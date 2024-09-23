@@ -1,4 +1,21 @@
-/* Global Styles */
+
+
+/* ***********************************************************
+
+   *************** VARIABLES ET STYLES GLOBAUX ***************
+
+   *********************************************************** */
+
+:root {
+
+    --color-bg: #9f8d89;
+    --color-primary: #ff9966;
+    --color-secondary : #FF6F61;
+    --color-shadow: rgba(0, 0, 0, 0.5);
+    --transition-speed : 0.3s
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,28 +23,55 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Utilise Roboto comme police principale */
     height: 100vh;
+
+    background-image: url("../0_assets/images/fond-degrader.jpeg");
+    background-size: cover; 
+    background-position: center;  
+
+    /* La page est centrée horizontalement et verticalement */
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, #ff6b00, #7b1800); /* Gradient de fond */
-    overflow: hidden;
     justify-content: center;
     align-items: center;
 }
 
-/* Navbar */
+
+/* Ajout d'une animation d'apparition sur le body */
+body {
+    animation: fadeInBody 1.5s ease-out;
+}
+
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* **********************************************
+   ************ STYLES DE LA NAVIGATION *********
+   **********************************************/
+
 header {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 15px 20px;
+    background-color: var(--color-bg); 
+    padding: 10px;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 4px 10px  var(--color-shadow);
+    animation: slideDown 1.5s ease-out;
 }
 
+@keyframes slideDown {
+    from { transform: translateY(-100px); }
+    to { transform: translateY(0); }
+}
+
+
+/* LOGO, LIENS DE NAVIGATION ET ICONS */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -36,45 +80,42 @@ header {
     margin: 0 auto;
 }
 
-.nav-links {
+
+.navbar .logo img {
+    max-height: 100px;    /* Limite la hauteur du logo */
+    width: auto;  
+}
+
+.navbar .nav-links {
     display: flex;
     list-style-type: none;
 }
 
-.nav-links li {
+/* Espacement entre chaque lien */
+.nav-links li, .icons a {
     margin: 0 20px;
 }
 
-.nav-links a {
+.navbar .nav-links a, 
+.navbar .icons a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #ff9966;
-}
-
-.icons a {
-    color: white;
-    margin-left: 15px;
     font-size: 22px;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed) ease;
+    
 }
 
-.icons a:hover {
-    color: #ff9966;
+.navbar .nav-links a:hover ,  .navbar .icons a:hover {
+    
+    color: var(--color-primary); 
 }
 
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
 
-/* Login Form */
+
+/* **********************************************
+   ************* FORMULAIRE DE LOGIN ************
+   ******************************************** */
+
 .login-section {
     flex: 1;
     display: flex;
@@ -83,16 +124,16 @@ header {
     padding-top: 100px;
 }
 
-.login-box {
-    background-color: rgba(255, 255, 255, 0.2);
+/* Conteneur du formulaire  */
+.login-section .login-box {
+    background-color: rgba(159, 141, 137, 0.75);  
     padding: 50px;
     border-radius: 12px;
     text-align: center;
     max-width: 450px;
     width: 100%;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(15px);
-    animation: fadeIn 1.5s ease-out;
+    box-shadow: 0px 0px 30px var(--color-shadow);
+    animation: fadeIn 1.3s ease-out;    /* Animation d'apparition */
 }
 
 @keyframes fadeIn {
@@ -111,12 +152,17 @@ header {
     margin-bottom: 30px;
     font-size: 28px;
     letter-spacing: 1px;
+    
+    /* Utilisation du dégradé dans les titres */
+    background: linear-gradient(135deg, #ff9966, #ff5e62);  
+    color: transparent;  
+    background-clip: text;
 }
 
 .login-box form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 20px;    /* Espacement entre les champs du formulaire */
 }
 
 .login-box label {
@@ -133,6 +179,7 @@ header {
     background-color: rgba(255, 255, 255, 0.7);
     transition: background-color 0.4s ease, box-shadow 0.4s ease;
     outline: none;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .login-box input:focus {
@@ -140,20 +187,29 @@ header {
     box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.8);
 }
 
-.login-box .forgot-password {
+/* - ------------------ */
+
+.login-box .forgot-password, .login-box .create-account {
     color: white;
-    text-align: right;
     font-size: 14px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed);
+}
+.forgot-password:hover, .create-account:hover {
+    color: var(--color-primary);
 }
 
-.login-box .forgot-password:hover {
-    color: #ff9966;
+
+.create-account {
+    color: var(--color-secondary);
+    font-weight: bold;
+    margin-top: 25px;
 }
+
+/* - ------------------ */
 
 .login-btn {
-    background-color: #FF6F61;
+    background-color:  var(--color-secondary);
     color: white;
     border: none;
     padding: 15px;
@@ -161,30 +217,21 @@ header {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.4s ease, transform 0.2s ease;
+    transition: transform 0.2s ease;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .login-btn:hover {
-    background-color: #ff9966;
-    transform: translateY(-2px);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px) scale(1.05); /* Effet de survol avec zoom */
 }
 
-.create-account {
-    color: #ff5e62;
-    font-weight: bold;
-    text-decoration: none;
-    margin-top: 25px;
-    display: inline-block;
-    transition: color 0.3s ease;
-}
 
-.create-account:hover {
-    color: white;
-    text-decoration: underline;
-}
 
-/* Mobile Responsive */
+/* **********************************************
+   *************** RESPONSIVE MOBILE ************
+   ******************************************** */
+
+
 @media (max-width: 768px) {
     .login-box {
         margin: 0 20px;
@@ -192,10 +239,52 @@ header {
     }
 
     .nav-links {
-        display: none;
+        display: none;      /* Masque la navigation sur mobile */
     }
 
     .logo {
         flex-grow: 1;
     }
+}
+
+
+
+/* **********************************************
+   *********** MESSAGE DE NOTIFICATION **********
+   ******************************************** */
+
+#message {
+
+    position: fixed;
+    top: 155px;
+
+    width: 70%;
+    padding: 15px 20px;
+    border-radius: 5px;
+
+    text-align: center;
+    color: white;
+
+    display: none;   /* Masqué par défaut */
+    z-index: 20;    
+
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeInMessage 0.5s ease;
+}
+
+@keyframes fadeInMessage {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.success {
+    background-color: green;
+}
+
+.error {
+    background-color:red;
+}
+
+.hidden {
+    display: none;
 }
