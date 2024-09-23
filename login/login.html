@@ -8,50 +8,76 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Page de Connexion</title>
 
-        <!-- Font Awesome Library -->
-        <link rel="stylesheet" href="../webfonts/all.min.css"/>
+        <!-- Intégration de la bibliothèque Font Awesome pour les icônes -->
+        <link rel="stylesheet" href="../0_assets/fonts/webfonts/all.min.css"/>
 
+        <!-- Intégration de la police Roboto via Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+        <!-- Style CSS personnalisée -->
         <link rel="stylesheet" href="login.css">
     </head>
 
     <body>
         <header>
+            <!-- Barre de navigation principale -->
             <nav class="navbar">
-                <div class="logo">Logo</div>
+
+                <!-- Logo du site -->
+                <div class="logo"> 
+                    <img src="../0_assets/images/logo-projet-fil-rouge.png" alt="Logo"> 
+                </div>
+
                 <ul class="nav-links">
+                    <!-- Liens de navigation principaux -->
                     <li><a href="#">Accueil</a></li>
                     <li><a href="#">Catalogue</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
+
                 <div class="icons">
+                    <!-- Section contenant les icônes de recherche, utilisateur, et panier -->
                     <a href="#"><i class="fa fa-search"></i></a>
                     <a href="#"><i class="fa fa-user"></i></a>
                     <a href="#"><i class="fa fa-shopping-cart"></i></a>
                 </div>
+                
             </nav>
         </header>
 
+        <!-- Élément masqué pour afficher les messages de succès ou d'erreur -->
+        <div id="message" class="hidden"></div>
+
+        <!-- Section principale contenant le formulaire de connexion -->
         <section class="login-section">
+
+            <!-- Conteneur du formulaire  -->
             <div class="login-box">
 
                 <h2>Se connecter</h2>
-                <form id="login-form">
+
+                <!-- Formulaire de connexion -->
+                <form id="login-form">    
+                
+                    <!-- Le nom d'utilisateur ou l'email -->
                     <label for="username">Nom d'utilisateur / Email</label>
                     <input type="text" id="username" placeholder="Nom d'utilisateur ou Email" required>
 
+                    <!-- Le mot de passe -->
                     <label for="password">Mot de passe</label>
                     <input type="password" id="password" placeholder="Mot de passe" required>
 
+                    <!-- Lien pour réinitialiser le mot de passe -->
                     <a href="#" class="forgot-password">Mot de passe oublié ?</a>
 
                     <button type="submit" class="login-btn">SE CONNECTER</button>
                     
                     <p>Pas de compte ? <a href="#" class="create-account">CRÉER UN COMPTE</a></p>
                 </form>
-
             </div>
         </section>
-
+        
+        <!-- Inclusion du fichier JavaScript qui gère les interactions -->
         <script src="login.js"></script>
     </body>
 </html>
