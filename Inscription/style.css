@@ -1,0 +1,275 @@
+/* 
+body {
+    background-color: #f8f9fa;
+}
+.signup-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.signup-title {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+.form-label {
+    font-weight: bold;
+}
+.btn-signup {
+    width: 100%;
+}
+.signin-link {
+    text-align: center;
+    margin-top: 15px;
+} */
+
+
+/* body {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-container {
+  background-image: url('../0_assets/images/fond-degrader.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.signup-title {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  color: #ffffff;
+}
+
+.btn-signup {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.signin-link {
+  text-align: center;
+  margin-top: 1rem;
+  color: #ffffff;
+}
+
+.signin-link a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.signin-link a:hover {
+  text-decoration: underline;
+} */
+
+/* body {
+  background-image: url('../0_assets/images/fond-degrader.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.signup-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.signup-title {
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  color: #333;
+}
+
+.btn-signup {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.signin-link {
+  text-align: center;
+  margin-top: 1rem;
+  color: #333;
+}
+
+.signin-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signin-link a:hover {
+  text-decoration: underline;
+} */
+
+
+body {
+  background-image: url('../0_assets/images/fond-degrader.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.signup-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.signup-title {
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  color: #333;
+}
+
+.form-control {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-signup {
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-signup:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.btn-signup:active {
+  transform: translateY(0);
+}
+
+/* Navbar styles */
+.navbar {
+  margin-bottom: 0;
+  padding: 10px 20px;
+}
+
+.navbar-brand {
+  transition: opacity 0.3s ease;
+}
+
+.navbar-brand:hover {
+  opacity: 0.8;
+}
+
+.navbar-nav .nav-link {
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff !important;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .navbar-nav.mx-auto {
+    margin: 10px 0;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .navbar-nav.ms-auto {
+    margin-top: 10px;
+  }
+}
+
+.input-group .password-toggle {
+  cursor: pointer;
+}
+
+.input-group .password-toggle i {
+  color: #6c757d;
+} 
+
+@media (max-width: 576px) {
+  .signup-container {
+    padding: 1.5rem;
+  }
+  
+  .signup-title {
+    font-size: 1.5rem;
+  }
+  
+  .container {
+    padding: 10px;
+  }
+}
