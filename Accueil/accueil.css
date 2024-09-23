@@ -3,9 +3,9 @@
     padding: 0;
 }
 
-.{ 
+.paralax{ 
     /* Image de fond */
-    background-image: url("IDENTITÉ-VISUELLE/fond-degrader.jpeg");
+   
     /* Effet paralax */
     background-attachment: fixed;
     background-position: center;
