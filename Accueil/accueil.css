@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.{ 
+    /* Image de fond */
+    background-image: url("IDENTITÉ-VISUELLE/fond-degrader.jpeg");
+    /* Effet paralax */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+  }
