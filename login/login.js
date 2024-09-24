@@ -1,13 +1,13 @@
 
 
-// Variables simulées pour l'utilisateur
+// // Variables simulées pour l'utilisateur
 
-const storedUser = {
+// const storedUser = {
 
-    username : "john",
-    email    : "john@gmail.com",
-    password : "john"
-};
+//     username : "john",
+//     email    : "john@gmail.com",
+//     password : "john"
+// };
 
 
 
@@ -23,32 +23,24 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     let enteredPassword = document.getElementById('password').value;
 
 
-    // Récupérer les informations de l'utilisateur stockées lors de l'inscription
-    const storedUser = JSON.parse(localStorage.getItem('user'));  
+    // Récupérer les utilisateurs stockés lors de l'inscription
+    const users = JSON.parse(localStorage.getItem('users')) || []; 
 
+
+    // Chercher l'utilisateur correspondant dans la liste des utilisateurs
+    const user = users.find(user => 
+        (user.email === usernameOrEmail || user.name === usernameOrEmail) && user.password === enteredPassword
+    );
 
     // Vérifier si l'utilisateur existe dans LocalStorage
-    if (storedUser) 
+    if (user) 
     {
-        const { username, email, password } = storedUser;
+        showMessage('Connexion réussie !', 'success');
 
-        // Comparer les informations saisies avec celles stockées
-        
-        if ( (usernameOrEmail === username || usernameOrEmail === email) && enteredPassword  === password) 
-        {
-            showMessage('Connexion réussie !', 'success');
-
-            // Rediriger vers la page d'accueil après un court délai
-
-            setTimeout( () => { window.location.href = "../Accueil/accueil.html"; } , 1500);
-        } 
-        else 
-        {
-            showMessage('Nom d\'utilisateur ou mot de passe incorrect.', 'error')
-        }
+        setTimeout( () => { window.location.href = "../Accueil/accueil.html"; } , 1500);
     } 
     else {
-        showMessage('Aucun compte n\'a été trouvé. Veuillez vous inscrire.', 'error');
+        showMessage('Nom d\'utilisateur ou mot de passe incorrect.', 'error');
     }
 });
 
