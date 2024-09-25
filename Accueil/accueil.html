@@ -19,46 +19,96 @@
   <body class="back">
     <header>
       <div class="logo">
-        <img src="/visuelle/logo-projet-fil-rouge.png" alt="" />
+        <img src="/0_assets/images/logo-projet-fil-rouge.png" alt="" />
       </div>
 
-      <nav>
-        <a href="">Accueil</a>
-        <a href="">Catalogue</a>
-        <a href="">Contact</a>
+      <div class="hamburger-menu"></div>
+      <input id="menu__toggle" type="checkbox" />
+      <label class="menu__btn" for="menu__toggle">
+        <span></span>
+      </label>
+
+      <nav class="menu__box">
+        <a class="menu__item" href="">Accueil</a>
+        <a class="menu__item" href="">Catalogue</a>
+        <a class="menu__item" href="">Contact</a>
       </nav>
+    </div>
 
       <nav>
         <form action="" id="searchBar">
           <input type="text" name="" placeholder="Search..." />
           <button type="button" onclick="toggleBar()">
-              <svg class="search" version="1.1" viewBox="0 0 32 32"><circle cx="14" cy="14" fill="none" id="XMLID_42_" r="9" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><line fill="none" id="XMLID_44_" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="27" x2="20.366" y1="27" y2="20.366"/></svg>
-              <svg class="close" viewBox="0 0 32 32"><g data-name="Layer 2" id="Layer_2"><path fill="#fff" d="M4,29a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l24-24a1,1,0,1,1,1.42,1.42l-24,24A1,1,0,0,1,4,29Z"/><path fill="#fff" d="M28,29a1,1,0,0,1-.71-.29l-24-24A1,1,0,0,1,4.71,3.29l24,24a1,1,0,0,1,0,1.42A1,1,0,0,1,28,29Z"/></g><g id="frame"><rect fill="none" height="32" width="32"/></g></svg>
+            <svg class="search" version="1.1" viewBox="0 0 32 32">
+              <circle
+                cx="14"
+                cy="14"
+                fill="none"
+                id="XMLID_42_"
+                r="9"
+                stroke="#fff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="2"
+              />
+              <line
+                fill="none"
+                id="XMLID_44_"
+                stroke="#fff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="2"
+                x1="27"
+                x2="20.366"
+                y1="27"
+                y2="20.366"
+              />
+            </svg>
+            <svg class="close" viewBox="0 0 32 32">
+              <g data-name="Layer 2" id="Layer_2">
+                <path
+                  fill="#fff"
+                  d="M4,29a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l24-24a1,1,0,1,1,1.42,1.42l-24,24A1,1,0,0,1,4,29Z"
+                />
+                <path
+                  fill="#fff"
+                  d="M28,29a1,1,0,0,1-.71-.29l-24-24A1,1,0,0,1,4.71,3.29l24,24a1,1,0,0,1,0,1.42A1,1,0,0,1,28,29Z"
+                />
+              </g>
+              <g id="frame"><rect fill="none" height="32" width="32" /></g>
+            </svg>
           </button>
-      </form>
+        </form>
         <a href=""><i class="fa-solid fa-user"></i></a>
         <a href=""><i class="fa-solid fa-basket-shopping"></i></a>
       </nav>
     </header>
 
     <div class="banniere">
-      <div class="slide">
-        <div id="slider" class="slider">
-          <div class="wrapper">
-            <div id="slides" class="slides">
-              <span class="slide">Slide 1</span>
-              <span class="slide">Slide 2</span>
-              <span class="slide">Slide 3</span>
-              <span class="slide">Slide 4</span>
-              <span class="slide">Slide 5</span>
-            </div>
+      <div id="slider">
+        <div class="slide">
+          <div id="precedent" onclick="ChangeSlide(-1)">&lt;</div>
+          <div class="info">
+            <h1 id="Auteur">Auteur</h1>
+            <h2 id="Titre">Titre</h2>
+            <p id="resumer">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Aspernatur minima minus tempor
+            </p>
+            <button><a id="details" href="#">En savoir plus</a></button>
           </div>
-          <a id="prev" class="control prev"></a>
-          <a id="next" class="control next"></a>
+
+          <img
+            src="/images/albums/Blacksad-03-Ame rouge.jpg"
+            alt=""
+            id="slide"
+          />
+
+          <div id="suivant" onclick="ChangeSlide(1)">&gt;</div>
         </div>
-
       </div>
-
     </div>
 
     <script src="accueil.js"></script>
