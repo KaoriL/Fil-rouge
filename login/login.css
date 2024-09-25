@@ -79,7 +79,9 @@ header {
     padding: 10px 20px;
 }
 
-
+.navbar .menu-toggle {
+    display: none;
+}
 .navbar .logo img {
     max-height: 50px;   /* Limite la hauteur du logo */
 }
@@ -245,13 +247,13 @@ header {
     }
 
     /* Afficher le menu hamburger et cacher les liens de navigation */
-    .menu-toggle {
+    .navbar .menu-toggle {
         display: flex;
         flex-direction: column;
         cursor: pointer;
     }
 
-    .menu-toggle span {
+    .navbar .menu-toggle span {
         width: 25px;
         height: 3px;
         background-color: white;
