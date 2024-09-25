@@ -3,139 +3,83 @@ function toggleBar() {
   form.classList.toggle("active");
 }
 
-//Slide//
+const slide = [
+  "Blacksad-03-Ame rouge.jpg",
+  "Elfes-01-Le crystal des Elfes bleus.jpg",
+  "Trolls de Troy-05-Les mal‚fices de la thaumaturge.jpg",
+];
 
-var slider = document.getElementById("slider"),
-  sliderItems = document.getElementById("slides"),
-  prev = document.getElementById("prev"),
-  next = document.getElementById("next");
+let auteur = ["Juan Diaz Canales", "Kyko Duartes", "Christophe Arleston"];
+//slide[0]="Blacksad-03-Ame rouge.jpg";
+//slide[1]="Elfes-01-Le crystal des Elfes bleus.jpg";
+//slide[2]="Trolls de Troy-05-Les mal‚fices de la thaumaturge.jpg";
+
+let numero = 0;
+
+function ChangeSlide(sens) {
+  numero = numero + sens;
+  if (numero > slide.length - 1) numero = 0;
+  if (numero < 0) numero = slide.length - 1;
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  //Ici tout ton script
+  document.getElementById("slide").src = "/images/albums/" + slide[numero];
 
-  function slide(wrapper, items, prev, next) {
-    var posX1 = 0,
-      posX2 = 0,
-      posInitial,
-      posFinal,
-      threshold = 100,
-      slides = items.getElementsByClassName("slide"),
-      slidesLength = slides.length,
-      slideSize = items.getElementsByClassName("slide")[0].offsetWidth,
-      firstSlide = slides[0],
-      lastSlide = slides[slidesLength - 1],
-      cloneFirst = firstSlide.cloneNode(true),
-      cloneLast = lastSlide.cloneNode(true),
-      index = 0,
-      allowShift = true;
+}
 
-    // Clone first and last slide
-    items.appendChild(cloneFirst);
-    items.insertBefore(cloneLast, firstSlide);
-    wrapper.classList.add("loaded");
+setInterval("ChangeSlide(1)", 4000);
 
-    // Mouse events
-    items.onmousedown = dragStart;
-
-    // Touch events
-    items.addEventListener("touchstart", dragStart);
-    items.addEventListener("touchend", dragEnd);
-    items.addEventListener("touchmove", dragAction);
-
-    next.addEventListener("load", function () {
-        shiftSlide(-1);
-      },3000);
-
-    // Click events
-    prev.addEventListener("click", function () {
-      shiftSlide(-1);
-    });
-    next.addEventListener("click", function () {
-      shiftSlide(1);
-    });
-
-    // Transition events
-    items.addEventListener("transitionend", checkIndex);
-
-    function dragStart(e) {
-      e = e || window.event;
-      e.preventDefault();
-      posInitial = items.offsetLeft;
-
-      if (e.type == "touchstart") {
-        posX1 = e.touches[0].clientX;
-      } else {
-        posX1 = e.clientX;
-        document.onmouseup = dragEnd;
-        document.onmousemove = dragAction;
-      }
-    }
-
-    function dragAction(e) {
-      e = e || window.event;
-
-      if (e.type == "touchmove") {
-        posX2 = posX1 - e.touches[0].clientX;
-        posX1 = e.touches[0].clientX;
-      } else {
-        posX2 = posX1 - e.clientX;
-        posX1 = e.clientX;
-      }
-      items.style.left = items.offsetLeft - posX2 + "px";
-    }
-
-    function dragEnd(e) {
-      posFinal = items.offsetLeft;
-      if (posFinal - posInitial < -threshold) {
-        shiftSlide(1, "drag");
-      } else if (posFinal - posInitial > threshold) {
-        shiftSlide(-1, "drag");
-      } else {
-        items.style.left = posInitial + "px";
-      }
-
-      document.onmouseup = null;
-      document.onmousemove = null;
-    }
-
-    function shiftSlide(dir, action) {
-      items.classList.add("shifting");
-
-      if (allowShift) {
-        if (!action) {
-          posInitial = items.offsetLeft;
-        }
-
-        if (dir == 1) {
-          items.style.left = posInitial - slideSize + "px";
-          index++;
-        } else if (dir == -1) {
-          items.style.left = posInitial + slideSize + "px";
-          index--;
-        }
-      }
-
-      allowShift = false;
-    }
-
-    function checkIndex() {
-      items.classList.remove("shifting");
-
-      if (index == -1) {
-        items.style.left = -(slidesLength * slideSize) + "px";
-        index = slidesLength - 1;
-      }
-
-      if (index == slidesLength) {
-        items.style.left = -(1 * slideSize) + "px";
-        index = 0;
-      }
-
-      allowShift = true;
-    }
-
-  }
-
-  slide(slider, sliderItems, prev, next);
-});
+//Slide en json
+//fetch("accueil.json")
+//  .then((rep) => {
+//    return rep.json();
+//  })
+//
+//  .then((data) => {
+//    console.log("données récupérées :", data);
+//
+//    data.slide.forEach((slide) => {
+//      AfficherTemplateSlide(slide);
+//    });
+//
+//
+//
+//    let suivant = document.getElementById("suivant");
+//    let precedent = document.getElementById("precedent");
+//
+//     
+//
+//
+//
+//
+//
+//
+//  
+//    function AfficherTemplateSlide(slide) {
+//      let template = `
+//        <div class="info" id="slide">
+//       <h1>${slide.auteur}</h1>
+//       <h2>${slide.titre}</h2>
+//       <p>
+//       ${slide.resume}
+//       </p>
+//       <button>En savoir plus</button>
+//     </div>
+//     <img src="${slide.img}" alt="" id="slide" />`;
+//
+//      console.log(template);
+//
+//      let madiv = document.getElementById("slider");
+//      madiv.innerHTML += template;
+//
+//      let numero = 0;
+//
+//      function ChangeSlide(sens) {
+//        numero = numero + sens;
+//        if (numero > slide.length - 1) numero = 0;
+//        if (numero < 0) numero = slide.length - 1;
+//
+//        document.getElementById("slide").src =
+//          "/images/albums/" + slide[numero];
+//      }
+//    }
+//  });
