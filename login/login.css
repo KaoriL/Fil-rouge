@@ -10,7 +10,7 @@
 
     --color-bg: #9f8d89;
     --color-primary: #ff9966;
-    --color-secondary : #FF6F61;
+    --color-secondary : #f8540c;
     --color-shadow: rgba(0, 0, 0, 0.5);
     --transition-speed : 0.3s
 }
@@ -76,14 +76,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 10px 20px;
 }
 
-
+.navbar .menu-toggle {
+    display: none;
+}
 .navbar .logo img {
-    max-height: 100px;    /* Limite la hauteur du logo */
-    width: auto;  
+    max-height: 50px;   /* Limite la hauteur du logo */
 }
 
 .navbar .nav-links {
@@ -111,7 +111,6 @@ header {
 }
 
 
-
 /* **********************************************
    ************* FORMULAIRE DE LOGIN ************
    ******************************************** */
@@ -126,7 +125,7 @@ header {
 
 /* Conteneur du formulaire  */
 .login-section .login-box {
-    background-color: rgba(159, 141, 137, 0.75);  
+    background-color: rgb(159 141 137 / 20%); 
     padding: 50px;
     border-radius: 12px;
     text-align: center;
@@ -149,14 +148,9 @@ header {
 
 .login-box h2 {
     color: white;
-    margin-bottom: 30px;
-    font-size: 28px;
+    margin-bottom: 45px;
+    font-size: 35px;
     letter-spacing: 1px;
-    
-    /* Utilisation du dégradé dans les titres */
-    background: linear-gradient(135deg, #ff9966, #ff5e62);  
-    color: transparent;  
-    background-clip: text;
 }
 
 .login-box form {
@@ -166,14 +160,14 @@ header {
 }
 
 .login-box label {
-    color: white;
-    font-size: 16px;
+    color: wheat;
+    font-size: larger;
     text-align: left;
 }
 
 .login-box input {
     padding: 12px;
-    border: none;
+    border: 1px solid black;
     border-radius: 5px;
     font-size: 16px;
     background-color: rgba(255, 255, 255, 0.7);
@@ -189,33 +183,43 @@ header {
 
 /* - ------------------ */
 
-.login-box .forgot-password, .login-box .create-account {
-    color: white;
+.login-box .forgot-password {
+    color: #ffffffc7;
+    text-align: left;
     font-size: 14px;
+}
+
+.login-box .forgot-password, .login-box .create-account {
     text-decoration: none;
     transition: color var(--transition-speed);
 }
+
 .forgot-password:hover, .create-account:hover {
     color: var(--color-primary);
 }
 
 
 .create-account {
-    color: var(--color-secondary);
+    display: inline-block;
     font-weight: bold;
-    margin-top: 25px;
+    margin-top: 15px;
+    color: #000000d6;
+}
+
+#login-form p {
+    color: wheat;
 }
 
 /* - ------------------ */
 
 .login-btn {
+    margin-top: 15px;
     background-color:  var(--color-secondary);
     color: white;
     border: none;
     padding: 15px;
     border-radius: 8px;
     font-size: 18px;
-    font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s ease;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
@@ -231,23 +235,60 @@ header {
    *************** RESPONSIVE MOBILE ************
    ******************************************** */
 
+/* 
 
+
+/* Responsive - max-width 768px */
 @media (max-width: 768px) {
-    .login-box {
-        margin: 0 20px;
-        padding: 30px;
+
+    header {
+        background-color: transparent;
+        box-shadow: none;
     }
 
-    .nav-links {
-        display: none;      /* Masque la navigation sur mobile */
+    /* Afficher le menu hamburger et cacher les liens de navigation */
+    .navbar .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
     }
 
-    .logo {
+    .navbar .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 4px;
+    }
+
+    .navbar .nav-links {
+        display: none; /* Cacher les liens */
+    }
+
+    /* Recentrer le logo */
+    .navbar .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Cacher les autres icônes, sauf la recherche */
+    .navbar .icons a:nth-child(2),  .navbar .icons a:nth-child(3) {
+        display: none;
+    }
+
+    .navbar .icons {
+        display: flex;
+        justify-content: flex-end;
         flex-grow: 1;
     }
+
+    .login-section {
+        padding: 0;
+    }
+    .login-section .login-box{
+        margin-right: 4px;
+    }
 }
-
-
 
 /* **********************************************
    *********** MESSAGE DE NOTIFICATION **********
