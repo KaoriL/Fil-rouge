@@ -286,6 +286,10 @@ h1 {
   background-color: #0000008a;
 }
 
+.none{
+  display: none;
+}
+
 @media screen and (max-width: 800px) {
   #menu__toggle {
     opacity: 0;
