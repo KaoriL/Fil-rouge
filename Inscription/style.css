@@ -3,138 +3,199 @@
 :root {
   --navbar-bg: #9f8d89;
   --navbar-text: #ffffff;
-  --navbar-hover: #007bff;
+  --navbar-hover: #ff9966;
   --form-bg: rgba(255, 255, 255, 0.8);
   --form-text: #333;
-  --btn-primary: #007bff;
-  --btn-hover: #0056b3;
+  --btn-primary:#f8540c;
+  --btn-hover: #ff9966;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-body {
+ body {
   font-family: 'Roboto', sans-serif;
-  background-image: url('../0_assets/images/fond-degrader.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
+} 
 
-.navbar {
-  background-color: var(--navbar-bg);
-  padding: 20px 0;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar-brand img {
-  height: 60px;
-}
-
-.navbar-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.navbar-nav-center {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-  flex-grow: 1;
-}
-
-.navbar-nav-center li {
-  margin: 0 15px;
-}
-
-.navbar-right {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-search {
-  display: flex;
-  margin-right: 15px;
-}
-
-.search-input {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 4px 0 0 4px;
-}
-
-.search-button {
-  background-color: var(--navbar-text);
-  color: var(--navbar-bg);
-  border: none;
-  padding: 5px 10px;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-}
-
-.navbar-nav {
-  display: flex;
-  list-style-type: none;
+* {
   margin: 0;
   padding: 0;
 }
 
-.navbar-nav li {
-  margin-left: 15px;
+/*Parallax*/
+.back {
+  background-image: url("/0_assets/images/fond-degrader.jpeg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
 }
 
-.navbar-nav a, .navbar-nav-center a {
-  color: var(--navbar-text);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
+/*header*/
 
-.navbar-nav a:hover, .navbar-nav-center a:hover {
-  color: var(--navbar-hover);
-}
-
-.navbar-toggler {
+.menu__toggle {
   display: none;
-  background: none;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 1px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+  margin: 20px;
+  align-items: center;
+}
+
+.logo {
+  width: 20%;
+  margin: 20px;
+}
+
+.logo img {
+  width: 50px;
+}
+
+header nav {
+  width: 30%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-family: Roboto;
+  margin-right: 20px;
+  text-align: right;
+}
+header nav a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  font-size: 22;
+  font-family: Roboto;
+  font-weight: 300;
+}
+
+header nav a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+header nav a::after {
+  content: "";
+  height: 0px;
+  width: 10px;
+  bottom: -25px;
+  left: calc(50% - 5px);
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50px;
+  transition: all 300ms;
+}
+
+header nav a:hover::after {
+  height: 10px;
+}
+
+/*search*/
+form {
+  position: relative;
+  margin-right: 30px;
+}
+
+form input[type="text"] {
+  font-size: 18px;
+  width: 0px;
+  padding: 8px 0;
   border: none;
-  font-size: 1.5rem;
-  color: var(--navbar-text);
+  border-radius: 25px 0 0 25px;
+  transition: 0.3s all ease-in-out;
+}
+
+form.active input[type="text"] {
+  width: 200px;
+  padding: 8px 20px;
+}
+
+form button[type="button"] {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  border: none;
+  border-radius: 100%;
+  background-color: #f8540c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
+form button[type="button"] svg {
+  width: 30px;
+  height: 30px;
+  transition: 0.3s all ease;
+}
+
+form.active button[type="button"] svg.search,
+form button[type="button"] svg.close {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+form.active button[type="button"] svg.close {
+  width: 25px;
+  height: 25px;
+  opacity: 1;
+}
+
+/* Navbar responsiveness */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  header nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #searchBar {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+/* Main Content Styles */
 .main-content {
-  margin-top: 100px; /* Adjust based on navbar height */
-  flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 20px;
+  align-items: center;
+  min-height: calc(100vh - 100px); /* Adjust based on your header height */
+  padding: 1rem;
 }
 
 .form-wrapper {
@@ -143,23 +204,105 @@ body {
 }
 
 .signup-container {
-  background-color: var(--form-bg);
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.signup-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .signup-title {
-  color: var(--form-text);
+  color: #333;
   text-align: center;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
+}
+
+
+
+@media (max-width: 768px) {
+
+  /* Ensure form takes full width and icons are aligned */
+  form {
+    width: 100%;
+    display: flex; /* Align input and button horizontally */
+    justify-content: space-between; /* Ensure spacing is even */
+    margin-top: 1rem;
+  }
+
+  form input[type="text"] {
+    flex: 1; /* Allow input to take available space */
+    padding: 8px 15px;
+    width: auto; /* Override fixed width */
+    font-size: 16px;
+    border-radius: 25px 0 0 25px; /* Ensure round borders */
+  }
+
+  form button[type="button"] {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0; /* Prevent button from shrinking */
+    margin-left: 10px; /* Add space between input and button */
+    background-color: #f8540c; /* Button background */
+    border-radius: 50%; /* Keep the button circular */
+  }
+
+  form button[type="button"] svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Adjust navigation links and icons */
+  header nav a {
+    font-size: 18px; /* Smaller font size */
+    margin-right: 10px; /* Reduce margin */
+  }
+
+  /* Adjust the logo size on smaller screens */
+  .logo img {
+    width: 40px; /* Smaller logo for mobile */
+  }
+
+  /* Center align icons and ensure proper padding */
+  header nav {
+    width: 100%;
+    justify-content: space-around; /* Spread icons evenly */
+    align-items: center;
+  }
+}
+
+
+/* Main Content Styles */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px); /* Adjust based on your header height */
+  padding: 1rem;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.signup-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.signup-title {
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* Form Styles */
+#signUpForm {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group {
@@ -169,21 +312,23 @@ body {
 .form-label {
   display: block;
   margin-bottom: 0.5rem;
-  color: var(--form-text);
+  color: #333;
 }
 
 .form-control {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.75rem;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+  background-color: white;
 }
 
-.form-control:focus {
-  border-color: var(--btn-primary);
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-  outline: none;
+/* Specific style for Nom field to ensure it's visible */
+#signUpName {
+  display: block;
+  width: 100%;
+  background-color: white;
 }
 
 .password-input {
@@ -201,22 +346,18 @@ body {
 
 .btn-signup {
   width: 100%;
-  padding: 0.5rem;
-  background-color: var(--btn-primary);
+  padding: 0.75rem;
+  background-color: #f8540c;
   color: white;
   border: none;
   border-radius: 0.25rem;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .btn-signup:hover {
-  background-color: var(--btn-hover);
-  transform: translateY(-2px);
-}
-
-.btn-signup:active {
-  transform: translateY(0);
+  background-color: #ff9966;
 }
 
 .signin-link {
@@ -224,51 +365,133 @@ body {
   margin-top: 1rem;
 }
 
-@media (max-width: 768px) {
-  .navbar-toggler {
-      display: block;
-  }
-
-  .navbar-menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background-color: var(--navbar-bg);
-      padding: 20px;
-  }
-
-  .navbar-menu.show {
-      display: flex;
-  }
-
-  .navbar-nav-center, .navbar-right {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .navbar-nav-center li, .navbar-nav li {
-      margin: 10px 0;
-  }
-
-  .navbar-search {
-      margin: 10px 0;
-      width: 100%;
-  }
-
-  .search-input {
-      width: 100%;
-  }
+.signin-link a {
+  color: #f8540c;
+  text-decoration: none;
 }
 
-@media (max-width: 576px) {
+.signin-link a:hover {
+  text-decoration: underline;
+}
+
+/* Ensure uniform shape for all input fields */
+#signUpName, #signUpEmail, #signUpPassword {
+  border-radius: 0.25rem; /* Same border-radius for all */
+  background-color: white;
+  font-size: 1rem; /* Ensure all fields have the same font size */
+  padding: 0.75rem;  /* Consistent background */
+}
+
+
+/* Responsive Design */
+@media (max-width: 480px) {
   .signup-container {
-      padding: 1.5rem;
+    padding: 1rem;
   }
-  
+
   .signup-title {
-      font-size: 1.25rem;
+    font-size: 1.2rem;
+  }
+
+  .form-control {
+    font-size: 0.9rem;
+  }
+
+  .btn-signup {
+    font-size: 0.9rem;
   }
 }
+
+
+@media screen and (max-width: 800px) {
+  /* Menu Toggle and Button */
+  #menu__toggle {
+    opacity: 0;
+  }
+
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+
+  /* Menu Button */
+  .menu__btn {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    width: 30px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transition-duration: 0.25s;
+  }
+
+  .menu__btn > span::before {
+    content: "";
+    top: -8px;
+  }
+
+  .menu__btn > span::after {
+    content: "";
+    top: 8px;
+  }
+
+  /* Menu Box */
+  .menu__box {
+    z-index: 2;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #000000;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.25s;
+  }
+
+  /* Menu Items */
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: none;
+    transition-duration: 0.25s;
+  }
+
+  /* Adjusting Logo for Mobile */
+  .logo {
+    width: 30%;
+    margin-left: 20%;
+  }
+}
+

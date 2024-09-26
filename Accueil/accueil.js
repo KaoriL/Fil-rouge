@@ -7,7 +7,7 @@ function toggleBar() {
 const slide = [
   "Blacksad-03-Ame rouge.jpg",
   "Elfes-01-Le crystal des Elfes bleus.jpg",
-  "Trolls de Troy-05-Les mal‚fices de la thaumaturge.jpg",
+  "Trolls de Troy-05-Les mal,fices de la thaumaturge.jpg",
 ];
 
 let auteur = ["Juan Diaz Canales", "Kyko Duartes", "Christophe Arleston"];
