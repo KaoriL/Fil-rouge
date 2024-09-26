@@ -1,6 +1,12 @@
 
 
 
+
+// Define the toggleBar function globally
+function toggleBar() {
+  let form = document.getElementById("searchBar");
+  form.classList.toggle("active");
+}
 window.addEventListener('load', function() {
   const signUpForm = document.getElementById('signUpForm');
   const nameInput = document.getElementById('signUpName');
@@ -11,6 +17,10 @@ window.addEventListener('load', function() {
   // Navbar toggle functionality
   const navbarToggler = document.getElementById('navbarToggler');
   const navbarMenu = document.getElementById('navbarMenu');
+
+ 
+  
+  
 
   if (navbarToggler && navbarMenu) {
     navbarToggler.addEventListener('click', function() {
