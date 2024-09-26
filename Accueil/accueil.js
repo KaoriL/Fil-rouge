@@ -25,7 +25,7 @@ function ChangeSlide(sens) {
   if (numero < 0) numero = slide.length - 1;
 
 
-  document.getElementById("slide").src = "/images/" + slide[numero];
+  document.getElementById("slide").src = "/Accueil/Images/" + slide[numero];
 
 }
 
