@@ -23,12 +23,9 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border-radius: 1px;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
   margin: 20px;
   align-items: center;
@@ -148,8 +145,6 @@ form.active button[type="button"] svg.close {
 
 .banniere {
   background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border-radius: 1px;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -315,7 +310,7 @@ h1 {
     width: 30px;
     height: 50px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 3;
   }
 
   .menu__btn > span,
@@ -327,6 +322,7 @@ h1 {
     height: 2px;
     background-color: #ffffff;
     transition-duration: 0.25s;
+    
   }
   .menu__btn > span::before {
     content: "";
@@ -337,6 +333,7 @@ h1 {
     top: 8px;
   }
   .menu__box {
+    z-index: 2;
     display: block;
     position: fixed;
     top: 0;
@@ -371,8 +368,6 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-between;
     background:transparent;
-    backdrop-filter: blur(0);
-    -webkit-backdrop-filter: blur(0);
     border-radius: 1px;
     border-left: 0px solid ;
     border-top: 0 solid ;
