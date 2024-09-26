@@ -236,30 +236,36 @@ h1 {
   display: none;
 }
 
-
+/*BEST SELLER*/
 .vitrine{
   margin-top: 10%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.59);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .best-seller{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  width: 40%;
+  margin-left: 5%;
 
 }
 
 .best-seller h1{
   font-size: 32px ;
   color: white;
-  width: 100%;
-  margin-left: 10%;
   padding: 30px;
+  text-align: left;
+
 }
 
 .top-1{
-  width: 500px;
+  width: 100%;
   height: 100px;
   border: 3px solid transparent;
   border-color:#f8540c;
@@ -281,11 +287,93 @@ h1 {
   background-color: #0000008a;
 }
 
+
+.top-2{
+  width: 30%;
+  height: 150px;
+  border: 3px solid transparent;
+  border-color:#f8540c;
+  margin-top: 10px;
+}
+
+.top-2 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-2 h2{
+  color: white;
+  font-size: 22px ;
+  font-family: Roboto;
+  font-weight: 300;  
+  position: absolute;
+  background-color: #0000008a;
+}
+
+.derniere-sort{
+  width: 40%;
+  border: 3px solid transparent;
+  border-color:#f8540c;
+  background-color: #0000009a;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.derniere-sort button{
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  border: solid 1px transparent;
+  border-color: #f8540c;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.bouton{
+  width: 100%;
+}
+
+.derniere-sort a{
+  text-decoration: none;
+  color: black;
+}
+
+.preference{
+  background-color: #56565677;
+  border-radius: 10px;
+  width: 80%;
+  text-align: center;
+  font-family: roboto;
+  font-weight: 300;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.preference a {
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+.derniere-sort h1{
+  padding-top: 10px;
+  font-size: 32px;
+  font-family: roboto;
+  font-weight: 300;
+  color: #f8540c;
+}
+
 .none{
   display: none;
 }
 
+/*RESPONSIVE*/
 @media screen and (max-width: 800px) {
+
+  /*MENUE BURGER*/
   #menu__toggle {
     opacity: 0;
   }
@@ -310,7 +398,7 @@ h1 {
     width: 30px;
     height: 50px;
     cursor: pointer;
-    z-index: 3;
+    z-index: 31;
   }
 
   .menu__btn > span,
@@ -377,6 +465,7 @@ h1 {
     align-items: center;
   }
 
+  /*SLIDER*/
   .slide {
     display: flex;
     flex-wrap: wrap;
