@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Panier - Comics Style Librairie</title>
+
+        <!-- Intégration de la bibliothèque Font Awesome pour les icônes -->
+        <link rel="stylesheet" href="../0_assets/fonts/webfonts/all.min.css"/>
+
+        <!-- Intégration de la police Roboto via Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+        <!-- Style CSS personnalisée -->
+        <link rel="stylesheet" href="panier.css">
+    </head>
+
+
+    <!-- ######################################################################## -->
+    
+    <body>
+        
+        <h2> Votre panier <span> ( 1 produit ) </span> </h2>
+
+    <!-- Conteneur principal pour la panier -->
+        <main class="cart-container">
+
+            <!-- **--**--**--**--**--**--**--**--**--**--** -->
+            
+            <!-- Section gauche : Informations sur le produit et options de livraison -->
+            <section  class="left-section"> 
+
+
+                <!-- ############################################# -->
+                <!-- Boîte 1 : Détails du produit -->
+                <article  class="box product-box"> 
+
+                    <div class="cart-product">
+
+                        <!-- Image de livre -->
+                        <img src="https://via.placeholder.com/120x150.png?text=Image" alt="Product Image">
+
+                        <!-- Informations sur le produit -->
+                        <div class="product-info">
+                            <h3>Name of book</h3>
+                            <p>Auteur</p>     
+                        </div>
+
+                        <!-- Section Prix et Quantité -->
+                        <div class="price-quantity">
+
+                            <span class="product-price">12,99 €</span>
+
+                            <!-- Contrôles de quantité -->
+                            <div class="quantity-controls">
+                                <button class="remove-btn" aria-label="Supprimer l'article">
+                                    <i class="fas fa-trash-alt"></i> <!-- Ajout d'une icône pour supprimer -->
+                                </button>
+                                <div class="quantity-wrapper">
+                                    <button class="quantity-btn" aria-label="Réduire la quantité">-</button>
+                                    <input type="number" value="1" min="1" class="quantity-input" aria-label="Quantité">
+                                    <button class="quantity-btn" aria-label="Augmenter la quantité">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+                
+                
+                <!-- ############################################# -->
+                <!-- Boîte 2 : Options de livraison -->
+                <article  class="box shipping-box">   
+                    
+                    <h3><i class="fas fa-shipping-fast"></i> Livraison</h3> 
+                    
+                    <form>
+
+                        <!-- Option 1 : Réservation en magasin -->
+                        <div class="shipping-option">     
+
+                            <input type="radio" id="reserve" name="shipping" checked> 
+                            
+                            <div class="shipping-details">
+                                <label for="reserve">
+                                    <i class="fas fa-store"></i> Réserver puis régler en magasin
+                                </label>   
+                                <p> A retirer sous 15 jours a la caisse de la librairie</p>
+                            </div>
+
+                            <p class="shipping-price"> GRATUIT </p>
+                        </div>
+
+                        
+                        <!-- Option 2 : Retrait en magasin avec paiement en ligne -->
+                        <div class="shipping-option">
+                            <input type="radio" id="pickup" name="shipping">
+                            <div class="shipping-details">
+                                <label for="pickup">
+                                    <i class="fas fa-shopping-basket"></i> Retrait en magasin avec paiement en ligne
+                                </label>
+                                <p> A retirer sous 15 jours a la caisse de la librairie</p>
+                            </div>
+                            <p class="shipping-price">GRATUIT</p>
+                        </div>
+
+                        <!-- Option 3 : Livraison à domicile -->
+                        <div class="shipping-option">
+                            <input type="radio" id="home" name="shipping">
+                            <div class="shipping-details">
+                                <label for="home">
+                                    <i class="fas fa-home"></i> Livraison à domicile
+                                </label>
+                                <p> Des frais peuvent s'ajouter selon le poids du colis</p>
+                            </div>
+                            <p class="shipping-price" >6.01 €</p>
+                        </div>
+                    </form>
+
+                </article>
+            </section>
+            <!-- **--**--**--**--**--**--**--**--**--**--** -->
+
+
+            <!-- Section droite : Résumé du paiement -->
+            <section  class="box payment-box">
+
+                <h3><i class="fas fa-store"></i> Comics Style Librairie</h3>   
+
+                <!-- Détails du paiement -->
+                <div class="payment-summary">
+                    <div class="payment-item">
+                        <p>Blacksad - Auteur</p>
+                        <p class="payment-price">12,99 €</p>
+                    </div>
+
+                    <div class="payment-item">
+                        <p>Articles en livraison</p>
+                        <p class="payment-price">6,01 €</p>
+                    </div>
+                </div>
+
+                <!-- Total du paiement -->
+                <div class="payment-total">
+                    <p>Total à payer</p>
+                    <p class="total-price"> 19,00 €</p>
+                </div>
+
+                <!-- Bouton de paiement -->
+                <button class="pay-btn">
+                    <i class="fas fa-credit-card"> </i> PAIEMENT EN LIGNE (19,00 €)
+                </button>
+
+                <!-- Message de sécurité -->
+                <p class="secure-payment">
+                    <i class="fas fa-lock"></i> Paiements 100% sécurisés
+                </p>
+
+            </section>
+        </main>
+
+
+        <footer>
+            <p>© 2024 Comics Style. Tous droits réservés.</p>
+        </footer>
+
+        <!-- Inclusion du fichier JavaScript qui gère les interactions -->
+        <script src="panier.js"></script>
+    </body>
+</html>
