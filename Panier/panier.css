@@ -1,0 +1,506 @@
+
+
+/* ***********************************************************
+
+   *************** VARIABLES ET STYLES GLOBAUX ***************
+
+   *********************************************************** */
+
+
+:root {
+    --color-bg: #9f8d89;
+    --color-primary: #ff9966;
+    --color-secondary : #f8540c;
+    --color-shadow: rgba(0, 0, 0, 0.5);
+
+    --color-heading: #2e2c2c;  /* Dark color for headings */
+    --color-border: #444;      
+    --color-highlight: #ffc107;
+
+    --transition-speed : 0.3s
+}
+
+
+/* **********************
+   ** STYLES GLOBAUX ****
+   ********************** */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif; /* Utilise Roboto comme police principale */
+
+    background-image: url("../0_assets/images/fond-degrader.jpeg");
+    background-size: cover; 
+    background-position: center;  
+
+    color: white;   
+
+    animation: fadeInBody 1.5s ease-out;       /* Ajout d'une animation d'apparition sur le body */
+}
+
+
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* **********************************************
+   ************ STYLES DE LA NAVIGATION *********
+   **********************************************/
+
+
+
+
+
+/* ********************
+   ** EN-TÊTE PAGE ****
+   ******************** */
+
+h2, .cart-container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h2 {
+    margin-top: 10%;
+    font-size: 35px;
+    color: #bbb;
+}
+
+h2 span {
+    font-size: 20px;
+}
+
+
+/* **********************
+   ** CONTENEUR PANIER **
+   ********************** */
+
+
+/* Contains two sections */
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 5%;
+    margin-bottom: 10%;
+    padding: 40px; 
+
+    background-color: rgb(159 141 137 / 20%);
+    box-shadow: 0 0 20px var(--color-shadow);
+    border-radius: 15px;  
+    gap: 40px;  
+}
+
+
+
+/* ***********************************************************
+
+   *************** SECTION GAUCHE ****************************
+
+   *********************************************************** */
+
+
+.cart-container .left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;                
+}
+
+
+/* Commun entre (produits et livraison) */
+
+.cart-container .left-section .box {
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* ***************
+   ** PRODUITS ***
+   *************** */
+
+
+.cart-container .left-section .product-box .cart-product {
+    display: flex;
+    margin-bottom: 40px; 
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 20px;
+}
+
+.cart-container .left-section .product-box .cart-product img {
+    width: 150px;
+    border-radius: 8px;  
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-container .left-section .product-box .cart-product .product-info {
+    margin-left: 30px;
+}
+
+.cart-container .left-section .product-box .cart-product .product-info  h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: var(--color-heading); /* Darker color for heading */
+}
+
+.product-info p {
+    color: #bbb;
+    margin-top: 20px;
+}
+
+
+/* ***************
+   ** QUANTITÉ **
+   *************** */
+
+.cart-container .left-section .product-box .cart-product .price-quantity {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content:space-between ;
+    flex: 1;
+}
+
+.cart-container .left-section .product-box .cart-product .price-quantity .product-price {
+    font-size: 1.6rem;
+}
+
+.cart-container .left-section .product-box .cart-product .price-quantity .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* COMMUN  -------------------- */
+
+.remove-btn, .quantity-btn {
+    color: white;
+    background-color: #333;
+    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+
+/* Bouton de suppression */
+.cart-container .left-section .product-box .cart-product .price-quantity .quantity-controls .remove-btn {
+    border: none;
+    padding: 10px 15px;
+    margin-right: 30px;
+}
+
+/* Taille de l'icône */
+.remove-btn i {
+    font-size: 1.2rem; 
+}
+
+
+.cart-container .left-section .product-box .cart-product .price-quantity .quantity-controls .quantity-wrapper .quantity-btn {
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+.cart-container .left-section .product-box .cart-product .price-quantity .quantity-controls .quantity-wrapper .quantity-btn:hover,
+.cart-container .left-section .product-box .cart-product .price-quantity .quantity-controls .remove-btn:hover  {
+    background-color: var(--color-secondary);
+}
+
+.cart-container .left-section .product-box .cart-product .price-quantity .quantity-controls .quantity-wrapper input {
+
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 13px;
+}
+
+
+
+/* ***************************
+   ** La boîte de livraison **
+   *************************** */
+
+
+.cart-container .left-section .shipping-box {
+    transition: transform 0.3s ease;
+}
+
+.cart-container .left-section .shipping-box:hover {
+    transform: translateY(-5px);  
+}
+
+
+/* Shipping Box Styling */
+.cart-container .left-section .shipping-box h3 {
+    font-size: 24px;
+    color: var(--color-heading);
+
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+    margin-bottom: 45px;
+}
+
+/* Style des options de livraison */
+.cart-container .left-section .shipping-box form .shipping-option {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 35px;
+    gap: 10px;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease;
+
+    cursor: pointer;
+}
+
+/* Effet au survol des options de livraison */
+
+.cart-container .left-section .shipping-box form .shipping-option:hover {
+
+    background-color: rgba(255, 255, 255, 0.3);  
+}
+
+ /* Espace entre le bouton radio et le texte */
+
+.cart-container .left-section .shipping-box form .shipping-option input[type="radio"] {
+    margin-right: 55px;
+}
+
+/* Conteneur des détails de la livraison */
+
+.cart-container .left-section .shipping-box form .shipping-option .shipping-details {
+    flex: 1;
+}
+
+/* Label des options de livraison */
+.cart-container .left-section .shipping-box form .shipping-option .shipping-details label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--color-heading);
+    font-size: 18px;
+}
+
+.cart-container .left-section .shipping-box form .shipping-option .shipping-details p {
+    margin: 20px 0 0 30px;
+}
+
+
+
+/* ***********************************************************
+
+   *************** SECTION  DROITE  **************************
+
+   *********************************************************** */
+
+
+/* la boîte de paiement  */
+.cart-container .payment-box {
+    width: 320px;
+    padding: 30px;
+
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  
+    transition: transform 0.3s ease;  
+}
+
+.cart-container .payment-box:hover {
+    transform: translateY(-10px); /* Légère élévation au survol pour une interaction dynamique */
+}
+
+/* titre de la boîte de paiement */
+.cart-container .payment-box h3 {
+    font-size: 26px;
+    color: var(--color-heading);
+
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Conteneur =====> résumé du paiement */
+.cart-container .payment-box .payment-summary {
+    margin-bottom: 50px;
+}
+
+/* (article et prix) */
+.cart-container .payment-box .payment-summary .payment-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.cart-container .payment-box .payment-summary .payment-item p {
+    color: wheat;
+    margin-bottom: 15px; 
+}
+
+/* Total de paiement */
+.cart-container .payment-box .payment-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 22px;
+
+    margin-bottom: 30px;
+    padding-top: 35px;
+
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Couleur du prix total */
+.cart-container .payment-box .payment-total .total-price {
+    color: var(--color-heading);
+    font-size: 24px;
+}
+
+/* Bouton de paiement */
+.cart-container .payment-box .pay-btn {
+    
+    margin: 30px 0;
+    padding: 15px;
+    background-color: #2196f39c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.cart-container .payment-box .pay-btn:hover {
+    background-color: #0b8cf69c; 
+    transform: translateY(-3px);  
+}
+
+/* Message de sécurité */
+.cart-container .payment-box .secure-payment {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.cart-container .payment-box .secure-payment i {
+    margin-right: 10px;
+    color: var(--color-highlight); 
+}
+
+
+
+
+/* ***********************************************************
+   ************** RESPONSIVE DESIGN   ************************
+   *********************************************************** */
+
+
+
+
+/* Écrans petits : largeur maximale de 600px (smartphones) */
+
+@media screen and (max-width: 600px) {
+
+    h2 {
+        font-size: 28px;
+        margin-top: 20%;
+        margin-bottom: 20%;
+    }
+
+    .cart-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .cart-container .left-section, 
+    .cart-container .payment-box {
+        width: 100%;  
+        margin-bottom: 20px;
+    }
+
+    .cart-container .left-section .product-box .cart-product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cart-container .left-section .product-box .cart-product img {
+        width: 100px;  
+        margin-bottom: 35px;
+    }
+
+    .cart-container .left-section .product-box .cart-product .product-info {
+        margin-left: 15px;
+    }
+
+    .cart-container .left-section .product-box .cart-product .product-info p {
+        margin-bottom: 45px;
+        text-align: center;
+    }
+
+    .cart-container .left-section .product-box .cart-product .price-quantity .product-price {
+
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .cart-container .left-section .shipping-box form .shipping-option {
+        display: block;
+    }
+
+    .cart-container .left-section .shipping-box form .shipping-option .shipping-details {
+        margin-bottom: 50px;
+    }
+
+    .cart-container .left-section .shipping-box form .shipping-option .shipping-details label {
+        width: 100%;
+    }
+
+    .cart-container .payment-box {
+        padding: 20px;
+    }
+
+    .cart-container .payment-box h3 {
+        font-size: 20px;
+    }
+
+    .cart-container .payment-box .payment-total {
+        font-size: 18px;
+    }
+
+    .cart-container .payment-box .pay-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
