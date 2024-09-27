@@ -1,0 +1,757 @@
+
+
+/* ***********************************************************
+
+   *************** VARIABLES ET STYLES GLOBAUX ***************
+
+   *********************************************************** */
+
+
+:root {
+    --color-bg: #9f8d89;
+    --color-primary: #ff9966;
+    --color-secondary : #f8540c;
+    --color-shadow: rgba(0, 0, 0, 0.5);
+
+    --color-heading: #2e2c2c;  /* Dark color for headings */
+    --color-border: #444;      
+    --color-highlight: #ffc107;
+
+    --transition-speed : 0.3s
+}
+
+
+/* **********************
+   ** STYLES GLOBAUX ****
+   ********************** */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif; /* Utilise Roboto comme police principale */
+
+    background-image: url("../0_assets/images/fond-degrader.jpeg");
+    background-size: cover; 
+    background-position: center;  
+
+    color: white;   
+
+    animation: fadeInBody 1.5s ease-out;       /* Ajout d'une animation d'apparition sur le body */
+}
+
+
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* **********************************************
+   ************ STYLES DE LA NAVIGATION *********
+   **********************************************/
+
+
+/* Cacher le menu toggle */
+.menu__toggle {
+    display: none;
+}
+
+/* Style de l'en-tête */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+    margin: 20px;
+    align-items: center;
+}
+
+/* Section logo */
+.logo {
+    width: 20%;
+    margin: 20px;
+}
+
+.logo img {
+    width: 50px;
+}
+
+/* Style de la navigation */
+header nav {
+    width: 30%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+/* Liens de navigation */
+header nav a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    font-family: Roboto;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    margin-right: 20px;
+    text-align: right;
+}
+
+header nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+}
+
+/* Animation sous les liens de navigation */
+header nav a::after {
+    content: "";
+    height: 0px;
+    width: 10px;
+    position: absolute;
+    bottom: -25px;
+    left: calc(50% - 5px);
+    background-color: #ffffff;
+    border-radius: 50px;
+    transition: all 300ms;
+}
+
+header nav a:hover::after {
+    height: 10px;
+}
+
+/* Style de la barre de recherche */
+form {
+    position: relative;
+    margin-right: 30px;
+}
+
+/* Champ de texte dans la barre de recherche */
+form input[type="text"] {
+    font-size: 18px;
+    width: 0px;
+    padding: 8px 0;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    transition: 0.3s all ease-in-out;
+}
+
+form.active input[type="text"] {
+    width: 200px;
+    padding: 8px 20px;
+}
+
+/* Bouton de recherche */
+form button[type="button"] {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+    border: none;
+    border-radius: 100%;
+    background-color: #f8540c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Icônes de recherche et de fermeture */
+form button[type="button"] svg {
+    width: 30px;
+    height: 30px;
+    transition: 0.3s all ease;
+}
+
+/* Transition des icônes de recherche et de fermeture */
+form.active button[type="button"] svg.search,
+form button[type="button"] svg.close {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+form.active button[type="button"] svg.close {
+    width: 25px;
+    height: 25px;
+    opacity: 1;
+}
+
+
+/* *************************************
+   ** RESPONSIVE STYLES FOR HEADER  ****
+   ************************************* */
+
+
+@media screen and (max-width: 925px) {
+
+    
+    #menu__toggle {
+      opacity: 0; /* Cacher le toggle du menu */
+    }
+
+    /* Animation du bouton du menu lorsqu'il est coché */
+    #menu__toggle:checked + .menu__btn > span {
+        transform: rotate(45deg);  
+    }
+    
+    #menu__toggle:checked + .menu__btn > span::before {
+
+        top: 0; /* Position du premier trait */
+        transform: rotate(0deg);
+    }
+    
+    #menu__toggle:checked + .menu__btn > span::after {
+
+        top: 0; /* Position du deuxième trait */
+        transform: rotate(90deg);
+    }
+    
+    /* Afficher le menu lorsque le toggle est coché */
+
+    #menu__toggle:checked ~ .menu__box {
+
+        left: 0 !important; /* Affiche le menu */
+    }
+
+    /* Styles du bouton du menu */
+    .menu__btn {
+        position: fixed;
+        top: 50px;  
+        left: 50px;
+        width: 30px; 
+        height: 50px;
+        cursor: pointer;  
+        z-index: 31;  
+    }
+
+    /* Styles du span du bouton */
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;  
+        background-color: #ffffff; 
+        transition-duration: 0.25s;  
+    }
+
+    .menu__btn > span::before {
+        content: "";
+        top: -8px;  
+    }
+    
+    .menu__btn > span::after {
+        content: "";
+        top: 8px;  
+    }
+
+    /* Styles de la boîte du menu */
+    .menu__box {
+        z-index: 2;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%; /* Position hors de l'écran */
+        width: 300px; /* Largeur du menu */
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;  
+        list-style: none;  
+        background-color: #000000;  
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);  
+        transition-duration: 0.25s;  
+    }
+
+    /* Styles des éléments du menu */
+    .menu__item {
+        display: block;
+        padding: 12px 24px;  
+        color: #ffffff;  
+        font-family: "Roboto", sans-serif;
+        font-size: 20px;  
+        font-weight: 300;  
+        text-decoration: none;  
+        transition-duration: 0.25s;  
+    }
+
+    /* Styles de la logo */
+    .logo {
+        width: 30%;  
+        margin-left: 20%;  
+    }
+
+    /* Styles de l'en-tête */
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background: transparent;   
+        border-radius: 1px;  
+        border-left: 0px solid;   
+        border-top: 0 solid;  
+        box-shadow: 0px 0px 0px 0px;  
+        transition: all 0.2s ease;  
+        margin: 20px;  
+        align-items: center;  
+    }
+}
+
+
+
+/* ********************
+   ** EN-TÊTE PAGE ****
+   ******************** */
+
+h2, .cart-container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h2 {
+    margin-top: 10%;
+    font-size: 35px;
+    color: #bbb;
+}
+
+h2 span {
+    font-size: 20px;
+}
+
+
+/* **********************
+   ** CONTENEUR PANIER **
+   ********************** */
+
+
+/* Contains two sections */
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 5%;
+    margin-bottom: 10%;
+    padding: 40px; 
+
+    background-color: rgb(159 141 137 / 20%);
+    box-shadow: 0 0 20px var(--color-shadow);
+    border-radius: 15px;  
+    gap: 40px;  
+}
+
+
+
+/* ***********************************************************
+
+   *************** SECTION GAUCHE ****************************
+
+   *********************************************************** */
+
+
+.cart-container .left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;                
+}
+
+
+/* Commun entre (produits et livraison) */
+
+.cart-container .left-section .box {
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* ***************
+   ** PRODUITS ***
+   *************** */
+
+
+.cart-container .left-section .product-box .cart-product {
+    display: flex;
+    margin-bottom: 40px; 
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 20px;
+}
+
+.cart-container .left-section .product-box .cart-product img {
+    width: 150px;
+    border-radius: 8px;  
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-container .left-section .product-box .cart-product .product-info {
+    margin-left: 30px;
+}
+
+.cart-container .left-section .product-box .cart-product .product-info  h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: var(--color-heading); /* Darker color for heading */
+}
+
+.product-info p {
+    color: #bbb;
+    margin-top: 20px;
+}
+
+
+/* ***************
+   ** QUANTITÉ **
+   *************** */
+
+.cart-container .left-section .product-box .cart-product .price-quantity {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content:space-between ;
+    flex: 1;
+}
+
+.cart-container .left-section .product-box .cart-product .price-quantity .product-price {
+    font-size: 1.6rem;
+}
+
+.cart-container .left-section .product-box .cart-product .price-quantity .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* COMMUN  -------------------- */
+
+.remove-btn, .quantity-btn {
+    color: white;
+    background-color: #333;
+    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+
+/* Bouton de suppression */
+.cart-container .left-section .product-box .cart-product .price-quantity .quantity-controls .remove-btn {
+    border: none;
+    padding: 10px 15px;
+    margin-right: 30px;
+}
+
+/* Taille de l'icône */
+.remove-btn i {
+    font-size: 1.2rem; 
+}
+
+
+.cart-container .left-section .product-box .cart-product .price-quantity .quantity-controls .quantity-wrapper .quantity-btn {
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+.cart-container .left-section .product-box .cart-product .price-quantity .quantity-controls .quantity-wrapper .quantity-btn:hover,
+.cart-container .left-section .product-box .cart-product .price-quantity .quantity-controls .remove-btn:hover  {
+    background-color: var(--color-secondary);
+}
+
+.cart-container .left-section .product-box .cart-product .price-quantity .quantity-controls .quantity-wrapper input {
+
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 13px;
+}
+
+
+
+/* ***************************
+   ** La boîte de livraison **
+   *************************** */
+
+
+.cart-container .left-section .shipping-box {
+    transition: transform 0.3s ease;
+}
+
+.cart-container .left-section .shipping-box:hover {
+    transform: translateY(-5px);  
+}
+
+
+/* Shipping Box Styling */
+.cart-container .left-section .shipping-box h3 {
+    font-size: 24px;
+    color: var(--color-heading);
+
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+    margin-bottom: 45px;
+}
+
+/* Style des options de livraison */
+.cart-container .left-section .shipping-box form .shipping-option {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 35px;
+    gap: 10px;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease;
+
+    cursor: pointer;
+}
+
+/* Effet au survol des options de livraison */
+
+.cart-container .left-section .shipping-box form .shipping-option:hover {
+
+    background-color: rgba(255, 255, 255, 0.3);  
+}
+
+ /* Espace entre le bouton radio et le texte */
+
+.cart-container .left-section .shipping-box form .shipping-option input[type="radio"] {
+    margin-right: 55px;
+}
+
+/* Conteneur des détails de la livraison */
+
+.cart-container .left-section .shipping-box form .shipping-option .shipping-details {
+    flex: 1;
+}
+
+/* Label des options de livraison */
+.cart-container .left-section .shipping-box form .shipping-option .shipping-details label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--color-heading);
+    font-size: 18px;
+}
+
+.cart-container .left-section .shipping-box form .shipping-option .shipping-details p {
+    margin: 20px 0 0 30px;
+}
+
+
+
+/* ***********************************************************
+
+   *************** SECTION  DROITE  **************************
+
+   *********************************************************** */
+
+
+/* la boîte de paiement  */
+.cart-container .payment-box {
+    width: 320px;
+    padding: 30px;
+
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  
+    transition: transform 0.3s ease;  
+}
+
+.cart-container .payment-box:hover {
+    transform: translateY(-10px); /* Légère élévation au survol pour une interaction dynamique */
+}
+
+/* titre de la boîte de paiement */
+.cart-container .payment-box h3 {
+    font-size: 26px;
+    color: var(--color-heading);
+
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Conteneur =====> résumé du paiement */
+.cart-container .payment-box .payment-summary {
+    margin-bottom: 50px;
+}
+
+/* (article et prix) */
+.cart-container .payment-box .payment-summary .payment-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.cart-container .payment-box .payment-summary .payment-item p {
+    color: wheat;
+    margin-bottom: 15px; 
+}
+
+/* Total de paiement */
+.cart-container .payment-box .payment-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 22px;
+
+    margin-bottom: 30px;
+    padding-top: 35px;
+
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Couleur du prix total */
+.cart-container .payment-box .payment-total .total-price {
+    color: var(--color-heading);
+    font-size: 24px;
+}
+
+/* Bouton de paiement */
+.cart-container .payment-box .pay-btn {
+    
+    margin: 30px 0;
+    padding: 15px;
+    background-color: #2196f39c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.cart-container .payment-box .pay-btn:hover {
+    background-color: #0b8cf69c; 
+    transform: translateY(-3px);  
+}
+
+/* Message de sécurité */
+.cart-container .payment-box .secure-payment {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.cart-container .payment-box .secure-payment i {
+    margin-right: 10px;
+    color: var(--color-highlight); 
+}
+
+
+
+
+/* ***********************************************************
+   ************** RESPONSIVE DESIGN   ************************
+   *********************************************************** */
+
+
+
+
+/* Écrans petits : largeur maximale de 600px (smartphones) */
+
+@media screen and (max-width: 925px) {
+
+    h2 {
+        font-size: 28px;
+        margin-top: 20%;
+        margin-bottom: 20%;
+    }
+
+    .cart-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .cart-container .left-section, 
+    .cart-container .payment-box {
+        width: 100%;  
+        margin-bottom: 20px;
+    }
+
+    .cart-container .left-section .product-box .cart-product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cart-container .left-section .product-box .cart-product img {
+        width: 100px;  
+        margin-bottom: 35px;
+    }
+
+    .cart-container .left-section .product-box .cart-product .product-info {
+        margin-left: 15px;
+    }
+
+    .cart-container .left-section .product-box .cart-product .product-info p {
+        margin-bottom: 45px;
+        text-align: center;
+    }
+
+    .cart-container .left-section .product-box .cart-product .price-quantity .product-price {
+
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .cart-container .left-section .shipping-box form .shipping-option {
+        display: block;
+    }
+
+    .cart-container .left-section .shipping-box form .shipping-option .shipping-details {
+        margin-bottom: 50px;
+    }
+
+    .cart-container .left-section .shipping-box form .shipping-option .shipping-details label {
+        width: 100%;
+    }
+
+    .cart-container .payment-box {
+        padding: 20px;
+    }
+
+    .cart-container .payment-box h3 {
+        font-size: 20px;
+    }
+
+    .cart-container .payment-box .payment-total {
+        font-size: 18px;
+    }
+
+    .cart-container .payment-box .pay-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
