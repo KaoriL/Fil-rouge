@@ -321,6 +321,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  text-decoration: none;
   
 }
 
@@ -339,8 +340,8 @@ h1 {
   width: 100%;
 }
 
-.derniere-sort ul{
-  text-decoration: none;
+.derniere-sort nav a{
+  
   color: black;
   display: flex;
  
@@ -360,6 +361,7 @@ h1 {
   color: white;
   padding-left: 20px;
   padding-right: 20px;
+  
 
 }
 
