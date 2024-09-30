@@ -36,6 +36,7 @@ function ChangeSlide(sens) {
 setInterval("ChangeSlide(1)", 5000);
 
 //Filtre sorties
+window.addEventListener("click")
 
 
 
