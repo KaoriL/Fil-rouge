@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalogue</title>
+    <link rel="stylesheet" href="catalogue.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.4.2/css/all.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="back">
+    <!--HEADER-->
+<header>
+    <!--LOGO-->
+    <div class="logo">
+      <img src="/0_assets/images/logo-projet-fil-rouge.png" alt="" />
+    </div>
+    <!--MENU BURGER-->
+    <div class="hamburger-menu"></div>
+    <input class="none"id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+        <span></span>
+    </label>
+    <!--NAV BASE-->
+    <nav class="menu__box">
+      <a class="menu__item" href="/Accueil/accueil.html">Accueil</a>
+      <a class="menu__item" href="catalogue.html">Catalogue</a>
+      <a class="menu__item" href="">Contact</a>
+    </nav>
+  </div>
+  <!--NAV ICON--> 
+    <nav>
+        <form action="" id="searchBar">
+            <input type="text" name="" placeholder="Search..." />
+            <button type="button" onclick="toggleBar()">
+              <svg class="search" version="1.1" viewBox="0 0 32 32">
+                <circle
+                  cx="14"
+                  cy="14"
+                  fill="none"
+                  id="XMLID_42_"
+                  r="9"
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                />
+                <line
+                  fill="none"
+                  id="XMLID_44_"
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                  x1="27"
+                  x2="20.366"
+                  y1="27"
+                  y2="20.366"
+                />
+              </svg>
+              <svg class="close" viewBox="0 0 32 32">
+                <g data-name="Layer 2" id="Layer_2">
+                  <path
+                    fill="#fff"
+                    d="M4,29a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l24-24a1,1,0,1,1,1.42,1.42l-24,24A1,1,0,0,1,4,29Z"
+                  />
+                  <path
+                    fill="#fff"
+                    d="M28,29a1,1,0,0,1-.71-.29l-24-24A1,1,0,0,1,4.71,3.29l24,24a1,1,0,0,1,0,1.42A1,1,0,0,1,28,29Z"
+                  />
+                </g>
+                <g id="frame"><rect fill="none" height="32" width="32" /></g>
+              </svg>
+            </button>
+          </form>
+      <a href=""><i class="fa-solid fa-user"></i></a>
+      <a href=""><i class="fa-solid fa-basket-shopping"></i></a>
+    </nav>
+  </header>
+
+  <!--En tête filtre-->
+
+  <div class="recherche">
+    <input class="search-catalogue" type="text" placeholder="Rechercher">
+
+  </div>
+  <div class="filtre"> 
+  <div class="annee">
+    <label for="">Années</label>
+    <br>
+    <select name="" id="">
+      <option value="">Aucun</option>
+      <option value="1">2020</option>
+      <option value="2">2021</option>
+    </select>
+  </div>
+
+  <div class="type">
+    <label for="">Types</label>
+    <br>
+    <select name="" id="">
+      <option value="">Aucun</option>
+      <option value="1">2020</option>
+      <option value="2">2021</option>
+    </select>
+  </div>
+
+  <div class="genre">
+    <label for="">Genre</label>
+    <br>
+    <select name="" id="">
+      <option value="">Aucun</option>
+      <option value="1">2020</option>
+      <option value="2">2021</option>
+    </select>
+  </div>
+</div>
+
+<div class="liste-bd">
+  <div class="bd">
+    <img src="/images/Blacksad-01-Quelque part entre les ombres.jpg" alt="">
+    <h1 id="">Titre</h1>
+    <h2>Tome</h2>
+  </div>
+
+  <div class="barre-change">
+    <div id="premiere-page"></div>
+    <div id="retour-arriere" onclick="ChangeSlide(-1)"></div>
+    <div id="numero-de-liste"></div>
+    <div id="prochaine-page" onclick="ChangeSlide(1)"></div>
+    <div id="derniere-page"></div>
+
+  </div>
+
+</div>
+  <script src="/Catalogue/data/series.js"></script>
+  <script src="/Catalogue/data/series.js"></script>
+  <script src="catalogue.js"></script>
+  </body>
+</html>

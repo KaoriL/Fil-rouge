@@ -244,7 +244,9 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
+  align-items:first baseline;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .best-seller{
@@ -310,7 +312,7 @@ h1 {
   position: absolute;
   background-color: #0000008a;
 }
-
+/*derniere sorties*/
 .derniere-sort{
   width: 40%;
   border: 3px solid transparent;
@@ -319,9 +321,12 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  text-decoration: none;
+  
 }
 
 .derniere-sort button{
+  text-decoration: none;
   padding: 10px;
   border-radius: 5px;
   background-color: white;
@@ -335,9 +340,11 @@ h1 {
   width: 100%;
 }
 
-.derniere-sort a{
-  text-decoration: none;
+.derniere-sort nav a{
+  
   color: black;
+  display: flex;
+ 
 }
 
 .preference{
@@ -347,7 +354,6 @@ h1 {
   text-align: center;
   font-family: roboto;
   font-weight: 300;
-  width: 80%;
   margin-top: 20px;
 }
 
@@ -355,6 +361,7 @@ h1 {
   color: white;
   padding-left: 20px;
   padding-right: 20px;
+  
 
 }
 
@@ -366,6 +373,48 @@ h1 {
   color: #f8540c;
 }
 
+.filtre{
+  width: 100%;
+
+}
+
+.filtre ul{
+  list-style-type: none;
+}
+
+.filtre ul li{
+  margin-bottom: 40px;
+}
+
+.filtre ul li a{
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  font-family: roboto;
+  font-weight: 300;
+  
+}
+
+footer{
+  width: 100%;
+  height: 300px;
+}
+
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  flex-direction: column;
+  padding: 20px;
+}
+footer nav a{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  font-family: roboto;
+  font-weight: 300;
+  margin: 20px;
+}
 .none{
   display: none;
 }
