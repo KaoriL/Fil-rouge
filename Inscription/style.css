@@ -1,4 +1,4 @@
-
+/* 
 
 :root {
   --navbar-bg: #9f8d89;
@@ -21,14 +21,12 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  
 } 
 
-* {
-  margin: 0;
-  padding: 0;
-}
 
-/*Parallax*/
+
+
 .back {
   background-image: url("/0_assets/images/fond-degrader.jpeg");
   background-attachment: fixed;
@@ -37,7 +35,7 @@
   min-height: 100vh;
 }
 
-/*header*/
+
 
 .menu__toggle {
   display: none;
@@ -111,7 +109,201 @@ header nav a:hover::after {
   height: 10px;
 }
 
-/*search*/
+#menu__toggle {
+  opacity: 0;
+  position: absolute;
+  left: -9999px;
+}
+
+
+form {
+  position: relative;
+  margin-right: 30px;
+}
+
+form input[type="text"] {
+  font-size: 18px;
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  border-radius: 25px 0 0 25px;
+  transition: 0.3s all ease-in-out;
+}
+
+form.active input[type="text"] {
+  width: 200px;
+  padding: 8px 20px;
+}
+
+form button[type="button"] {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  border: none;
+  border-radius: 100%;
+  background-color: #f8540c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+form button[type="button"] svg {
+  width: 30px;
+  height: 30px;
+  transition: 0.3s all ease;
+}
+
+form.active button[type="button"] svg.search,
+form button[type="button"] svg.close {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+form.active button[type="button"] svg.close {
+  width: 25px;
+  height: 25px;
+  opacity: 1;
+} */
+
+  :root {
+  --navbar-bg: #9f8d89;
+  --navbar-text: #ffffff;
+  --navbar-hover: #ff9966;
+  --form-bg: rgba(255, 255, 255, 0.8);
+  --form-text: #333;
+  --btn-primary: #f8540c;
+  --btn-hover: #ff9966;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("/0_assets/images/fond-degrader.jpeg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.back {
+  background-image: url("/0_assets/images/fond-degrader.jpeg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+
+
+.menu__toggle {
+  display: none;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 1px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+  margin: 20px;
+  align-items: center;
+  
+}
+
+.logo {
+  width: 20%;
+  margin: 20px;
+}
+
+.logo img {
+  width: 50px;
+}
+
+header nav {
+  width: 30%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  
+}
+
+header nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-family: Roboto;
+  margin-right: 20px;
+  text-align: right;
+}
+header nav a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  font-size: 22;
+  font-family: Roboto;
+  font-weight: 300;
+}
+
+header nav a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+header nav a::after {
+  content: "";
+  height: 0px;
+  width: 10px;
+  bottom: -25px;
+  left: calc(50% - 5px);
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50px;
+  transition: all 300ms;
+}
+
+header nav a:hover::after {
+  height: 10px;
+}
+
+#menu__toggle {
+  opacity: 0;
+  position: absolute;
+  left: -9999px;
+}
+
+.quantity-input {
+  margin-bottom: 10px;
+}
+
+.quantity-input input {
+  width: 50px;
+  padding: 5px;
+}
+
+.menu__box{
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+
 form {
   position: relative;
   margin-right: 30px;
@@ -166,7 +358,8 @@ form.active button[type="button"] svg.close {
   opacity: 1;
 }
 
-/* Navbar responsiveness */
+
+
 @media (max-width: 768px) {
   header {
     flex-wrap: wrap;
@@ -189,12 +382,12 @@ form.active button[type="button"] svg.close {
   }
 }
 
-/* Main Content Styles */
+
 .main-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 100px); /* Adjust based on your header height */
+  min-height: calc(100vh - 100px); 
   padding: 1rem;
 }
 
@@ -221,29 +414,29 @@ form.active button[type="button"] svg.close {
 
 @media (max-width: 768px) {
 
-  /* Ensure form takes full width and icons are aligned */
+  
   form {
     width: 100%;
-    display: flex; /* Align input and button horizontally */
-    justify-content: space-between; /* Ensure spacing is even */
+    display: flex; 
+    justify-content: space-between; 
     margin-top: 1rem;
   }
 
   form input[type="text"] {
-    flex: 1; /* Allow input to take available space */
+    flex: 1; 
     padding: 8px 15px;
-    width: auto; /* Override fixed width */
+    
     font-size: 16px;
-    border-radius: 25px 0 0 25px; /* Ensure round borders */
+    border-radius: 25px 0 0 25px; 
   }
 
   form button[type="button"] {
     width: 50px;
     height: 50px;
-    flex-shrink: 0; /* Prevent button from shrinking */
-    margin-left: 10px; /* Add space between input and button */
-    background-color: #f8540c; /* Button background */
-    border-radius: 50%; /* Keep the button circular */
+    flex-shrink: 0; 
+    margin-left: 10px; 
+    background-color: #f8540c; 
+    border-radius: 50%; 
   }
 
   form button[type="button"] svg {
@@ -251,32 +444,32 @@ form.active button[type="button"] svg.close {
     height: 24px;
   }
 
-  /* Adjust navigation links and icons */
+  
   header nav a {
-    font-size: 18px; /* Smaller font size */
-    margin-right: 10px; /* Reduce margin */
+    font-size: 18px; 
+    margin-right: 10px; 
   }
 
-  /* Adjust the logo size on smaller screens */
+  
   .logo img {
-    width: 40px; /* Smaller logo for mobile */
+    width: 40px; 
   }
 
-  /* Center align icons and ensure proper padding */
+  
   header nav {
     width: 100%;
-    justify-content: space-around; /* Spread icons evenly */
+    justify-content: space-around; 
     align-items: center;
   }
 }
 
 
-/* Main Content Styles */
+
 .main-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 100px); /* Adjust based on your header height */
+  min-height: calc(100vh - 100px); 
   padding: 1rem;
 }
 
@@ -299,7 +492,7 @@ form.active button[type="button"] svg.close {
   font-size: 1.5rem;
 }
 
-/* Form Styles */
+
 #signUpForm {
   display: flex;
   flex-direction: column;
@@ -324,7 +517,7 @@ form.active button[type="button"] svg.close {
   background-color: white;
 }
 
-/* Specific style for Nom field to ensure it's visible */
+
 #signUpName {
   display: block;
   width: 100%;
@@ -374,16 +567,16 @@ form.active button[type="button"] svg.close {
   text-decoration: underline;
 }
 
-/* Ensure uniform shape for all input fields */
+
 #signUpName, #signUpEmail, #signUpPassword {
-  border-radius: 0.25rem; /* Same border-radius for all */
+  border-radius: 0.25rem; 
   background-color: white;
-  font-size: 1rem; /* Ensure all fields have the same font size */
-  padding: 0.75rem;  /* Consistent background */
+  font-size: 1rem; 
+  padding: 0.75rem;  
 }
 
 
-/* Responsive Design */
+
 @media (max-width: 480px) {
   .signup-container {
     padding: 1rem;
@@ -404,7 +597,7 @@ form.active button[type="button"] svg.close {
 
 
 @media screen and (max-width: 800px) {
-  /* Menu Toggle and Button */
+  
   #menu__toggle {
     opacity: 0;
   }
@@ -427,7 +620,7 @@ form.active button[type="button"] svg.close {
     left: 0 !important;
   }
 
-  /* Menu Button */
+  
   .menu__btn {
     position: fixed;
     top: 50px;
@@ -459,7 +652,7 @@ form.active button[type="button"] svg.close {
     top: 8px;
   }
 
-  /* Menu Box */
+  
   .menu__box {
     z-index: 2;
     display: block;
@@ -476,7 +669,7 @@ form.active button[type="button"] svg.close {
     transition-duration: 0.25s;
   }
 
-  /* Menu Items */
+  
   .menu__item {
     display: block;
     padding: 12px 24px;
@@ -488,10 +681,10 @@ form.active button[type="button"] svg.close {
     transition-duration: 0.25s;
   }
 
-  /* Adjusting Logo for Mobile */
+  
   .logo {
     width: 30%;
     margin-left: 20%;
   }
-}
+} 
 
