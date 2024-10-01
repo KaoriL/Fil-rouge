@@ -18,7 +18,7 @@
   </head>
   <body class="back">
     <!--HEADER-->
-<header>
+<header >
     <!--LOGO-->
     <div class="logo">
       <img src="/0_assets/images/logo-projet-fil-rouge.png" alt="" />
@@ -126,25 +126,23 @@
   </div>
 </div>
 
-<div class="liste-bd">
-  <div class="bd">
-    <img src="/images/Blacksad-01-Quelque part entre les ombres.jpg" alt="">
-    <h1 id="">Titre</h1>
-    <h2>Tome</h2>
+<div id="liste-bd" class="liste-bd">
+  <div id="bd" class="bd">
+    <img src="" alt="">
+    <h1 id="Titre">Titre</h1>
+    <h2 id="Auteur" >Tome</h2>
   </div>
-
   <div class="barre-change">
     <div id="premiere-page"></div>
-    <div id="retour-arriere" onclick="ChangeSlide(-1)"></div>
+    <div id="retour-arriere" onclick="ChangeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></div>
     <div id="numero-de-liste"></div>
-    <div id="prochaine-page" onclick="ChangeSlide(1)"></div>
+    <div id="prochaine-page" onclick="ChangeSlide(1)"><i class="fa-solid fa-chevron-right"></i></div>
     <div id="derniere-page"></div>
-
   </div>
-
 </div>
-  <script src="/Catalogue/data/series.js"></script>
-  <script src="/Catalogue/data/series.js"></script>
+
+
+
   <script src="catalogue.js"></script>
   </body>
 </html>
