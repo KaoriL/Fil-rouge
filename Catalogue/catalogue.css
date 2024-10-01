@@ -46,6 +46,15 @@
     width: 50px;
   }
   
+.aadi-header-sticky.aadi-header-transparent.aadi-header-v11,
+.aadi-header-sticky.aadi-header-transparent.aadi-header-v11 .aadi-top-header,
+.aadi-header-sticky.aadi-header-transparent.aadi-header-v11 .aadi-bottom-header,
+#main-header .aadi-header-collaspe {
+    background-color: #fff !important;
+}
+
+
+
   header nav {
     width: 30%;
     display: flex;
@@ -251,6 +260,7 @@
   .liste-bd{
     background-color: #00000054;
     display: flex;
+    flex-wrap:wrap;
     justify-content: space-around;
     padding: 20px;
     margin-top: 20px;
@@ -259,6 +269,7 @@
   .bd{
     text-align: left;
     color: white;
+    margin: 20px;
     
   }
   
@@ -279,6 +290,42 @@
     width: 200px;
     border-radius: 10px;
    
+  }
+
+  .barre-change{
+    background-color: #00000061;
+    width: 300px;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
+  #retour-arriere{
+    background-color: #0000008b;
+    width: 30px;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 2px;
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  #prochaine-page{
+    background-color: #0000008b;
+    width: 30px;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 2px;
+    margin: 5px;
+    cursor: pointer;
   }
 
   /*RESPONSIVE*/
