@@ -85,7 +85,7 @@
         <!-- ##################################### -->
 
 
-        <h2> Votre panier <span> ( 1 produit ) </span> </h2>
+        <h2> Votre panier <span id="heading"></span> </h2>
 
     <!-- Conteneur principal pour la panier -->
         <main class="cart-container">
@@ -100,26 +100,24 @@
                 <!-- Boîte 1 : Détails du produit -->
                 <article  class="box product-box"> 
 
+                    <!-- @--  Les livres sont genere ici avec la classe  cart-product 
+                    
                     <div class="cart-product">
 
-                        <!-- Image de livre -->
                         <img src="https://via.placeholder.com/120x150.png?text=Image" alt="Product Image">
 
-                        <!-- Informations sur le produit -->
                         <div class="product-info">
                             <h3>Name of book</h3>
                             <p>Auteur</p>     
                         </div>
 
-                        <!-- Section Prix et Quantité -->
                         <div class="price-quantity">
 
                             <span class="product-price">12,99 €</span>
 
-                            <!-- Contrôles de quantité -->
                             <div class="quantity-controls">
                                 <button class="remove-btn" aria-label="Supprimer l'article">
-                                    <i class="fas fa-trash-alt"></i> <!-- Ajout d'une icône pour supprimer -->
+                                    <i class="fas fa-trash-alt"></i>  
                                 </button>
                                 <div class="quantity-wrapper">
                                     <button class="quantity-btn" aria-label="Réduire la quantité">-</button>
@@ -128,8 +126,9 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
+                    -->
+
                 </article>
                 
                 
@@ -192,8 +191,9 @@
 
                 <h3><i class="fas fa-store"></i> Comics Style Librairie</h3>   
 
-                <!-- Détails du paiement -->
                 <div class="payment-summary">
+
+                    <!-- Détails du paiement 
                     <div class="payment-item">
                         <p>Blacksad - Auteur</p>
                         <p class="payment-price">12,99 €</p>
@@ -203,13 +203,15 @@
                         <p>Articles en livraison</p>
                         <p class="payment-price">6,01 €</p>
                     </div>
+                    -->
                 </div>
 
-                <!-- Total du paiement -->
+                <!-- Total du paiement 
                 <div class="payment-total">
                     <p>Total à payer</p>
                     <p class="total-price"> 19,00 €</p>
                 </div>
+                -->
 
                 <!-- Bouton de paiement -->
                 <button class="pay-btn">
@@ -231,5 +233,17 @@
 
         <!-- Inclusion du fichier JavaScript qui gère les interactions -->
         <script src="panier.js"></script>
+
+        <!-- les fichiers JavaScript qui contiennent les données  -->
+        <script src="../0_assets/BD/data/albums.js"></script>
+        <script src="../0_assets/BD/data/auteurs.js"></script>
+        <script src="../0_assets/BD/data/series.js"></script> 
+
+        <!-- Utiliser ce script pour faire correspondre les images avec les albums dans l'application -->
+        <script src="../0_assets/BD/albumsMini/titres_Images.js"></script>
+
     </body>
 </html>
+
+
+
