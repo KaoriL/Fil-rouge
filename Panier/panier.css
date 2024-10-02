@@ -680,7 +680,7 @@ h2 span {
 
 /* Écrans petits : largeur maximale de 600px (smartphones) */
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
 
     h2 {
         font-size: 28px;
@@ -705,6 +705,10 @@ h2 span {
 
     .cart-container .left-section .product-box .cart-product .product-info h3 {
         color: white;
+    }
+
+    .cart-container .left-section .product-box .cart-product .product-info  p:last-of-type {
+        display: none;
     }
 
     .cart-container .left-section .product-box .cart-product .price-quantity {
@@ -749,7 +753,14 @@ h2 span {
         position: absolute;
         top: 5%;
         left: 39%;
+
+        font-size: 18px;
+        width: 190px;
+        white-space: nowrap;      /* Empêche le texte de passer à la ligne */
+        overflow: hidden;         /* Cache tout texte qui déborde de la largeur */
+        text-overflow: ellipsis;  /* Affiche les "..." à la fin si le texte dépasse */
     }
+    
     .cart-container .left-section .product-box .cart-product .product-info p {
         position: absolute;
         top: 16%;
@@ -760,7 +771,7 @@ h2 span {
         position: absolute;
         top: 60%;
         left: 78%;
-        font-size: 21px;
+        font-size: 18px;
     }
 
     .cart-container .left-section .product-box .cart-product .price-quantity .quantity-controls {
