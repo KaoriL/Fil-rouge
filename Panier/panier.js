@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 // POUR TESTER  
 
                                 // =============>  localStorage.setItem('id_book', JSON.stringify(["6", "4", "43", "14", "87", "24"]));
-                                // localStorage.setItem('id_book', JSON.stringify(["6", "4", "43", "14", "87", "24"]));
+                                // localStorage.setItem('id_book', JSON.stringify(["4", "11", "13", "15", "18"]));
 
 
     // Récupération des ID des albums depuis localStorage
@@ -76,16 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let albumIds = JSON.parse(localStorage.getItem('id_book')) || [];
 
 
-
     // Sélectionner l'élément où ajouter les produits
     const cartProductContainer    = document.querySelector('.product-box');
-    const paymentSummaryContainer = document.querySelector('.payment-summary');
-    const totalPriceContainer     = document.querySelector('.total-price');
-    const deliveryPriceContainer  = document.querySelector('.payment-item .payment-price:nth-child(2)');  // Selector for delivery price
-
-
-    let deliveryCost = 6.01;  // Prix de livraison par defaut
-    let totalAmount  = 0;
 
 
     /*
@@ -158,18 +150,19 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById("heading").innerText = ' ( 0 produit ) ';
             return;
         }
-
+    
         // Boucle sur les id dans localStorage
         albumIds.forEach(id => {
                                  // albums est un ficher dans data/
             const current_album = albums.get(id);
-
+            
             if (current_album && current_album != undefined) 
             {
                 totalProducts += 1;  
 
                 const imageUrl = findImageForAlbum(current_album.titre);   // Trouver l'image associée
-                const auteur   = auteurs.get(current_album.idAuteur);        
+
+                const auteur   = auteurs.get(current_album.idAuteur);         
                 const serie    = series.get(current_album.idSerie);
 
 
@@ -230,10 +223,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fonction pour mettre à jour le resume de paiement
 
-    function updatePaymentSummary() 
-    {
+    function updatePaymentSummary(upddatedAlbumIds) 
+    {   
+
+        if (upddatedAlbumIds != undefined  && upddatedAlbumIds.length < albumIds.length)
+        {
+            albumIds = upddatedAlbumIds;
+        }
+
         const paymentSummaryContainer = document.querySelector('.payment-summary');
-        const paymentItems            = paymentSummaryContainer.querySelectorAll('.payment-item');
 
         // Vider le contenu actuel de la summary
         paymentSummaryContainer.innerHTML = '';
@@ -241,19 +239,24 @@ document.addEventListener('DOMContentLoaded', function() {
         let totalAmount   = 0;    // Variable pour le total à payer
         let deliveryPrice = 0;    // Variable pour le prix de la livraison
 
+        
         // Parcourir tous les produits du panier pour calculer le total
         albumIds.forEach(id => {
             
             const current_album = albums.get(id);
+
+            const quantity = productQuantities[id] || 1;  // Récupérer la quantité
+            
             if (current_album) {
 
-                totalAmount += parseFloat(current_album.prix);
+                const productTotal = parseFloat(current_album.prix) * quantity;
+                totalAmount += productTotal;
 
                 // Ajouter le produit à la section de paiement
                 const productHtml = `
                     <div class="payment-item">
-                        <p>${current_album.titre}</p>
-                        <p class="payment-price">${current_album.prix} €</p>
+                        <p> ${current_album.titre} <span style="color:black;" > (x${quantity}) </span> </p>
+                        <p class="payment-price">${productTotal.toFixed(2)} €</p>
                     </div>
                 `;
                 paymentSummaryContainer.innerHTML += productHtml;
@@ -264,6 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Vérifier l'option de livraison sélectionnée
         const shippingOptions = document.querySelectorAll('input[name="shipping"]');
 
+        
         shippingOptions.forEach(option => {
 
             if (option.checked) {
@@ -278,7 +282,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     deliveryPrice = parseFloat(shippingPriceText);
                 }
             }
-        });
+        })
+        
 
         // Ajouter les frais de livraison au total
         totalAmount += deliveryPrice;
@@ -347,7 +352,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                 quantityInput.value = currentQuantity - 1;
                             }
                         }
-                        updateProductQuantity(currentQuantity, quantityInput.value);
+                        // Mettre à jour la quantité dans localStorage et le résumé de paiement
+                        updateProductQuantity(currentQuantity, parseInt(quantityInput.value));
                     });
                 });
     
@@ -356,6 +362,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 removeButton.addEventListener('click', function() 
                 {   
+
+                    const confirmation = confirm("Êtes-vous sûr de vouloir supprimer ce livre du panier ?");
+
+                    if (!confirmation) {return} 
+
                     // closest() recherche l'ancêtre le plus proche de l'élément actuel (dans ce cas, control)
                     const productElement = control.closest('.cart-product');
 
@@ -384,10 +395,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
                     // Mettre à jour le résumé de paiement après suppression
-                    updatePaymentSummary();
+                    updatePaymentSummary(albumIds);
 
                     // Mettre à jour le nombre total de produits
-                    updateCartCount(); 
+                    updateCartCount(albumIds); 
                 });
             });
         }
@@ -407,8 +418,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Mettre à jour la quantité dans le stockage local
         const productID  = event.target.closest('.cart-product').dataset.id;  
 
-        console.log(productID);
-
         productQuantities[productID] = newQuantity;
 
         localStorage.setItem('productQuantities', JSON.stringify(productQuantities));
@@ -422,17 +431,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fonction pour mettre à jour le nombre total de produits affichés
     
-    function updateCartCount() 
+    function updateCartCount(upddatedAlbumIds) 
     {
-        let totalProducts = 0;  
-        const quantities = Object.values(productQuantities);  // Récupérer les quantités
+        let totalProducts = upddatedAlbumIds.length; 
 
-        // Ajouter chaque quantité au total
-        for (let qty of quantities) {
-            totalProducts += parseInt(qty); 
-        }
 
+        // Mettre à jour l'élément affichant le nombre de produits
         document.getElementById("heading").innerText = ` (${totalProducts} produit${totalProducts !== 1 ? 's' : ''})`;
+
+        // Si aucun produit ne reste, vous pouvez afficher un message indiquant que le panier est vide
+        if (totalProducts=== 0) {
+            document.getElementById("heading").innerText = ' (0 produit)';
+        }
     }
 
 
