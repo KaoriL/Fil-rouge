@@ -477,3 +477,8 @@ footer {
     padding: 6px 10px;
   }
 }
+
+.price {
+  color: white;  /* Change the price text color to white */
+  margin-right: 150px;
+}

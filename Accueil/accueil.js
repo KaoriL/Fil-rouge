@@ -17,8 +17,8 @@ let titre = ["Blacksad 03 ", "Efles", "Troll de Troy"];
 let resumer = [
   "Finances et moral au plus bas, Blacksad est à Las Vegas où il travaille pour le compte d'un joueur fortuné. Pourtant une rencontre inattendue va bousculer sa nouvelle vie : un ami, Otto Lieber, scientifique de haut rang, est de passage dans la ville où a lieu une conférence sur le nucléaire",
   "Les Elfes bleus d'Ennlya, une petite ville portuaire du Nordrenn, ont tous été massacrés ! L'Elfe bleue Lanawyn et Turin, un homme réputé, enquêtent alors que toutes les pistes mènent vers un clan d'Yrlanais, ces Hommes du nord qui haïssent les Elfes",
-  "Vous connaissez déjà Hébus, le célèbre troll de la série Lanfeust de troy... Vous allez faire la connaissance de son grand-père, le troll Tedräm, dont les aventures se déroulent plusieurs générations avant celles de Lanfeust"
-]
+  "Vous connaissez déjà Hébus, le célèbre troll de la série Lanfeust de troy... Vous allez faire la connaissance de son grand-père, le troll Tedräm, dont les aventures se déroulent plusieurs générations avant celles de Lanfeust",
+];
 
 let numero = 0;
 
@@ -36,9 +36,7 @@ function ChangeSlide(sens) {
 setInterval("ChangeSlide(1)", 5000);
 
 //Filtre sorties
-window.addEventListener("click")
-
-
+window.addEventListener("click");
 
 ////Slide en json
 //fetch("accueil.json")

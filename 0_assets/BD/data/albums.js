@@ -1,238 +1,2126 @@
+
+
+
 var albums = new Map();
-albums.set("1", {titre: "Croc vert", numero: "23", idSerie: "6", idAuteur: "13", prix: "24.50"});
-albums.set("2", {titre: "Machine qui rêve", numero: "46", idSerie: "2", idAuteur: "14", prix: "23.50"});
-albums.set("3", {titre: "La guerre des gloutons (II)", numero: "13", idSerie: "16", idAuteur: "11", prix: "14.50"});
-albums.set("4", {titre: "Le jour du Mayflower", numero: "20", idSerie: "10", idAuteur: "16", prix: "12"});
-albums.set("6", {titre: "La griffe de Rome", numero: "03", idSerie: "17", idAuteur: "9", prix: "14.50"});
-albums.set("7", {titre: "Le Waltras", numero: "07", idSerie: "13", idAuteur: "8", prix: "15.20"});
-albums.set("8", {titre: "Le sang des comètes", numero: "08", idSerie: "18", idAuteur: "10", prix: "14.50"});
-albums.set("9", {titre: "La bête fabuleuse", numero: "08", idSerie: "9", idAuteur: "10", prix: "14.50"});
-albums.set("10", {titre: "(Avant la quête) L'ami Javin", numero: "A01", idSerie: "22", idAuteur: "18", prix: "14.10"});
-albums.set("11", {titre: "Le sens de la vie", numero: "12", idSerie: "23", idAuteur: "19", prix: "10.50"});
-albums.set("13", {titre: "Mes meilleurs copains", numero: "11", idSerie: "23", idAuteur: "19", prix: "11"});
-albums.set("15", {titre: "Nadia se marie", numero: "10", idSerie: "23", idAuteur: "19", prix: "12.50"});
-albums.set("18", {titre: "La loi du préau", numero: "09", idSerie: "23", idAuteur: "19", prix: "10.50"});
-albums.set("19", {titre: "Gare aux garous", numero: "03", idSerie: "24", idAuteur: "20", prix: "11.40"});
-albums.set("20", {titre: "Le Walou Walou ancestral", numero: "02", idSerie: "24", idAuteur: "20", prix: "13.90"});
-albums.set("21", {titre: "Les runes de Gartagueul", numero: "01", idSerie: "24", idAuteur: "20", prix: "14.20"});
-albums.set("22", {titre: "Le temple de Boavista", numero: "08", idSerie: "6", idAuteur: "21", prix: "10.95"});
-albums.set("23", {titre: "L'or de Boavista", numero: "07", idSerie: "6", idAuteur: "21", prix: "12"});
-albums.set("24", {titre: "Fordlandia", numero: "06", idSerie: "6", idAuteur: "21", prix: "9.98"});
-albums.set("25", {titre: "Baby Prinz", numero: "05", idSerie: "6", idAuteur: "21", prix: "11"});
-albums.set("26", {titre: "Le pollen du monte Urticando", numero: "04", idSerie: "6", idAuteur: "21", prix: "10.25"});
-albums.set("27", {titre: "Mars le noir", numero: "03", idSerie: "6", idAuteur: "21", prix: "12.20"});
-albums.set("28", {titre: "Le bébé du bout du monde", numero: "02", idSerie: "6", idAuteur: "22", prix: "11.33"});
-albums.set("29", {titre: "La queue du Marsupilami", numero: "01", idSerie: "6", idAuteur: "22", prix: "10.47"});
-albums.set("30", {titre: "Capturez un Marsupilami !", numero: "00", idSerie: "6", idAuteur: "23", prix: "10.54"});
-albums.set("31", {titre: "Le rayon noir", numero: "44", idSerie: "2", idAuteur: "14", prix: "9.98"});
-albums.set("32", {titre: "Luna fatale", numero: "45", idSerie: "2", idAuteur: "14", prix: "10.00"});
-albums.set("33", {titre: "A Moscou", numero: "42", idSerie: "2", idAuteur: "14", prix: "10.95"});
-albums.set("34", {titre: "Vito la déveine", numero: "43", idSerie: "2", idAuteur: "14", prix: "10.42"});
-albums.set("35", {titre: "La vallée des bannis", numero: "41", idSerie: "2", idAuteur: "14", prix: "11.50"});
-albums.set("36", {titre: "La frousse aux trousses", numero: "40", idSerie: "2", idAuteur: "14", prix: "12.50"});
-albums.set("37", {titre: "A New York", numero: "39", idSerie: "2", idAuteur: "14", prix: "10.50"});
-albums.set("38", {titre: "Le réveil du Z", numero: "37", idSerie: "2", idAuteur: "14", prix: "10.45"});
-albums.set("39", {titre: "L'horloger de la comète", numero: "36", idSerie: "2", idAuteur: "14", prix: "10.26"});
-albums.set("40", {titre: "Mise à jour", numero: "03", idSerie: "25", idAuteur: "24", prix: "10"});
-albums.set("41", {titre: "Qui arrêtera Cyanure ?", numero: "35", idSerie: "2", idAuteur: "14", prix: "11.23"});
-albums.set("42", {titre: "Aventure en Australie", numero: "34", idSerie: "2", idAuteur: "14", prix: "12.60"});
-albums.set("43", {titre: "Virus", numero: "33", idSerie: "2", idAuteur: "14", prix: "14.20"});
-albums.set("44", {titre: "Des haricots partout", numero: "29", idSerie: "2", idAuteur: "25", prix: "14.50"});
-albums.set("45", {titre: "Kodo le tyran", numero: "28", idSerie: "2", idAuteur: "25", prix: "14.50"});
-albums.set("46", {titre: "L'Ankou", numero: "27", idSerie: "2", idAuteur: "25", prix: "13.50"});
-albums.set("47", {titre: "Du cidre pour les étoiles", numero: "26", idSerie: "2", idAuteur: "25", prix: "10.50"});
-albums.set("48", {titre: "Le gri-gri du Niokolo-Koba", numero: "25", idSerie: "2", idAuteur: "25", prix: "11.80"});
-albums.set("49", {titre: "Tembo tabou", numero: "24", idSerie: "2", idAuteur: "26", prix: "14.50"});
-albums.set("50", {titre: "Tora torapa", numero: "23", idSerie: "2", idAuteur: "25", prix: "12.50"});
-albums.set("51", {titre: "L'abbaye truquée", numero: "22", idSerie: "2", idAuteur: "25", prix: "13.50"});
-albums.set("52", {titre: "Du glucose pour Noémie", numero: "21", idSerie: "2", idAuteur: "25", prix: "14.00"});
-albums.set("53", {titre: "Le faiseur d'or", numero: "20", idSerie: "2", idAuteur: "25", prix: "11.50"});
-albums.set("54", {titre: "Panade à Champignac", numero: "19", idSerie: "2", idAuteur: "23", prix: "12.50"});
-albums.set("55", {titre: "QRN sur Bretzelburg", numero: "18", idSerie: "2", idAuteur: "27", prix: "12.50"});
-albums.set("56", {titre: "Spirou et les hommes-bulles", numero: "17", idSerie: "2", idAuteur: "28", prix: "11.50"});
-albums.set("57", {titre: "3615 code bavure", numero: "02", idSerie: "26", idAuteur: "29", prix: "12.50"});
-albums.set("58", {titre: "Premières mesures", numero: "01", idSerie: "27", idAuteur: "30", prix: "10.50"});
-albums.set("59", {titre: "L'affaire tournesol", numero: "18", idSerie: "28", idAuteur: "31", prix: "11.60"});
-albums.set("60", {titre: "Connection", numero: "00", idSerie: "29", idAuteur: "32", prix: "15.42"});
-albums.set("61", {titre: "Chez les castors", numero: "03", idSerie: "30", idAuteur: "33", prix: "9.80"});
-albums.set("62", {titre: "Destination Duralex", numero: "01", idSerie: "31", idAuteur: "34", prix: "10.56"});
-albums.set("63", {titre: "Le ciel lui tombe sur la tête", numero: "33", idSerie: "32", idAuteur: "35", prix: "10.50"});
-albums.set("64", {titre: "Astérix chez les belges", numero: "24", idSerie: "32", idAuteur: "35", prix: "12.50"});
-albums.set("65", {titre: "Astérix aux jeux olympiques", numero: "12", idSerie: "32", idAuteur: "35", prix: "12.55"});
-albums.set("66", {titre: "Obélix et compagnie", numero: "23", idSerie: "32", idAuteur: "35", prix: "11.80"});
-albums.set("67", {titre: "Astérix et Latraviata", numero: "31", idSerie: "32", idAuteur: "35", prix: "13.50"});
-albums.set("68", {titre: "Le cadeau de César", numero: "21", idSerie: "32", idAuteur: "35", prix: "10.50"});
-albums.set("70", {titre: "Astérix chez les Bretons", numero: "08", idSerie: "32", idAuteur: "35", prix: "11.50"});
-albums.set("71", {titre: "Astérix et les Goths", numero: "03", idSerie: "32", idAuteur: "35", prix: "12.00"});
-albums.set("72", {titre: "L'échelle de la terre", numero: "00", idSerie: "33", idAuteur: "36", prix: "11.50"});
-albums.set("73", {titre: "La zizanie", numero: "15", idSerie: "32", idAuteur: "35", prix: "12.60"});
-albums.set("74", {titre: "Six foies neufs", numero: "08", idSerie: "34", idAuteur: "37", prix: "14.50"});
-albums.set("75", {titre: "L'esprit du lac", numero: "01", idSerie: "35", idAuteur: "38", prix: "13.10"});
-albums.set("76", {titre: "Destins", numero: "06", idSerie: "3", idAuteur: "39", prix: "12.50"});
-albums.set("77", {titre: "Lâchez-moi le slip", numero: "08", idSerie: "23", idAuteur: "19", prix: "10.40"});
-albums.set("78", {titre: "Le miracle de la vie", numero: "07", idSerie: "23", idAuteur: "19", prix: "11.50"});
-albums.set("80", {titre: "Tchô, monde cruel", numero: "06", idSerie: "23", idAuteur: "19", prix: "12.30"});
-albums.set("81", {titre: "Et le derrière des choses", numero: "05", idSerie: "23", idAuteur: "19", prix: "11.50"});
-albums.set("82", {titre: "C'est pô juste ...", numero: "04", idSerie: "23", idAuteur: "19", prix: "10.50"});
-albums.set("83", {titre: "Ca épate les filles ...", numero: "03", idSerie: "23", idAuteur: "19", prix: "14.50"});
-albums.set("84", {titre: "L'Amour, c'est pô propre ...", numero: "02", idSerie: "23", idAuteur: "19", prix: "13.80"});
-albums.set("85", {titre: "L'intégrale", numero: "14", idSerie: "36", idAuteur: "40", prix: "12.60"});
-albums.set("86", {titre: "L'étrange réveil du schtroumpf paresseux", numero: "15", idSerie: "37", idAuteur: "41", prix: "10.50"});
-albums.set("87", {titre: "Le bandit manchot", numero: "78", idSerie: "38", idAuteur: "42", prix: "9.98"});
-albums.set("88", {titre: "Le fil qui chante", numero: "46", idSerie: "38", idAuteur: "43", prix: "10.50"});
-albums.set("89", {titre: "L'amnésie des Dalton", numero: "98", idSerie: "38", idAuteur: "44", prix: "10.50"});
-albums.set("90", {titre: "Dalton city", numero: "49", idSerie: "38", idAuteur: "43", prix: "10.60"});
-albums.set("91", {titre: "La belle province", numero: "110", idSerie: "38", idAuteur: "45", prix: "10.80"});
-albums.set("92", {titre: "Ame rouge", numero: "03", idSerie: "39", idAuteur: "46", prix: "11.50"});
-albums.set("93", {titre: "Arctic-Nation", numero: "02", idSerie: "39", idAuteur: "46", prix: "11.00"});
-albums.set("94", {titre: "Quelque part entre les ombres", numero: "01", idSerie: "39", idAuteur: "46", prix: "10.50"});
-albums.set("95", {titre: "L'invasion des envahisseurs", numero: "05", idSerie: "24", idAuteur: "20", prix: "12.50"});
-albums.set("96", {titre: "Le grand tournoi", numero: "04", idSerie: "24", idAuteur: "20", prix: "13.50"});
-albums.set("97", {titre: "Red monster", numero: "21", idSerie: "6", idAuteur: "13", prix: "10.55"});
-albums.set("98", {titre: "Viva Palombia !", numero: "20", idSerie: "6", idAuteur: "13", prix: "11.50"});
-albums.set("99", {titre: "Magie blanche", numero: "19", idSerie: "6", idAuteur: "13", prix: "14.50"});
-albums.set("100", {titre: "Robinson académy", numero: "18", idSerie: "6", idAuteur: "47", prix: "13.80"});
-albums.set("101", {titre: "L'orchidée des Chahutas", numero: "17", idSerie: "6", idAuteur: "47", prix: "12.10"});
-albums.set("102", {titre: "Tous en piste", numero: "16", idSerie: "6", idAuteur: "47", prix: "11.50"});
-albums.set("103", {titre: "C'est quoi ce cirque !?", numero: "15", idSerie: "6", idAuteur: "47", prix: "9.50"});
-albums.set("104", {titre: "Un fils en or", numero: "14", idSerie: "6", idAuteur: "48", prix: "11.50"});
-albums.set("105", {titre: "Le défilé du jaguar", numero: "13", idSerie: "6", idAuteur: "49", prix: "10.50"});
-albums.set("106", {titre: "Trafic à Jollywood", numero: "12", idSerie: "6", idAuteur: "50", prix: "14.30"});
-albums.set("107", {titre: "Houba banana", numero: "11", idSerie: "6", idAuteur: "51", prix: "10.50"});
-albums.set("108", {titre: "Rififi en Palombie", numero: "10", idSerie: "6", idAuteur: "51", prix: "11.70"});
-albums.set("109", {titre: "Le papillon des cimes", numero: "09", idSerie: "6", idAuteur: "21", prix: "10.90"});
-albums.set("110", {titre: "L'ombre du Z", numero: "16", idSerie: "2", idAuteur: "52", prix: "11.99"});
-albums.set("111", {titre: "Z comme Zorglub", numero: "15", idSerie: "2", idAuteur: "52", prix: "12.70"});
-albums.set("112", {titre: "Le voyageur du mésozoïque", numero: "13", idSerie: "2", idAuteur: "23", prix: "11.50"});
-albums.set("113", {titre: "Le nid des marsupilamis", numero: "12", idSerie: "2", idAuteur: "23", prix: "12.50"});
-albums.set("115", {titre: "Le gorille à bonne mine", numero: "11", idSerie: "2", idAuteur: "23", prix: "11.70"});
-albums.set("116", {titre: "Les pirates du silence", numero: "10", idSerie: "2", idAuteur: "23", prix: "10.90"});
-albums.set("117", {titre: "Le repaire de la murène", numero: "09", idSerie: "2", idAuteur: "23", prix: "10.50"});
-albums.set("118", {titre: "La mauvaise tête", numero: "08", idSerie: "2", idAuteur: "23", prix: "11"});
-albums.set("119", {titre: "La corne de rhinocéros", numero: "06", idSerie: "2", idAuteur: "23", prix: "12.50"});
-albums.set("120", {titre: "Les voleurs du marsupilami", numero: "05", idSerie: "2", idAuteur: "23", prix: "11.50"});
-albums.set("121", {titre: "Spirou et les héritiers", numero: "04", idSerie: "2", idAuteur: "23", prix: "120.50"});
-albums.set("122", {titre: "Les chapeaux noirs", numero: "03", idSerie: "2", idAuteur: "53", prix: "130"});
-albums.set("125", {titre: "Il y a un sorcier à Champignac", numero: "02", idSerie: "2", idAuteur: "23", prix: "160"});
-albums.set("124", {titre: "4 aventures de Spirou et Fantasio", numero: "01", idSerie: "2", idAuteur: "23", prix: "210"});
-albums.set("126", {titre: "Radar le robot", numero: "HS2", idSerie: "2", idAuteur: "23", prix: "12.50"});
-albums.set("127", {titre: "L'héritage", numero: "HS1", idSerie: "2", idAuteur: "23", prix: "11.50"});
-albums.set("128", {titre: "La jeunesse de Spirou", numero: "38", idSerie: "2", idAuteur: "14", prix: "12.50"});
-albums.set("129", {titre: "Fais de beaux rêves !", numero: "13", idSerie: "5", idAuteur: "14", prix: "11.00"});
-albums.set("130", {titre: "C'est du joli !", numero: "12", idSerie: "5", idAuteur: "14", prix: "15.50"});
-albums.set("131", {titre: "Tu ne s'ras jamais grand !", numero: "11", idSerie: "5", idAuteur: "14", prix: "14.50"});
-albums.set("132", {titre: "Tu comprendras quand tu s'ras grand !", numero: "10", idSerie: "5", idAuteur: "14", prix: "11.50"});
-albums.set("133", {titre: "T'as qu'à t'retenir !", numero: "08", idSerie: "5", idAuteur: "14", prix: "16.50"});
-albums.set("134", {titre: "Demande à ton père !", numero: "07", idSerie: "5", idAuteur: "14", prix: "17.50"});
-albums.set("135", {titre: "N'oublie pas ta capuche !", numero: "06", idSerie: "5", idAuteur: "14", prix: "12.50"});
-albums.set("136", {titre: "C'est pas de ton âge !", numero: "09", idSerie: "5", idAuteur: "14", prix: "11.50"});
-albums.set("137", {titre: "Mais ! Quest-ce que tu fabriques ?", numero: "03", idSerie: "5", idAuteur: "14", prix: "12.50"});
-albums.set("138", {titre: "\"Merci\" qui ?", numero: "05", idSerie: "5", idAuteur: "14", prix: "12.90"});
-albums.set("139", {titre: "C'est pour ton bien !", numero: "04", idSerie: "5", idAuteur: "14", prix: "12.60"});
-albums.set("140", {titre: "Tu veux mon doigt ?", numero: "02", idSerie: "5", idAuteur: "14", prix: "13.50"});
-albums.set("141", {titre: "Dis bonjour à la dame !", numero: "01", idSerie: "5", idAuteur: "14", prix: "11.50"});
-albums.set("142", {titre: "Crochet", numero: "05", idSerie: "3", idAuteur: "39", prix: "10.50"});
-albums.set("143", {titre: "Mains rouges", numero: "04", idSerie: "3", idAuteur: "39", prix: "14.56"});
-albums.set("144", {titre: "Tempête", numero: "03", idSerie: "3", idAuteur: "39", prix: "12.50"});
-albums.set("145", {titre: "Opikanoba", numero: "02", idSerie: "3", idAuteur: "39", prix: "14.50"});
-albums.set("146", {titre: "Londres", numero: "01", idSerie: "3", idAuteur: "39", prix: "12.50"});
-albums.set("149", {titre: "L'oeuf des ténèbres", numero: "04", idSerie: "22", idAuteur: "56", prix: "13.50"});
-albums.set("150", {titre: "Le Rige", numero: "03", idSerie: "22", idAuteur: "56", prix: "10.50"});
-albums.set("151", {titre: "Le temple de l'oubli", numero: "02", idSerie: "22", idAuteur: "56", prix: "11.50"});
-albums.set("152", {titre: "La conque de Ramor", numero: "01", idSerie: "22", idAuteur: "56", prix: "14.50"});
-albums.set("153", {titre: "(Avant la quête) Le grimoire des dieux", numero: "A02", idSerie: "22", idAuteur: "55", prix: "12.50"});
-albums.set("154", {titre: "(Avant la quête) La voie du Rige", numero: "A03", idSerie: "22", idAuteur: "54", prix: "10.50"});
-albums.set("155", {titre: "Gnomes de Troy", numero: "00", idSerie: "40", idAuteur: "57", prix: "11.60"});
-albums.set("156", {titre: "t.2", numero: "02", idSerie: "41", idAuteur: "40", prix: "12.45"});
-albums.set("157", {titre: "t.1", numero: "01", idSerie: "41", idAuteur: "40", prix: "12.50"});
-albums.set("159", {titre: "Reporter du \"petit vingtième\" au pays des soviets", numero: "01", idSerie: "28", idAuteur: "31", prix: "45.50"});
-albums.set("160", {titre: "La forêt suspendue", numero: "01", idSerie: "42", idAuteur: "58", prix: "15.50"});
-albums.set("161", {titre: "Les 13 transgressions", numero: "21", idSerie: "43", idAuteur: "59", prix: "14.50"});
-albums.set("162", {titre: "Le prisonnier du Bouddha", numero: "14", idSerie: "2", idAuteur: "52", prix: "13.50"});
-albums.set("163", {titre: "Dieu, le sexe et les bretelles", numero: "01", idSerie: "23", idAuteur: "19", prix: "15.50"});
-albums.set("164", {titre: "t.4", numero: "04", idSerie: "41", idAuteur: "40", prix: "14.90"});
-albums.set("165", {titre: "Morituri te salutant", numero: "01", idSerie: "44", idAuteur: "60", prix: "11.20"});
-albums.set("166", {titre: "Le mariage de Rahan", numero: "00", idSerie: "36", idAuteur: "40", prix: "10.50"});
-albums.set("167", {titre: "Le maître des fauves", numero: "06", idSerie: "36", idAuteur: "40", prix: "9.50"});
-albums.set("168", {titre: "Les hommes sans cheveux", numero: "05", idSerie: "36", idAuteur: "40", prix: "9"});
-albums.set("169", {titre: "Les chasseurs de foudre", numero: "04", idSerie: "36", idAuteur: "40", prix: "10.50"});
-albums.set("170", {titre: "t.3", numero: "03", idSerie: "41", idAuteur: "40", prix: "11"});
-albums.set("171", {titre: "Paris sous-Seine", numero: "47", idSerie: "2", idAuteur: "61", prix: "10.50"});
-albums.set("172", {titre: "L'homme qui ne voulait pas mourrir", numero: "48", idSerie: "2", idAuteur: "61", prix: "9.50"});
-albums.set("173", {titre: "La ceinture du grand froid", numero: "30", idSerie: "2", idAuteur: "62", prix: "12.60"});
-albums.set("174", {titre: "Alerte aux zorkons", numero: "51", idSerie: "2", idAuteur: "63", prix: "14.70"});
-albums.set("175", {titre: "La face cachée du Z", numero: "52", idSerie: "2", idAuteur: "63", prix: "13.50"});
-albums.set("176", {titre: "Les faiseurs de silence", numero: "32", idSerie: "2", idAuteur: "62", prix: "12.80"});
-albums.set("177", {titre: "La boîte noire", numero: "31", idSerie: "2", idAuteur: "62", prix: "10.50"});
-albums.set("178", {titre: "Aux sources du Z", numero: "50", idSerie: "2", idAuteur: "64", prix: "11.50"});
-albums.set("179", {titre: "Le dictateur et le champignon", numero: "07", idSerie: "2", idAuteur: "23", prix: "12.50"});
-albums.set("180", {titre: "Sortie de l'oeuf", numero: "01", idSerie: "45", idAuteur: "65", prix: "12.60"});
-albums.set("181", {titre: "Le chat", numero: "01", idSerie: "46", idAuteur: "66", prix: "12.70"});
-albums.set("182", {titre: "L'affaire le chat", numero: "11", idSerie: "46", idAuteur: "66", prix: "12.80"});
-albums.set("183", {titre: "Perceval et le dragon d'Airain", numero: "04", idSerie: "47", idAuteur: "67", prix: "12.90"});
-albums.set("184", {titre: "L'armée du Nécromant", numero: "01", idSerie: "47", idAuteur: "67", prix: "10.90"});
-albums.set("185", {titre: "L'énigme du coffre", numero: "03", idSerie: "47", idAuteur: "67", prix: "9.98"});
-albums.set("186", {titre: "Les sièges de transport", numero: "02", idSerie: "47", idAuteur: "67", prix: "11.46"});
-albums.set("187", {titre: "Le jugement", numero: "03", idSerie: "48", idAuteur: "68", prix: "12.58"});
-albums.set("188", {titre: "Le choisi", numero: "02", idSerie: "48", idAuteur: "68", prix: "14.67"});
-albums.set("189", {titre: "Le commandement", numero: "01", idSerie: "48", idAuteur: "68", prix: "17.52"});
-albums.set("199", {titre: "Histoire trolles", numero: "01", idSerie: "16", idAuteur: "11", prix: "16.95"});
-albums.set("191", {titre: "Litteul Kévin T2", numero: "02", idSerie: "49", idAuteur: "69", prix: "10.54"});
-albums.set("193", {titre: "Litteul Kévin T3", numero: "03", idSerie: "49", idAuteur: "69", prix: "14.37"});
-albums.set("194", {titre: "Litteul Kévin T4", numero: "04", idSerie: "49", idAuteur: "69", prix: "10.62"});
-albums.set("195", {titre: "Litteul Kévin T5", numero: "05", idSerie: "49", idAuteur: "69", prix: "10.50"});
-albums.set("196", {titre: "Litteul Kévin T6", numero: "06", idSerie: "49", idAuteur: "69", prix: "10.50"});
-albums.set("197", {titre: "Litteul Kévin T7", numero: "07", idSerie: "49", idAuteur: "69", prix: "15.50"});
-albums.set("198", {titre: "Litteul Kévin T1", numero: "01", idSerie: "49", idAuteur: "69", prix: "12.50"});
-albums.set("200", {titre: "Le scalp du vénérable", numero: "02", idSerie: "16", idAuteur: "11", prix: "11.50"});
-albums.set("201", {titre: "Comme un vol de pétaures", numero: "03", idSerie: "16", idAuteur: "11", prix: "10.50"});
-albums.set("202", {titre: "Les maléfices de la thaumaturge", numero: "05", idSerie: "16", idAuteur: "11", prix: "10.50"});
-albums.set("203", {titre: "Trolls dans la brume", numero: "06", idSerie: "16", idAuteur: "11", prix: "12.50"});
-albums.set("204", {titre: "Plume de sage", numero: "07", idSerie: "16", idAuteur: "11", prix: "12.50"});
-albums.set("205", {titre: "Rock'n Troll attitude", numero: "08", idSerie: "16", idAuteur: "11", prix: "14.50"});
-albums.set("206", {titre: "Les prisonniers du Darshan (I)", numero: "09", idSerie: "16", idAuteur: "11", prix: "11.50"});
-albums.set("207", {titre: "Les prisonniers du Darshan (II)", numero: "10", idSerie: "16", idAuteur: "11", prix: "12.50"});
-albums.set("208", {titre: "Trollympiades", numero: "11", idSerie: "16", idAuteur: "11", prix: "10.50"});
-albums.set("209", {titre: "Sang famille (I)", numero: "12", idSerie: "16", idAuteur: "11", prix: "16.50"});
-albums.set("210", {titre: "Joe bar team Tome 1", numero: "01", idSerie: "50", idAuteur: "70", prix: "14.50"});
-albums.set("211", {titre: "Joe bar team Tome 2", numero: "02", idSerie: "50", idAuteur: "71", prix: "12.50"});
-albums.set("212", {titre: "Joe bar team Tome 3", numero: "03", idSerie: "50", idAuteur: "71", prix: "13.65"});
-albums.set("213", {titre: "Joe bar team Tome 4", numero: "04", idSerie: "50", idAuteur: "71", prix: "12.54"});
-albums.set("214", {titre: "Joe bar team Tome 5", numero: "05", idSerie: "50", idAuteur: "70", prix: "11.98"});
-albums.set("215", {titre: "Joe bar team Tome 6", numero: "06", idSerie: "50", idAuteur: "71", prix: "10.65"});
-albums.set("216", {titre: "Joe bar team Tome 7", numero: "07", idSerie: "50", idAuteur: "72", prix: "11.78"});
-albums.set("218", {titre: "Le réveil de Merlin", numero: "01", idSerie: "17", idAuteur: "9", prix: "11.65"});
-albums.set("219", {titre: "Le Sidhe aux mille charmes", numero: "02", idSerie: "17", idAuteur: "9", prix: "10.50"});
-albums.set("220", {titre: "La colère de Merlin", numero: "04", idSerie: "17", idAuteur: "74", prix: "11.50"});
-albums.set("221", {titre: "Le masque", numero: "01", idSerie: "13", idAuteur: "8", prix: "10.65"});
-albums.set("222", {titre: "L'ombre de Dompour", numero: "02", idSerie: "13", idAuteur: "8", prix: "10.50"});
-albums.set("223", {titre: "L'autre côté", numero: "03", idSerie: "13", idAuteur: "75", prix: "11.50"});
-albums.set("224", {titre: "Bragal", numero: "04", idSerie: "13", idAuteur: "8", prix: "12.23"});
-albums.set("225", {titre: "Le thaumaturge", numero: "05", idSerie: "13", idAuteur: "8", prix: "1064"});
-albums.set("226", {titre: "La femme-vie", numero: "06", idSerie: "13", idAuteur: "8", prix: "11.65"});
-albums.set("227", {titre: "Exil à port-fleury", numero: "01", idSerie: "51", idAuteur: "76", prix: "12.54"});
-albums.set("228", {titre: "Un, deux... Troy", numero: "01", idSerie: "18", idAuteur: "10", prix: "10.50"});
-albums.set("229", {titre: "Les tours de Meirrion", numero: "02", idSerie: "18", idAuteur: "10", prix: "11.50"});
-albums.set("230", {titre: "Les sables d'Abraxar", numero: "03", idSerie: "18", idAuteur: "10", prix: "11.50"});
-albums.set("231", {titre: "Les buveurs de mondes", numero: "04", idSerie: "18", idAuteur: "10", prix: "11.50"});
-albums.set("232", {titre: "La chevauchée des bactéries", numero: "05", idSerie: "18", idAuteur: "10", prix: "11.50"});
-albums.set("233", {titre: "Le râle du flibustier", numero: "06", idSerie: "18", idAuteur: "10", prix: "12.65"});
-albums.set("234", {titre: "Le secret des Dolphantes", numero: "07", idSerie: "18", idAuteur: "10", prix: "12.65"});
-albums.set("235", {titre: "Les pétaures se cachent pour mourir", numero: "07", idSerie: "9", idAuteur: "10", prix: "12.65"});
-albums.set("236", {titre: "L'ivoire du Magohamoth", numero: "01", idSerie: "9", idAuteur: "10", prix: "12.65"});
-albums.set("237", {titre: "Thanos l'incongru", numero: "02", idSerie: "9", idAuteur: "10", prix: "10.65"});
-albums.set("238", {titre: "Castel or-azur", numero: "03", idSerie: "9", idAuteur: "10", prix: "10.65"});
-albums.set("239", {titre: "Le paladin d'Eckmül", numero: "04", idSerie: "9", idAuteur: "10", prix: "10.65"});
-albums.set("240", {titre: "Le frisson de l'haruspice", numero: "05", idSerie: "9", idAuteur: "10", prix: "11.24"});
-albums.set("241", {titre: "Cixi Impératrice", numero: "06", idSerie: "9", idAuteur: "10", prix: "11.24"});
-albums.set("242", {titre: "L'héritier", numero: "01", idSerie: "12", idAuteur: "77", prix: "11.24"});
-albums.set("243", {titre: "Le groupe W", numero: "02", idSerie: "12", idAuteur: "77", prix: "10.67"});
-albums.set("244", {titre: "O.P.A.", numero: "03", idSerie: "12", idAuteur: "77", prix: "10.67"});
-albums.set("245", {titre: "Business blues", numero: "04", idSerie: "12", idAuteur: "77", prix: "10.67"});
-albums.set("246", {titre: "H", numero: "05", idSerie: "12", idAuteur: "77", prix: "10.67"});
-albums.set("247", {titre: "Dutch Connection", numero: "06", idSerie: "12", idAuteur: "77", prix: "10.67"});
-albums.set("248", {titre: "La forteresse de Makiling", numero: "07", idSerie: "12", idAuteur: "77", prix: "12.65"});
-albums.set("249", {titre: "L'heure du tigre", numero: "08", idSerie: "12", idAuteur: "77", prix: "12.65"});
+
+albums.set("1", {
+  titre: "Croc vert",
+  numero: "23",
+  idSerie: "6",
+  idAuteur: "13",
+  prix: "24.50",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-23-Croc vert.jpg"
+});
+
+albums.set("2", {
+  titre: "Machine qui rêve",
+  numero: "46",
+  idSerie: "2",
+  idAuteur: "14",
+  prix: "23.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-46-Machine qui rêve.jpg"
+});
+
+albums.set("3", {
+  titre: "La guerre des gloutons (II)",
+  numero: "13",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "14.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-13-La guerre des gloutons (II).jpg"
+});
+
+albums.set("4", {
+  titre: "Le jour du Mayflower",
+  numero: "20",
+  idSerie: "10",
+  idAuteur: "16",
+  prix: "12",
+  imageUrl: "../0_assets/BD/albums/XIII-20-Le jour du Mayflower.jpg"
+});
+
+albums.set("6", {
+  titre: "La griffe de Rome",
+  numero: "03",
+  idSerie: "17",
+  idAuteur: "9",
+  prix: "14.50",
+  imageUrl: "../0_assets/BD/albums/Le chant dexcalibur-03-La griffe de Rome.jpg"
+});
+
+albums.set("7", {
+  titre: "Le Waltras",
+  numero: "07",
+  idSerie: "13",
+  idAuteur: "8",
+  prix: "15.20",
+  imageUrl: "../0_assets/BD/albums/Marlysa-07-Le Waltras.jpg"
+});
+
+albums.set("8", {
+  titre: "Le sang des comètes",
+  numero: "08",
+  idSerie: "18",
+  idAuteur: "10",
+  prix: "14.50",
+  imageUrl: "../0_assets/BD/albums/Lanfeust des étoiles-08-Le sang des comètes.jpg"
+});
+
+albums.set("9", {
+  titre: "La bête fabuleuse",
+  numero: "08",
+  idSerie: "9",
+  idAuteur: "10",
+  prix: "14.50",
+  imageUrl: "../0_assets/BD/albums/Lanfeust de Troy-08-La bête fabuleuse.jpg"
+});
+
+albums.set("10", {
+  titre: "(Avant la quête) L'ami Javin",
+  numero: "A01",
+  idSerie: "22",
+  idAuteur: "18",
+  prix: "14.10",
+  imageUrl: "../0_assets/BD/albums/La quête de loiseau du temps-A01-(Avant la quête) Lami Javin.jpg"
+});
+
+albums.set("11", {
+  titre: "Le sens de la vie",
+  numero: "12",
+  idSerie: "23",
+  idAuteur: "19",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Titeuf-12-Le sens de la vie.jpg"
+});
+
+albums.set("13", {
+  titre: "Mes meilleurs copains",
+  numero: "11",
+  idSerie: "23",
+  idAuteur: "19",
+  prix: "11",
+  imageUrl: "../0_assets/BD/albums/Titeuf-11-Mes meilleurs copains.jpg"
+});
+
+albums.set("15", {
+  titre: "Nadia se marie",
+  numero: "10",
+  idSerie: "23",
+  idAuteur: "19",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Titeuf-10-Nadia se marie.jpg"
+});
+
+albums.set("18", {
+  titre: "La loi du préau",
+  numero: "09",
+  idSerie: "23",
+  idAuteur: "19",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Titeuf-09-La loi du préau.jpg"
+});
+
+albums.set("19", {
+  titre: "Gare aux garous",
+  numero: "03",
+  idSerie: "24",
+  idAuteur: "20",
+  prix: "11.40",
+  imageUrl: "../0_assets/BD/albums/Kran-03-Gare aux garous.jpg"
+});
+
+albums.set("20", {
+  titre: "Le Walou Walou ancestral",
+  numero: "02",
+  idSerie: "24",
+  idAuteur: "20",
+  prix: "13.90",
+  imageUrl: "../0_assets/BD/albums/Kran-02-Le Walou Walou ancestral.jpg"
+});
+
+albums.set("21", {
+  titre: "Les runes de Gartagueul",
+  numero: "01",
+  idSerie: "24",
+  idAuteur: "20",
+  prix: "14.20",
+  imageUrl: "../0_assets/BD/albums/Kran-01-Les runes de Gartagueul.jpg"
+});
+
+albums.set("22", {
+  titre: "Le temple de Boavista",
+  numero: "08",
+  idSerie: "6",
+  idAuteur: "21",
+  prix: "10.95",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-08-Le temple de Boavista.jpg"
+});
+
+albums.set("23", {
+  titre: "L'or de Boavista",
+  numero: "07",
+  idSerie: "6",
+  idAuteur: "21",
+  prix: "12",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-07-Lor de Boavista.jpg"
+});
+
+albums.set("24", {
+  titre: "Fordlandia",
+  numero: "06",
+  idSerie: "6",
+  idAuteur: "21",
+  prix: "9.98",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-06-Fordlandia.jpg"
+});
+
+albums.set("25", {
+  titre: "Baby Prinz",
+  numero: "05",
+  idSerie: "6",
+  idAuteur: "21",
+  prix: "11",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-05-Baby Prinz.jpg"
+});
+
+albums.set("26", {
+  titre: "Le pollen du monte Urticando",
+  numero: "04",
+  idSerie: "6",
+  idAuteur: "21",
+  prix: "10.25",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-04-Le pollen du monte Urticando.jpg"
+});
+
+albums.set("27", {
+  titre: "Mars le noir",
+  numero: "03",
+  idSerie: "6",
+  idAuteur: "21",
+  prix: "12.20",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-03-Mars le noir.jpg"
+});
+
+albums.set("28", {
+  titre: "Le bébé du bout du monde",
+  numero: "02",
+  idSerie: "6",
+  idAuteur: "22",
+  prix: "11.33",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-02-Le bébé du bout du monde.jpg"
+});
+
+albums.set("29", {
+  titre: "La queue du Marsupilami",
+  numero: "01",
+  idSerie: "6",
+  idAuteur: "22",
+  prix: "10.47",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-01-La queue du Marsupilami.jpg"
+});
+
+albums.set("30", {
+  titre: "Capturez un Marsupilami !",
+  numero: "00",
+  idSerie: "6",
+  idAuteur: "23",
+  prix: "10.54",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-00-Capturez un Marsupilami .jpg"
+});
+
+albums.set("31", {
+  titre: "Le rayon noir",
+  numero: "44",
+  idSerie: "2",
+  idAuteur: "14",
+  prix: "9.98",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-44-Le rayon noir.jpg"
+});
+
+albums.set("32", {
+  titre: "Luna fatale",
+  numero: "45",
+  idSerie: "2",
+  idAuteur: "14",
+  prix: "10.00",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-45-Luna fatale.jpg"
+});
+
+albums.set("33", {
+  titre: "A Moscou",
+  numero: "42",
+  idSerie: "2",
+  idAuteur: "14",
+  prix: "10.95",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-42-A Moscou.jpg"
+});
+
+albums.set("34", {
+  titre: "Vito la déveine",
+  numero: "43",
+  idSerie: "2",
+  idAuteur: "14",
+  prix: "10.42",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-43-Vito la déveine.jpg"
+});
+
+albums.set("35", {
+  titre: "La vallée des bannis",
+  numero: "41",
+  idSerie: "2",
+  idAuteur: "14",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-41-La vallée des bannis.jpg"
+});
+
+albums.set("36", {
+  titre: "La frousse aux trousses",
+  numero: "40",
+  idSerie: "2",
+  idAuteur: "14",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-40-La frousse aux trousses.jpg"
+});
+
+albums.set("37", {
+  titre: "A New York",
+  numero: "39",
+  idSerie: "2",
+  idAuteur: "14",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-39-A New York.jpg"
+});
+
+albums.set("38", {
+  titre: "Le réveil du Z",
+  numero: "37",
+  idSerie: "2",
+  idAuteur: "14",
+  prix: "10.45",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-37-Le réveil du Z.jpg"
+});
+
+albums.set("39", {
+  titre: "L'horloger de la comète",
+  numero: "36",
+  idSerie: "2",
+  idAuteur: "14",
+  prix: "10.26",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-36-L'horloger de la comète.jpg"
+});
+
+albums.set("40", {
+  titre: "Mise à jour",
+  numero: "03",
+  idSerie: "25",
+  idAuteur: "24",
+  prix: "10",
+  imageUrl: "../0_assets/BD/albums/Les informaticiens-03-Mise à jour.jpg"
+});
+
+albums.set("41", {
+  titre: "Qui arrêtera Cyanure ?",
+  numero: "35",
+  idSerie: "2",
+  idAuteur: "14",
+  prix: "11.23",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-35-Qui arrêtera Cyanure .jpg"
+});
+
+albums.set("42", {
+  titre: "Aventure en Australie",
+  numero: "34",
+  idSerie: "2",
+  idAuteur: "14",
+  prix: "12.60",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-34-Aventure en Australie.jpg"
+});
+
+albums.set("43", {
+  titre: "Virus",
+  numero: "33",
+  idSerie: "2",
+  idAuteur: "14",
+  prix: "14.20",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-33-Virus.jpg"
+});
+
+albums.set("44", {
+  titre: "Des haricots partout",
+  numero: "29",
+  idSerie: "2",
+  idAuteur: "25",
+  prix: "14.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-29-Des haricots partout.jpg"
+});
+
+albums.set("45", {
+  titre: "Kodo le tyran",
+  numero: "28",
+  idSerie: "2",
+  idAuteur: "25",
+  prix: "14.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-28-Kodo le tyran.jpg"
+});
+
+albums.set("46", {
+  titre: "L'Ankou",
+  numero: "27",
+  idSerie: "2",
+  idAuteur: "25",
+  prix: "13.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-27-L'Ankou.jpg"
+});
+
+albums.set("47", {
+  titre: "Du cidre pour les étoiles",
+  numero: "26",
+  idSerie: "2",
+  idAuteur: "25",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-26-Du cidre pour les étoiles.jpg"
+});
+
+albums.set("48", {
+  titre: "Le gri-gri du Niokolo-Koba",
+  numero: "25",
+  idSerie: "2",
+  idAuteur: "25",
+  prix: "11.80",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-25-Le gri-gri du Niokolo-Koba.jpg"
+});
+
+albums.set("49", {
+  titre: "Tembo tabou",
+  numero: "24",
+  idSerie: "2",
+  idAuteur: "26",
+  prix: "14.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-24-Tembo tabou.jpg"
+});
+
+albums.set("50", {
+  titre: "Tora torapa",
+  numero: "23",
+  idSerie: "2",
+  idAuteur: "25",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-23-Tora torapa.jpg"
+});
+
+albums.set("51", {
+  titre: "L'abbaye truquée",
+  numero: "22",
+  idSerie: "2",
+  idAuteur: "25",
+  prix: "13.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-22-L'abbaye truquée.jpg"
+});
+
+albums.set("52", {
+  titre: "Du glucose pour Noémie",
+  numero: "21",
+  idSerie: "2",
+  idAuteur: "25",
+  prix: "14.00",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-21-Du glucose pour Noémie.jpg"
+});
+
+albums.set("53", {
+  titre: "Le faiseur d'or",
+  numero: "20",
+  idSerie: "2",
+  idAuteur: "25",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-20-Le faiseur d'or.jpg"
+});
+
+albums.set("54", {
+  titre: "Panade à Champignac",
+  numero: "19",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-19-Panade à Champignac.jpg"
+});
+
+albums.set("55", {
+  titre: "QRN sur Bretzelburg",
+  numero: "18",
+  idSerie: "2",
+  idAuteur: "27",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-18-QRN sur Bretzelburg.jpg"
+});
+
+albums.set("56", {
+  titre: "Spirou et les hommes-bulles",
+  numero: "17",
+  idSerie: "2",
+  idAuteur: "28",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-17-Spirou et les hommes-bulles.jpg"
+});
+
+albums.set("57", {
+  titre: "3615 code bavure",
+  numero: "02",
+  idSerie: "26",
+  idAuteur: "29",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/CRS = Détresse-02-3615 code bavure.jpg"
+});
+
+albums.set("58", {
+  titre: "Premières mesures",
+  numero: "01",
+  idSerie: "27",
+  idAuteur: "30",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Pacush blues-01-Premières mesures.jpg"
+});
+
+albums.set("59", {
+  titre: "L'affaire tournesol",
+  numero: "18",
+  idSerie: "28",
+  idAuteur: "31",
+  prix: "11.60",
+  imageUrl: "../0_assets/BD/albums/Les aventures de Tintin-18-Laffaire tournesol.jpg"
+});
+
+albums.set("60", {
+  titre: "Connection",
+  numero: "00",
+  idSerie: "29",
+  idAuteur: "32",
+  prix: "15.42",
+  imageUrl: "../0_assets/BD/albums/Connection-00-Connection.jpg"
+});
+
+albums.set("61", {
+  titre: "Chez les castors",
+  numero: "03",
+  idSerie: "30",
+  idAuteur: "33",
+  prix: "9.80",
+  imageUrl: "../0_assets/BD/albums/Chez les castors-03-Chez les castors.jpg"
+});
+
+albums.set("62", {
+  titre: "Destination Duralex",
+  numero: "01",
+  idSerie: "31",
+  idAuteur: "34",
+  prix: "10.56",
+  imageUrl: "../0_assets/BD/albums/Destination Duralex-01-Destination Duralex.jpg"
+});
+
+albums.set("63", {
+  titre: "Le ciel lui tombe sur la tête",
+  numero: "33",
+  idSerie: "32",
+  idAuteur: "35",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Astérix-33-Le ciel lui tombe sur la tête.jpg"
+});
+
+albums.set("64", {
+  titre: "Astérix chez les belges",
+  numero: "24",
+  idSerie: "32",
+  idAuteur: "35",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Astérix-24-Astérix chez les belges.jpg"
+});
+
+albums.set("65", {
+  titre: "Astérix aux jeux olympiques",
+  numero: "12",
+  idSerie: "32",
+  idAuteur: "35",
+  prix: "12.55",
+  imageUrl: "../0_assets/BD/albums/Astérix-12-Astérix aux jeux olympiques.jpg"
+});
+
+albums.set("66", {
+  titre: "Obélix et compagnie",
+  numero: "23",
+  idSerie: "32",
+  idAuteur: "35",
+  prix: "11.80",
+  imageUrl: "../0_assets/BD/albums/Astérix-23-Obélix et compagnie.jpg"
+});
+
+albums.set("67", {
+  titre: "Astérix et Latraviata",
+  numero: "31",
+  idSerie: "32",
+  idAuteur: "35",
+  prix: "13.50",
+  imageUrl: "../0_assets/BD/albums/Astérix-31-Astérix et Latraviata.jpg"
+});
+
+albums.set("68", {
+  titre: "Le cadeau de César",
+  numero: "21",
+  idSerie: "32",
+  idAuteur: "35",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Astérix-21-Le cadeau de César.jpg"
+});
+
+albums.set("70", {
+  titre: "Astérix chez les Bretons",
+  numero: "08",
+  idSerie: "32",
+  idAuteur: "35",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Astérix-08-Astérix chez les Bretons.jpg"
+});
+
+albums.set("71", {
+  titre: "Astérix et les Goths",
+  numero: "03",
+  idSerie: "32",
+  idAuteur: "35",
+  prix: "12.00",
+  imageUrl: "../0_assets/BD/albums/Astérix-03-Astérix et les Goths.jpg"
+});
+
+albums.set("72", {
+  titre: "L'échelle de la terre",
+  numero: "00",
+  idSerie: "33",
+  idAuteur: "36",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Les aventures de Bédé-00-Léchelle de la terre.jpg"
+});
+
+albums.set("73", {
+  titre: "La zizanie",
+  numero: "15",
+  idSerie: "32",
+  idAuteur: "35",
+  prix: "12.60",
+  imageUrl: "../0_assets/BD/albums/Astérix-15-La zizanie.jpg"
+});
+
+albums.set("74", {
+  titre: "Six foies neufs",
+  numero: "08",
+  idSerie: "34",
+  idAuteur: "37",
+  prix: "14.50",
+  imageUrl: "../0_assets/BD/albums/Les femmes en blanc-08-Six foies neufs.jpg"
+});
+
+albums.set("75", {
+  titre: "L'esprit du lac",
+  numero: "01",
+  idSerie: "35",
+  idAuteur: "38",
+  prix: "13.10",
+  imageUrl: "../0_assets/BD/albums/Kwaïdan-01-Lesprit du lac.jpg"
+});
+
+albums.set("76", {
+  titre: "Destins",
+  numero: "06",
+  idSerie: "3",
+  idAuteur: "39",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Peter Pan-06-Destins.jpg"
+});
+
+albums.set("77", {
+  titre: "Lâchez-moi le slip",
+  numero: "08",
+  idSerie: "23",
+  idAuteur: "19",
+  prix: "10.40",
+  imageUrl: "../0_assets/BD/albums/Titeuf-08-Lâchez-moi le slip.jpg"
+});
+
+albums.set("78", {
+  titre: "Le miracle de la vie",
+  numero: "07",
+  idSerie: "23",
+  idAuteur: "19",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Titeuf-07-Le miracle de la vie.jpg"
+});
+
+albums.set("80", {
+  titre: "Tchô, monde cruel",
+  numero: "06",
+  idSerie: "23",
+  idAuteur: "19",
+  prix: "12.30",
+  imageUrl: "../0_assets/BD/albums/Titeuf-06-Tchô, monde cruel.jpg"
+});
+
+albums.set("81", {
+  titre: "Et le derrière des choses",
+  numero: "05",
+  idSerie: "23",
+  idAuteur: "19",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Titeuf-05-Et le derrière des choses.jpg"
+});
+
+albums.set("82", {
+  titre: "C'est pô juste ...",
+  numero: "04",
+  idSerie: "23",
+  idAuteur: "19",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Titeuf-04-C'est pô juste ....jpg"
+});
+
+albums.set("83", {
+  titre: "Ca épate les filles ...",
+  numero: "03",
+  idSerie: "23",
+  idAuteur: "19",
+  prix: "14.50",
+  imageUrl: "../0_assets/BD/albums/Titeuf-03-Ca épate les filles ....jpg"
+});
+
+albums.set("84", {
+  titre: "L'Amour, c'est pô propre ...",
+  numero: "02",
+  idSerie: "23",
+  idAuteur: "19",
+  prix: "13.80",
+  imageUrl: "../0_assets/BD/albums/Titeuf-02-L'Amour, c'est pô propre ....jpg"
+});
+
+albums.set("85", {
+  titre: "L'intégrale",
+  numero: "14",
+  idSerie: "36",
+  idAuteur: "40",
+  prix: "12.60",
+  imageUrl: "../0_assets/BD/albums/Rahan fils des âges farouches-14-Lintégrale.jpg"
+});
+
+albums.set("86", {
+  titre: "L'étrange réveil du schtroumpf paresseux",
+  numero: "15",
+  idSerie: "37",
+  idAuteur: "41",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Histoires de Schtroumpfs-15-Létrange réveil du schtroumpf paresseux.jpg"
+});
+
+albums.set("87", {
+  titre: "Le bandit manchot",
+  numero: "78",
+  idSerie: "38",
+  idAuteur: "42",
+  prix: "9.98",
+  imageUrl: "../0_assets/BD/albums/Lucky Luke-78-Le bandit manchot.jpg"
+});
+
+albums.set("88", {
+  titre: "Le fil qui chante",
+  numero: "46",
+  idSerie: "38",
+  idAuteur: "43",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Lucky Luke-46-Le fil qui chante.jpg"
+});
+
+albums.set("89", {
+  titre: "L'amnésie des Dalton",
+  numero: "98",
+  idSerie: "38",
+  idAuteur: "44",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Lucky Luke-98-Lamnésie des Dalton.jpg"
+});
+
+albums.set("90", {
+  titre: "Dalton city",
+  numero: "49",
+  idSerie: "38",
+  idAuteur: "43",
+  prix: "10.60",
+  imageUrl: "../0_assets/BD/albums/Lucky Luke-49-Dalton city.jpg"
+});
+
+albums.set("91", {
+  titre: "La belle province",
+  numero: "110",
+  idSerie: "38",
+  idAuteur: "45",
+  prix: "10.80",
+  imageUrl: "../0_assets/BD/albums/Lucky Luke-110-La belle province.jpg"
+});
+
+albums.set("92", {
+  titre: "Ame rouge",
+  numero: "03",
+  idSerie: "39",
+  idAuteur: "46",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Blacksad-03-Ame rouge.jpg"
+});
+
+albums.set("93", {
+  titre: "Arctic-Nation",
+  numero: "02",
+  idSerie: "39",
+  idAuteur: "46",
+  prix: "11.00",
+  imageUrl: "../0_assets/BD/albums/Blacksad-02-Arctic-Nation.jpg"
+});
+
+albums.set("94", {
+  titre: "Quelque part entre les ombres",
+  numero: "01",
+  idSerie: "39",
+  idAuteur: "46",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Blacksad-01-Quelque part entre les ombres.jpg"
+});
+
+albums.set("95", {
+  titre: "L'invasion des envahisseurs",
+  numero: "05",
+  idSerie: "24",
+  idAuteur: "20",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Kran-05-Linvasion des envahisseurs.jpg"
+});
+
+albums.set("96", {
+  titre: "Le grand tournoi",
+  numero: "04",
+  idSerie: "24",
+  idAuteur: "20",
+  prix: "13.50",
+  imageUrl: "../0_assets/BD/albums/Kran-04-Le grand tournoi.jpg"
+});
+
+albums.set("97", {
+  titre: "Red monster",
+  numero: "21",
+  idSerie: "6",
+  idAuteur: "13",
+  prix: "10.55",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-21-Red monster.jpg"
+});
+
+albums.set("98", {
+  titre: "Viva Palombia !",
+  numero: "20",
+  idSerie: "6",
+  idAuteur: "13",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-20-Viva Palombia .jpg"
+});
+
+albums.set("99", {
+  titre: "Magie blanche",
+  numero: "19",
+  idSerie: "6",
+  
+  idAuteur: "13",
+  prix: "14.50",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-19-Magie blanche.jpg"
+});
+
+albums.set("100", {
+  titre: "Robinson académy",
+  numero: "18",
+  idSerie: "6",
+  idAuteur: "13",
+  prix: "13.50",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-18-Robinson académy.jpg"
+});
+
+albums.set("101", {
+  titre: "L'orchidée des Chahutas",
+  numero: "17",
+  idSerie: "6",
+  idAuteur: "13",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-17-Lorchidée des Chahutas.jpg"
+});
+
+albums.set("102", {
+  titre: "Tous en piste",
+  numero: "16",
+  idSerie: "6",
+  idAuteur: "13",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-16-Tous en piste.jpg"
+});
+
+albums.set("103", {
+  titre: "C'est quoi ce cirque !?",
+  numero: "15",
+  idSerie: "6",
+  idAuteur: "13",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-15-C'est quoi ce cirque !.jpg"
+});
+
+albums.set("104", {
+  titre: "Un fils en or",
+  numero: "14",
+  idSerie: "6",
+  idAuteur: "13",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-14-Un fils en or.jpg"
+});
+
+albums.set("105", {
+  titre: "Le défilé du jaguar",
+  numero: "13",
+  idSerie: "6",
+  idAuteur: "13",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-13-Le défilé du jaguar.jpg"
+});
+
+albums.set("106", {
+  titre: "Trafic à Jollywood",
+  numero: "12",
+  idSerie: "6",
+  idAuteur: "13",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-12-Trafic à Jollywood.jpg"
+});
+
+albums.set("107", {
+  titre: "Houba banana",
+  numero: "11",
+  idSerie: "6",
+  idAuteur: "13",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-11-Houba banana.jpg"
+});
+
+albums.set("108", {
+  titre: "Rififi en Palombie",
+  numero: "10",
+  idSerie: "6",
+  idAuteur: "13",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-10-Rififi en Palombie.jpg"
+});
+
+albums.set("109", {
+  titre: "Le papillon des cimes",
+  numero: "09",
+  idSerie: "6",
+  idAuteur: "13",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Marsupilami-09-Le papillon des cimes.jpg"
+});
+
+albums.set("110", {
+  titre: "L'ombre du Z",
+  numero: "16",
+  idSerie: "2",
+  idAuteur: "52",
+  prix: "11.99",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-16-Lombre du Z.jpg"
+});
+
+albums.set("111", {
+  titre: "Z comme Zorglub",
+  numero: "15",
+  idSerie: "2",
+  idAuteur: "52",
+  prix: "12.70",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-15-Z comme Zorglub.jpg"
+});
+
+albums.set("112", {
+  titre: "Le voyageur du mésozoïque",
+  numero: "13",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-13-Le voyageur du mésozoïque.jpg"
+});
+
+albums.set("113", {
+  titre: "Le nid des marsupilamis",
+  numero: "12",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-12-Le nid des marsupilamis.jpg"
+});
+
+albums.set("115", {
+  titre: "Le gorille à bonne mine",
+  numero: "11",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "11.70",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-11-Le gorille à bonne mine.jpg"
+});
+
+albums.set("116", {
+  titre: "Les pirates du silence",
+  numero: "10",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "10.90",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-10-Les pirates du silence.jpg"
+});
+
+albums.set("117", {
+  titre: "Le repaire de la murène",
+  numero: "09",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-09-Le repaire de la murène.jpg"
+});
+
+albums.set("118", {
+  titre: "La mauvaise tête",
+  numero: "08",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "11",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-08-La mauvaise tête.jpg"
+});
+
+albums.set("119", {
+  titre: "La corne de rhinocéros",
+  numero: "06",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-06-La corne de rhinocéros.jpg"
+});
+
+albums.set("120", {
+  titre: "Les voleurs du marsupilami",
+  numero: "05",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-05-Les voleurs du marsupilami.jpg"
+});
+
+albums.set("121", {
+  titre: "Spirou et les héritiers",
+  numero: "04",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "120.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-04-Spirou et les héritiers.jpg"
+});
+
+albums.set("122", {
+  titre: "Les chapeaux noirs",
+  numero: "03",
+  idSerie: "2",
+  idAuteur: "53",
+  prix: "130",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-03-Les chapeaux noirs.jpg"
+});
+
+albums.set("125", {
+  titre: "Il y a un sorcier à Champignac",
+  numero: "02",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "160",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-02-Il y a un sorcier à Champignac.jpg"
+});
+
+albums.set("124", {
+  titre: "4 aventures de Spirou et Fantasio",
+  numero: "01",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "210",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-01-4 aventures de Spirou et Fantasio.jpg"
+});
+
+albums.set("126", {
+  titre: "Radar le robot",
+  numero: "HS2",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-HS2-Radar le robot.jpg"
+});
+
+albums.set("127", {
+  titre: "L'héritage",
+  numero: "HS1",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-HS1-Lhéritage.jpg"
+});
+
+albums.set("128", {
+  titre: "La jeunesse de Spirou",
+  numero: "38",
+  idSerie: "2",
+  idAuteur: "14",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-38-La jeunesse de Spirou.jpg"
+});
+
+albums.set("129", {
+  titre: "Fais de beaux rêves !",
+  numero: "13",
+  idSerie: "5",
+  idAuteur: "14",
+  prix: "11.00",
+  imageUrl: "../0_assets/BD/albums/Le petit Spirou-13-Fais de beaux rêves .jpg"
+});
+
+albums.set("130", {
+  titre: "C'est du joli !",
+  numero: "12",
+  idSerie: "5",
+  idAuteur: "14",
+  prix: "15.50",
+  imageUrl: "../0_assets/BD/albums/Le petit Spirou-12-Cest du joli .jpg"
+});
+
+albums.set("131", {
+  titre: "Tu ne s'ras jamais grand !",
+  numero: "11",
+  idSerie: "5",
+  idAuteur: "14",
+  prix: "14.50",
+  imageUrl: "../0_assets/BD/albums/Le petit Spirou-11-Tu ne sras jamais grand .jpg"
+});
+
+albums.set("132", {
+  titre: "Tu comprendras quand tu s'ras grand !",
+  numero: "10",
+  idSerie: "5",
+  idAuteur: "14",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Le petit Spirou-10-Tu comprendras quand tu sras grand .jpg"
+});
+
+albums.set("133", {
+  titre: "T'as qu'à t'retenir !",
+  numero: "08",
+  idSerie: "5",
+  idAuteur: "14",
+  prix: "16.50",
+  imageUrl: "../0_assets/BD/albums/Le petit Spirou-08-Tas quà tretenir .jpg"
+});
+
+albums.set("134", {
+  titre: "Demande à ton père !",
+  numero: "07",
+  idSerie: "5",
+  idAuteur: "14",
+  prix: "17.50",
+  imageUrl: "../0_assets/BD/albums/Le petit Spirou-07-Demande à ton père .jpg"
+});
+
+albums.set("135", {
+  titre: "N'oublie pas ta capuche !",
+  numero: "06",
+  idSerie: "5",
+  idAuteur: "14",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Le petit Spirou-06-Noublie pas ta capuche .jpg"
+});
+
+albums.set("136", {
+  titre: "C'est pas de ton âge !",
+  numero: "09",
+  idSerie: "5",
+  idAuteur: "14",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Le petit Spirou-09-Cest pas de ton âge .jpg"
+});
+
+albums.set("137", {
+  titre: "Mais ! Quest-ce que tu fabriques ?",
+  numero: "03",
+  idSerie: "5",
+  idAuteur: "14",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Le petit Spirou-03-Mais  Quest-ce que tu fabriques .jpg"
+});
+
+albums.set("138", {
+  titre: "\"Merci\" qui ?",
+  numero: "05",
+  idSerie: "5",
+  idAuteur: "14",
+  prix: "12.90",
+  imageUrl: "../0_assets/BD/albums/Le petit Spirou-05-Merci qui .jpg"
+});
+
+albums.set("139", {
+  titre: "C'est pour ton bien !",
+  numero: "04",
+  idSerie: "5",
+  idAuteur: "14",
+  prix: "12.60",
+  imageUrl: "../0_assets/BD/albums/Le petit Spirou-04-Cest pour ton bien .jpg"
+});
+
+albums.set("140", {
+  titre: "Tu veux mon doigt ?",
+  numero: "02",
+  idSerie: "5",
+  idAuteur: "14",
+  prix: "13.50",
+  imageUrl: "../0_assets/BD/albums/Le petit Spirou-02-Tu veux mon doigt .jpg"
+});
+
+albums.set("141", {
+  titre: "Dis bonjour à la dame !",
+  numero: "01",
+  idSerie: "5",
+  idAuteur: "14",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Le petit Spirou-01-Dis bonjour à la dame .jpg"
+});
+
+albums.set("142", {
+  titre: "Crochet",
+  numero: "05",
+  idSerie: "3",
+  idAuteur: "39",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Peter Pan-05-Crochet.jpg"
+});
+
+albums.set("143", {
+  titre: "Mains rouges",
+  numero: "04",
+  idSerie: "3",
+  idAuteur: "39",
+  prix: "14.56",
+  imageUrl: "../0_assets/BD/albums/Peter Pan-04-Mains rouges.jpg"
+});
+
+albums.set("144", {
+  titre: "Tempête",
+  numero: "03",
+  idSerie: "3",
+  idAuteur: "39",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Peter Pan-03-Tempête.jpg"
+});
+
+albums.set("145", {
+  titre: "Opikanoba",
+  numero: "02",
+  idSerie: "3",
+  idAuteur: "39",
+  prix: "14.50",
+  imageUrl: "../0_assets/BD/albums/Peter Pan-02-Opikanoba.jpg"
+});
+
+albums.set("146", {
+  titre: "Londres",
+  numero: "01",
+  idSerie: "3",
+  idAuteur: "39",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Peter Pan-01-Londres.jpg"
+});
+
+albums.set("149", {
+  titre: "L'oeuf des ténèbres",
+  numero: "04",
+  idSerie: "22",
+  idAuteur: "56",
+  prix: "13.50",
+  imageUrl: "../0_assets/BD/albums/La quête de loiseau du temps-04-Loeuf des ténèbres.jpg"
+});
+
+albums.set("150", {
+  titre: "Le Rige",
+  numero: "03",
+  idSerie: "22",
+  idAuteur: "56",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/La quête de loiseau du temps-03-Le Rige.jpg"
+});
+
+albums.set("151", {
+  titre: "Le temple de l'oubli",
+  numero: "02",
+  idSerie: "22",
+  idAuteur: "56",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/La quête de loiseau du temps-02-Le temple de loubli.jpg"
+});
+
+albums.set("152", {
+  titre: "La conque de Ramor",
+  numero: "01",
+  idSerie: "22",
+  idAuteur: "56",
+  prix: "14.50",
+  imageUrl: "../0_assets/BD/albums/La quête de loiseau du temps-01-La conque de Ramor.jpg"
+});
+
+albums.set("153", {
+  titre: "(Avant la quête) Le grimoire des dieux",
+  numero: "A02",
+  idSerie: "22",
+  idAuteur: "55",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/La quête de loiseau du temps-A02-(Avant la quête) Le grimoire des dieux.jpg"
+});
+
+albums.set("154", {
+  titre: "(Avant la quête) La voie du Rige",
+  numero: "A03",
+  idSerie: "22",
+  idAuteur: "54",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/La quête de loiseau du temps-A03-(Avant la quête) La voie du Rige.jpg"
+});
+
+albums.set("155", {
+  titre: "Gnomes de Troy",
+  numero: "00",
+  idSerie: "40",
+  idAuteur: "57",
+  prix: "11.60",
+  imageUrl: "../0_assets/BD/albums/Gnomes de Troy-00-Gnomes de Troy.jpg"
+});
+
+albums.set("156", {
+  titre: "t.2",
+  numero: "02",
+  idSerie: "41",
+  idAuteur: "40",
+  prix: "12.45",
+  imageUrl: "../0_assets/BD/albums/Rahan fils des âges farouches-02-Les longues crinières.jpg"
+});
+
+albums.set("157", {
+  titre: "t.1",
+  numero: "01",
+  idSerie: "41",
+  idAuteur: "40",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Rahan fils des âges farouches-01-Comme aurait fait Craô.jpg"
+});
+
+albums.set("159", {
+  titre: "Reporter du \"petit vingtième\" au pays des soviets",
+  numero: "01",
+  idSerie: "28",
+  idAuteur: "31",
+  prix: "45.50",
+  imageUrl: "../0_assets/BD/albums/Les aventures de Tintin-01-Reporter du petit vingtième au pays des soviets.jpg"
+});
+
+albums.set("160", {
+  titre: "La forêt suspendue",
+  numero: "01",
+  idSerie: "42",
+  idAuteur: "58",
+  prix: "15.50",
+  imageUrl: "../0_assets/BD/albums/Finn-01-La forêt suspendue.jpg"
+});
+
+albums.set("161", {
+  titre: "Les 13 transgressions",
+  numero: "21",
+  idSerie: "43",
+  idAuteur: "59",
+  prix: "14.50",
+  imageUrl: "../0_assets/BD/albums/Le vagabond des limbes-21-Les 13 transgressions.jpg"
+});
+
+albums.set("162", {
+  titre: "Le prisonnier du Bouddha",
+  numero: "14",
+  idSerie: "2",
+  idAuteur: "52",
+  prix: "13.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-14-Le prisonnier du Bouddha.jpg"
+});
+
+albums.set("163", {
+  titre: "Dieu, le sexe et les bretelles",
+  numero: "01",
+  idSerie: "23",
+  idAuteur: "19",
+  prix: "15.50",
+  imageUrl: "../0_assets/BD/albums/Titeuf-01-Dieu, le sexe et les bretelles.jpg"
+});
+
+albums.set("164", {
+  titre: "t.4",
+  numero: "04",
+  idSerie: "41",
+  idAuteur: "40",
+  prix: "14.90",
+  imageUrl: "../0_assets/BD/albums/Rahan fils des âges farouches-04-Les chasseurs de foudre.jpg"
+});
+
+albums.set("165", {
+  titre: "Morituri te salutant",
+  numero: "01",
+  idSerie: "44",
+  idAuteur: "60",
+  prix: "11.20",
+  imageUrl: "../0_assets/BD/albums/Le fléau des dieux-01-Morituri te salutant.jpg"
+});
+
+albums.set("166", {
+  titre: "Le mariage de Rahan",
+  numero: "00",
+  idSerie: "36",
+  idAuteur: "40",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Rahan fils des âges farouches-00-Le mariage de Rahan.jpg"
+});
+
+albums.set("167", {
+  titre: "Le maître des fauves",
+  numero: "06",
+  idSerie: "36",
+  idAuteur: "40",
+  prix: "9.50",
+  imageUrl: "../0_assets/BD/albums/Rahan fils des âges farouches-06-Le maître des fauves.jpg"
+});
+
+albums.set("168", {
+  titre: "Les hommes sans cheveux",
+  numero: "05",
+  idSerie: "36",
+  idAuteur: "40",
+  prix: "9",
+  imageUrl: "../0_assets/BD/albums/Rahan fils des âges farouches-05-Les hommes sans cheveux.jpg"
+});
+
+albums.set("169", {
+  titre: "Les chasseurs de foudre",
+  numero: "04",
+  idSerie: "36",
+  idAuteur: "40",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Rahan fils des âges farouches-04-Les chasseurs de foudre.jpg"
+});
+
+albums.set("170", {
+  titre: "t.3",
+  numero: "03",
+  idSerie: "41",
+  idAuteur: "40",
+  prix: "11",
+  imageUrl: "../0_assets/BD/albums/Rahan fils des âges farouches-03-Le clan sauvage.jpg"
+});
+
+albums.set("171", {
+  titre: "Paris sous-Seine",
+  numero: "47",
+  idSerie: "2",
+  idAuteur: "61",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-47-Paris sous-Seine.jpg"
+});
+
+albums.set("172", {
+  titre: "L'homme qui ne voulait pas mourrir",
+  numero: "48",
+  idSerie: "2",
+  idAuteur: "61",
+  prix: "9.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-48-Lhomme qui ne voulait pas mourrir.jpg"
+});
+
+albums.set("173", {
+  titre: "La ceinture du grand froid",
+  numero: "30",
+  idSerie: "2",
+  idAuteur: "62",
+  prix: "12.60",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-30-La ceinture du grand froid.jpg"
+});
+
+albums.set("174", {
+  titre: "Alerte aux zorkons",
+  numero: "51",
+  idSerie: "2",
+  idAuteur: "63",
+  prix: "14.70",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-51-Alerte aux zorkons.jpg"
+});
+
+albums.set("175", {
+  titre: "La face cachée du Z",
+  numero: "52",
+  idSerie: "2",
+  idAuteur: "63",
+  prix: "13.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-52-La face cachée du Z.jpg"
+});
+
+albums.set("176", {
+  titre: "Les faiseurs de silence",
+  numero: "32",
+  idSerie: "2",
+  idAuteur: "62",
+  prix: "12.80",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-32-Les faiseurs de silence.jpg"
+});
+
+albums.set("177", {
+  titre: "La boîte noire",
+  numero: "31",
+  idSerie: "2",
+  idAuteur: "62",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-31-La boîte noire.jpg"
+});
+
+albums.set("178", {
+  titre: "Aux sources du Z",
+  numero: "50",
+  idSerie: "2",
+  idAuteur: "64",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-50-Aux sources du Z.jpg"
+});
+
+albums.set("179", {
+  titre: "Le dictateur et le champignon",
+  numero: "07",
+  idSerie: "2",
+  idAuteur: "23",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Spirou et Fantasio-07-Le dictateur et le champignon.jpg"
+});
+
+albums.set("180", {
+  titre: "Sortie de l'oeuf",
+  numero: "01",
+  idSerie: "45",
+  idAuteur: "65",
+  prix: "12.60",
+  imageUrl: "../0_assets/BD/albums/Marsu kids-01-Sortie de loeuf.jpg"
+});
+
+albums.set("181", {
+  titre: "Le chat",
+  numero: "01",
+  idSerie: "46",
+  idAuteur: "66",
+  prix: "12.70",
+  imageUrl: "../0_assets/BD/albums/Le chat-01-Le chat.jpg"
+});
+
+albums.set("182", {
+  titre: "L'affaire le chat",
+  numero: "11",
+  idSerie: "46",
+  idAuteur: "66",
+  prix: "12.80",
+  imageUrl: "../0_assets/BD/albums/Le chat-11-Laffaire le chat.jpg"
+});
+
+albums.set("183", {
+  titre: "Perceval et le dragon d'Airain",
+  numero: "04",
+  idSerie: "47",
+  idAuteur: "67",
+  prix: "12.90",
+  imageUrl: "../0_assets/BD/albums/Kaamelott-04-Perceval et le dragon dAirain.jpg"
+});
+
+albums.set("184", {
+  titre: "L'armée du Nécromant",
+  numero: "01",
+  idSerie: "47",
+  idAuteur: "67",
+  prix: "10.90",
+  imageUrl: "../0_assets/BD/albums/Kaamelott-01-Larmée du Nécromant.jpg"
+});
+
+albums.set("185", {
+  titre: "L'énigme du coffre",
+  numero: "03",
+  idSerie: "47",
+  idAuteur: "67",
+  prix: "9.98",
+  imageUrl: "../0_assets/BD/albums/Kaamelott-03-Lénigme du coffre.jpg"
+});
+
+albums.set("186", {
+  titre: "Les sièges de transport",
+  numero: "02",
+  idSerie: "47",
+  idAuteur: "67",
+  prix: "11.46",
+  imageUrl: "../0_assets/BD/albums/Kaamelott-02-Les sièges de transport.jpg"
+});
+
+albums.set("187", {
+  titre: "Le jugement",
+  numero: "03",
+  idSerie: "48",
+  idAuteur: "68",
+  prix: "12.58",
+  imageUrl: "../0_assets/BD/albums/Le grand pouvoir du Chninkel-03-Le jugement.jpg"
+});
+
+albums.set("188", {
+  titre: "Le choisi",
+  numero: "02",
+  idSerie: "48",
+  idAuteur: "68",
+  prix: "14.67",
+  imageUrl: "../0_assets/BD/albums/Le grand pouvoir du Chninkel-02-Le choisi.jpg"
+});
+
+albums.set("189", {
+  titre: "Le commandement",
+  numero: "01",
+  idSerie: "48",
+  idAuteur: "68",
+  prix: "17.52",
+  imageUrl: "../0_assets/BD/albums/Le grand pouvoir du Chninkel-01-Le commandement.jpg"
+});
+
+albums.set("199", {
+  titre: "Histoire trolles",
+  numero: "01",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "16.95",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-01-Histoire trolles.jpg"
+});
+
+albums.set("191", {
+  titre: "Litteul Kévin T2",
+  numero: "02",
+  idSerie: "49",
+  idAuteur: "69",
+  prix: "10.54",
+  imageUrl: "../0_assets/BD/albums/Litteul Kévin-02-Litteul Kévin T2.jpg"
+});
+
+albums.set("193", {
+  titre: "Litteul Kévin T3",
+  numero: "03",
+  idSerie: "49",
+  idAuteur: "69",
+  prix: "14.37",
+  imageUrl: "../0_assets/BD/albums/Litteul Kévin-03-Litteul Kévin T3.jpg"
+});
+
+albums.set("194", {
+  titre: "Litteul Kévin T4",
+  numero: "04",
+  idSerie: "49",
+  idAuteur: "69",
+  prix: "10.62",
+  imageUrl: "../0_assets/BD/albums/Litteul Kévin-04-Litteul Kévin T4.jpg"
+});
+
+albums.set("195", {
+  titre: "Litteul Kévin T5",
+  numero: "05",
+  idSerie: "49",
+  idAuteur: "69",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Litteul Kévin-05-Litteul Kévin T5.jpg"
+});
+
+albums.set("196", {
+  titre: "Litteul Kévin T6",
+  numero: "06",
+  idSerie: "49",
+  idAuteur: "69",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Litteul Kévin-06-Litteul Kévin T6.jpg"
+});
+
+albums.set("197", {
+  titre: "Litteul Kévin T7",
+  numero: "07",
+  idSerie: "49",
+  idAuteur: "69",
+  prix: "15.50",
+  imageUrl: "../0_assets/BD/albums/Litteul Kévin-07-Litteul Kévin T7.jpg"
+});
+
+albums.set("198", {
+  titre: "Litteul Kévin T1",
+  numero: "01",
+  idSerie: "49",
+  idAuteur: "69",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Litteul Kévin-01-Litteul Kévin T1.jpg"
+});
+
+albums.set("200", {
+  titre: "Le scalp du vénérable",
+  numero: "02",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "11.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-02-Le scalp du vénérable.jpg"
+});
+
+albums.set("201", {
+  titre: "Comme un vol de pétaures",
+  numero: "03",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-03-Comme un vol de pétaures.jpg"
+});
+
+albums.set("202", {
+  titre: "Les maléfices de la thaumaturge",
+  numero: "05",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "10.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-05-Les maléfices de la thaumaturge.jpg"
+});
+
+albums.set("203", {
+  titre: "Trolls dans la brume",
+  numero: "06",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-06-Trolls dans la brume.jpg"
+});
+
+albums.set("204", {
+  titre: "Plume de sage",
+  numero: "07",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-07-Plume de sage.jpg"
+});
+
+albums.set("205", {
+  titre: "Rock'n Troll attitude",
+  numero: "08",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-08-Rockn Troll attitude.jpg"
+});
+
+albums.set("206", {
+  titre: "Les prisonniers du Darshan",
+  numero: "09",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-09-Les prisonniers du Darshan.jpg"
+});
+
+albums.set("207", {
+  titre: "Les enragés du Darshan",
+  numero: "10",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-10-Les enragés du Darshan.jpg"
+});
+
+albums.set("208", {
+  titre: "Trollympiades",
+  numero: "11",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-11-Trollympiades.jpg"
+});
+
+albums.set("209", {
+  titre: "Sang famille",
+  numero: "12",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-12-Sang famille.jpg"
+});
+
+albums.set("210", {
+  titre: "La guerre des gloutons (I)",
+  numero: "14",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-14-La guerre des gloutons (I).jpg"
+});
+
+albums.set("211", {
+  titre: "Boules de poils",
+  numero: "15",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-15-Boules de poils.jpg"
+});
+
+albums.set("212", {
+  titre: "Poils de trolls (I)",
+  numero: "16",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-16-Poils de trolls (I).jpg"
+});
+
+albums.set("213", {
+  titre: "La trolle impromptue",
+  numero: "17",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-17-La trolle impromptue.jpg"
+});
+
+albums.set("214", {
+  titre: "Profy Blues",
+  numero: "18",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-18-Profy Blues.jpg"
+});
+
+albums.set("215", {
+  titre: "Pas de Nöl pour le père Grommël",
+  numero: "19",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-19-Pas de Nöl pour le père Grommël.jpg"
+});
+
+albums.set("216", {
+  titre: "L'héritage de Waha",
+  numero: "20",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-20-Lhéritage de Waha.jpg"
+});
+
+albums.set("217", {
+  titre: "L'or des trolls",
+  numero: "21",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-21-Lor des trolls.jpg"
+});
+
+albums.set("218", {
+  titre: "A l'école des trolls",
+  numero: "22",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-22-A lécole des trolls.jpg"
+});
+
+albums.set("219", {
+  titre: "Art brut",
+  numero: "23",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-23-Art brut.jpg"
+});
+
+albums.set("220", {
+  titre: "Un caillou sur la tête",
+  numero: "24",
+  idSerie: "16",
+  idAuteur: "11",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Trolls de Troy-24-Un caillou sur la tête.jpg"
+});
+
+albums.set("221", {
+  titre: "Enfin la liberté !",
+  numero: "01",
+  idSerie: "50",
+  idAuteur: "70",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Atalante-01-Enfin la liberté .jpg"
+});
+
+albums.set("222", {
+  titre: "Nautiliaa",
+  numero: "02",
+  idSerie: "50",
+  idAuteur: "70",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Atalante-02-Nautiliaa.jpg"
+});
+
+albums.set("223", {
+  titre: "Les mystères de Samothrace",
+  numero: "03",
+  idSerie: "50",
+  idAuteur: "70",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Atalante-03-Les mystères de Samothrace.jpg"
+});
+
+albums.set("224", {
+  titre: "L'envol des Boréades",
+  numero: "04",
+  idSerie: "50",
+  idAuteur: "70",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Atalante-04-Lenvol des Boréades.jpg"
+});
+
+albums.set("225", {
+  titre: "Calais",
+  numero: "05",
+  idSerie: "50",
+  idAuteur: "70",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Atalante-05-Calais.jpg"
+});
+
+albums.set("226", {
+  titre: "Le labyrinthe d'Hadès",
+  numero: "06",
+  idSerie: "50",
+  idAuteur: "70",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Atalante-06-Le labyrinthe dHadès.jpg"
+});
+
+albums.set("227", {
+  titre: "Le dernier des grands anciens",
+  numero: "07",
+  idSerie: "50",
+  idAuteur: "70",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Atalante-07-Le dernier des grands anciens.jpg"
+});
+
+albums.set("228", {
+  titre: "Les taureaux de Colchide",
+  numero: "08",
+  idSerie: "50",
+  idAuteur: "70",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Atalante-08-Les taureaux de Colchide.jpg"
+});
+
+albums.set("229", {
+  titre: "Le secret d'Héraclès",
+  numero: "09",
+  idSerie: "50",
+  idAuteur: "70",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Atalante-09-Le secret dHéraclès.jpg"
+});
+
+albums.set("230", {
+  titre: "Les hordes de Sargon",
+  numero: "10",
+  idSerie: "50",
+  idAuteur: "70",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Atalante-10-Les hordes de Sargon.jpg"
+});
+
+albums.set("231", {
+  titre: "Retour aux sources",
+  numero: "11",
+  idSerie: "50",
+  idAuteur: "70",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Atalante-11-Retour aux sources.jpg"
+});
+
+albums.set("232", {
+  titre: "Feu et cendres",
+  numero: "01",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-01-Feu et cendres.jpg"
+});
+
+albums.set("233", {
+  titre: "Le vent des dragons",
+  numero: "02",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-02-Le vent des dragons.jpg"
+});
+
+albums.set("234", {
+  titre: "La marque des démons",
+  numero: "03",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-03-La marque des démons.jpg"
+});
+
+albums.set("235", {
+  titre: "Quand sifflent les serpents",
+  numero: "04",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-04-Quand sifflent les serpents.jpg"
+});
+
+albums.set("236", {
+  titre: "La danse écarlate",
+  numero: "05",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-05-La danse écarlate.jpg"
+});
+
+albums.set("237", {
+  titre: "La couronne des ombres",
+  numero: "06",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-06-La couronne des ombres.jpg"
+});
+
+albums.set("238", {
+  titre: "De vents, de jade et de jais",
+  numero: "07",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-07-De vents, de jade et de jais.jpg"
+});
+
+albums.set("239", {
+  titre: "Le glaive de justice",
+  numero: "08",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-08-Le glaive de justice.jpg"
+});
+
+albums.set("240", {
+  titre: "Les chants de la négation",
+  numero: "09",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-09-Les chants de la négation.jpg"
+});
+
+albums.set("241", {
+  titre: "L'aigle foudroyé",
+  numero: "10",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-10-Laigle foudroyé.jpg"
+});
+
+albums.set("242", {
+  titre: "Ave tenebrae",
+  numero: "11",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-11-Ave tenebrae.jpg"
+});
+
+albums.set("243", {
+  titre: "La porte des enfers",
+  numero: "12",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-12-La porte des enfers.jpg"
+});
+
+albums.set("244", {
+  titre: "La prophétie",
+  numero: "13",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-13-La prophétie.jpg"
+});
+
+albums.set("245", {
+  titre: "La fin des temps",
+  numero: "14",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-14-La fin des temps.jpg"
+});
+
+albums.set("246", {
+  titre: "Terra secunda (livre 1/2)",
+  numero: "15",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-15-Terra secunda (livre 12).jpg"
+});
+
+albums.set("247", {
+  titre: "Terra secunda (livre 2/2)",
+  numero: "16",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-16-Terra secunda (livre 22).jpg"
+});
+
+albums.set("248", {
+  titre: "Guerilla",
+  numero: "17",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-17-Guerilla.jpg"
+});
+
+albums.set("249", {
+  titre: "Le trône d'Opale",
+  numero: "18",
+  idSerie: "51",
+  idAuteur: "71",
+  prix: "12.50",
+  imageUrl: "../0_assets/BD/albums/Chroniques de la Lune Noire-18-Le trône dOpale.jpg"
+});
+
+
+
 albums.set("250", {titre: "Voir Venise ...", numero: "09", idSerie: "12", idAuteur: "77", prix: "12.65"});
 albums.set("251", {titre: "... et mourir", numero: "10", idSerie: "12", idAuteur: "77", prix: "12.65"});
 albums.set("252", {titre: "Golden gate", numero: "11", idSerie: "12", idAuteur: "77", prix: "11.45"});

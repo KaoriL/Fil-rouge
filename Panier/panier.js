@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
 
 
@@ -147,83 +146,141 @@ document.addEventListener('DOMContentLoaded', function() {
         Example de auteurs.js =====> auteurs.set("8", {nom: "Gaudin, Danard"});
     */
 
-    function displayCartProducts() 
-    {
+// ... (previous code remains unchanged)
 
-        let totalProducts = 0;  // Nombre total de produits
+function displayCartProducts() 
+{
+    let totalProducts = 0;  // Nombre total de produits
 
+    if (albumIds.length === 0) {
+        document.getElementById("heading").innerText = ' ( 0 produit ) ';
+        return;
+    }
 
-        if (albumIds.length === 0) {
+    // Boucle sur les id dans localStorage
+    albumIds.forEach(item => {
+        if (item && item != undefined) 
+        {
+            totalProducts += 1;  
 
-            document.getElementById("heading").innerText = ' ( 0 produit ) ';
-            return;
-        }
+            // Use the image URL stored in the cart item
+            const imageUrl = item.imageUrl || findImageForAlbum(item.name);
 
-        // Boucle sur les id dans localStorage
-        albumIds.forEach(id => {
-                                 // albums est un ficher dans data/
-            const current_album = albums.get(id);
+            // Récupérer la quantité stockée pour ce produit dans localStorage
+            const quantity = item.quantity || 1;  
 
-            if (current_album && current_album != undefined) 
-            {
-                totalProducts += 1;  
-
-                const imageUrl = findImageForAlbum(current_album.titre);   // Trouver l'image associée
-                const auteur   = auteurs.get(current_album.idAuteur);        
-                const serie    = series.get(current_album.idSerie);
-
-
-                // Récupérer la quantité stockée pour ce produit dans localStorage
-                const quantity = productQuantities[id] || 1;  
-
-                
-                // Créer une structure HTML pour chaque produit
-                const productHtml = `
-
-                    <div class="cart-product" data-id="${id}">
-
-                        <img src="${imageUrl ? imageUrl : 'https://via.placeholder.com/120x150.png?text=Image'}" alt="${current_album.titre}">
-
-
-                        <div class="product-info">
-                            <h3>${current_album.titre}</h3>
-                            <p><strong>Auteur:</strong> ${auteur ? auteur.nom : 'Auteur inconnu'}</p>
-                            <p><strong>Série:</strong>  ${serie  ? serie.nom  : 'Série inconnue'}</p>
-                        </div>
-
-
-                        <div class="price-quantity">
-
-                            <span class="product-price">${current_album.prix} €</span>
-
-                            <!-- Contrôles de quantité -->
-
-                            <div class="quantity-controls">
-
-                                <button class="remove-btn" aria-label="Supprimer l'article">
-                                    <i class="fas fa-trash-alt"></i> <!-- Icône supprimer -->
-                                </button>
-
-                                <div class="quantity-wrapper">
-                                    <button class="quantity-btn" aria-label="Réduire la quantité">-</button>
-                                    <input type="number" value="${quantity}" min="1" class="quantity-input" aria-label="Quantité">
-                                    <button class="quantity-btn" aria-label="Augmenter la quantité">+</button>
-                                </div>
-
+            // Créer une structure HTML pour chaque produit
+            const productHtml = `
+                <div class="cart-product" data-id="${item.seriesId}">
+                    <img src="${imageUrl}" alt="${item.name}">
+                    <div class="product-info">
+                        <h3>${item.name}</h3>
+                        <p><strong>Auteur:</strong> ${item.author}</p>
+                        <p><strong>Série:</strong> ${item.seriesId}</p>
+                    </div>
+                    <div class="price-quantity">
+                        <span class="product-price">${item.price} €</span>
+                        <div class="quantity-controls">
+                            <button class="remove-btn" aria-label="Supprimer l'article">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                            <div class="quantity-wrapper">
+                                <button class="quantity-btn" aria-label="Réduire la quantité">-</button>
+                                <input type="number" value="${quantity}" min="1" class="quantity-input" aria-label="Quantité">
+                                <button class="quantity-btn" aria-label="Augmenter la quantité">+</button>
                             </div>
                         </div>
                     </div>
-                `;
+                </div>
+            `;
 
-                // Ajouter le produit à la section du panier
-                cartProductContainer.innerHTML += productHtml;
-            }
-        });
-        // End for loop
+            // Ajouter le produit à la section du panier
+            cartProductContainer.innerHTML += productHtml;
+        }
+    });
 
-        document.getElementById("heading").innerText = ` (${totalProducts} produit${albumIds.length > 1 ? 's' : ''})`;
+    document.getElementById("heading").innerText = ` (${totalProducts} produit${albumIds.length > 1 ? 's' : ''})`;
+}
+
+// ... (rest of the code remains unchanged)
+
+    // function displayCartProducts() 
+    // {
+
+    //     let totalProducts = 0;  // Nombre total de produits
+
+
+    //     if (albumIds.length === 0) {
+
+    //         document.getElementById("heading").innerText = ' ( 0 produit ) ';
+    //         return;
+    //     }
+
+    //     // Boucle sur les id dans localStorage
+    //     albumIds.forEach(id => {
+    //                              // albums est un ficher dans data/
+    //         const current_album = albums.get(id);
+
+    //         if (current_album && current_album != undefined) 
+    //         {
+    //             totalProducts += 1;  
+
+    //             const imageUrl = findImageForAlbum(current_album.titre);   // Trouver l'image associée
+    //             const auteur   = auteurs.get(current_album.idAuteur);        
+    //             const serie    = series.get(current_album.idSerie);
+
+
+    //             // Récupérer la quantité stockée pour ce produit dans localStorage
+    //             const quantity = productQuantities[id] || 1;  
+
+                
+    //             // Créer une structure HTML pour chaque produit
+    //             const productHtml = `
+
+    //                 <div class="cart-product" data-id="${id}">
+
+    //                     <img src="${imageUrl ? imageUrl : 'https://via.placeholder.com/120x150.png?text=Image'}" alt="${current_album.titre}">
+
+
+    //                     <div class="product-info">
+    //                         <h3>${current_album.titre}</h3>
+    //                         <p><strong>Auteur:</strong> ${auteur ? auteur.nom : 'Auteur inconnu'}</p>
+    //                         <p><strong>Série:</strong>  ${serie  ? serie.nom  : 'Série inconnue'}</p>
+    //                     </div>
+
+
+    //                     <div class="price-quantity">
+
+    //                         <span class="product-price">${current_album.prix} €</span>
+
+    //                         <!-- Contrôles de quantité -->
+
+    //                         <div class="quantity-controls">
+
+    //                             <button class="remove-btn" aria-label="Supprimer l'article">
+    //                                 <i class="fas fa-trash-alt"></i> <!-- Icône supprimer -->
+    //                             </button>
+
+    //                             <div class="quantity-wrapper">
+    //                                 <button class="quantity-btn" aria-label="Réduire la quantité">-</button>
+    //                                 <input type="number" value="${quantity}" min="1" class="quantity-input" aria-label="Quantité">
+    //                                 <button class="quantity-btn" aria-label="Augmenter la quantité">+</button>
+    //                             </div>
+
+    //                         </div>
+    //                     </div>
+    //                 </div>
+    //             `;
+
+    //             // Ajouter le produit à la section du panier
+    //             cartProductContainer.innerHTML += productHtml;
+    //         }
+    //     });
+    //     // End for loop
+
+    //     document.getElementById("heading").innerText = ` (${totalProducts} produit${albumIds.length > 1 ? 's' : ''})`;
         
-    }
+    // }
 
 
     // ##############################
