@@ -1,154 +1,81 @@
+
+
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Catalogue</title>
-    <link rel="stylesheet" href="catalogue.css" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v6.4.2/css/all.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="back">
-    <!--HEADER-->
-<header >
-    <!--LOGO-->
-    <div class="logo">
-      <img src="/0_assets/images/logo-projet-fil-rouge.png" alt="" />
-    </div>
-    <!--MENU BURGER-->
-    <div class="hamburger-menu"></div>
-    <input class="none"id="menu__toggle" type="checkbox" />
-    <label class="menu__btn" for="menu__toggle">
-        <span></span>
-    </label>
-    <!--NAV BASE-->
-    <nav class="menu__box">
-      <a class="menu__item" href="/Accueil/accueil.html">Accueil</a>
-      <a class="menu__item" href="catalogue.html">Catalogue</a>
-      <a class="menu__item" href="">Contact</a>
-    </nav>
-  </div>
-  <!--NAV ICON--> 
-    <nav>
-        <form action="" id="searchBar">
-            <input onkeyup="search()" type="text" name="" placeholder="Search..."  />
-            <button type="button" onclick="toggleBar()">
-              <svg class="search" version="1.1" viewBox="0 0 32 32">
-                <circle
-                  cx="14"
-                  cy="14"
-                  fill="none"
-                  id="XMLID_42_"
-                  r="9"
-                  stroke="#fff"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="2"
-                />
-                <line
-                  fill="none"
-                  id="XMLID_44_"
-                  stroke="#fff"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="2"
-                  x1="27"
-                  x2="20.366"
-                  y1="27"
-                  y2="20.366"
-                />
-              </svg>
-              <svg class="close" viewBox="0 0 32 32">
-                <g data-name="Layer 2" id="Layer_2">
-                  <path
-                    fill="#fff"
-                    d="M4,29a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l24-24a1,1,0,1,1,1.42,1.42l-24,24A1,1,0,0,1,4,29Z"
-                  />
-                  <path
-                    fill="#fff"
-                    d="M28,29a1,1,0,0,1-.71-.29l-24-24A1,1,0,0,1,4.71,3.29l24,24a1,1,0,0,1,0,1.42A1,1,0,0,1,28,29Z"
-                  />
-                </g>
-                <g id="frame"><rect fill="none" height="32" width="32" /></g>
-              </svg>
-            </button>
-          </form>
-      <a href=""><i class="fa-solid fa-user"></i></a>
-      <a href=""><i class="fa-solid fa-basket-shopping"></i></a>
-    </nav>
-  </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue - Comic World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="catalogue.css">
+</head>
+<body>
+    <header>
+        <nav>
+          
+            <div class="logo">
+              <img src="/0_assets/images/logo-projet-fil-rouge.png" alt="Logo" />
+          </div>
+            <ul class="nav-links">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Catalogue</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="search-container">
+                    <input type="text" placeholder="Rechercher..." id="search-input">
+                    <i class="fas fa-search"></i>
+                </div>
+                <i class="fas fa-user"></i>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
 
-  <!--En tête filtre-->
+    <main>
+        <section class="filter-section">
+            <h2><i class="fas fa-filter"></i> Rechercher par:</h2>
+            <select id="filter-select">
+                <option value="id">ID</option>
+                <option value="titre">Titre</option>
+                <option value="auteur">Auteur</option>
+                <option value="serie">Série</option>
+            </select>
+            <input type="text" id="filter-input" placeholder="Entrez votre recherche...">
+            <button id="filter-button" class="btn">Rechercher</button>
+        </section>
 
-  <div class="recherche">
-    <input class="search-catalogue" type="text" placeholder="Rechercher">
+        <section class="catalogue">
+            <h2>Catalogue de BD</h2>
+            <div id="comics-container" class="comics-grid"></div>
+            <button id="load-more" class="btn">Charger plus</button>
+        </section>
 
-  </div>
-  <div class="filtre"> 
-  <div class="annee">
-    <label for="">Années</label>
-    <br>
-    <select name="" id="">
-      <option value="">Aucun</option>
-      <option value="1">2020</option>
-      <option value="2">2021</option>
-    </select>
-  </div>
+        <section class="best-sellers">
+            <h2>Meilleures ventes</h2>
+            <div id="best-sellers-container" class="comics-grid"></div>
+        </section>
+    </main>
 
-  <div class="type">
-    <label for="">Types</label>
-    <br>
-    <select name="" id="">
-      <option value="">Aucun</option>
-      <option value="1">2020</option>
-      <option value="2">2021</option>
-    </select>
-  </div>
+    <footer>
+        <p>&copy; 2023 Comic World. Tous droits réservés.</p>
+    </footer>
 
-  <div class="genre">
-    <label for="">Genre</label>
-    <br>
-    <select name="" id="">
-      <option value="">Aucun</option>
-      <option value="1">2020</option>
-      <option value="2">2021</option>
-    </select>
-  </div>
-</div>
-<!--LISTE BD-->
-<div id="liste-bd" class="liste-bd">
-  <div id="bd" class="bd">
-    <img src="" id="albumMini" alt="">
-    <h1 id="titre">Titre</h1>
-    <h2 id="auteur" >Tome</h2>
-  </div>
+    <script src="../0_assets/BD/data/albums.js"></script>
+    <script src="../0_assets/BD/data/auteurs.js"></script>
+    <script src="../0_assets/BD/data/series.js"></script>
+    <script src="../Catalogue/catalogue.js"></script>
+</body>
+</html> 
 
-<!--Barre de changement-->
-  <div class="barre-change">
-    <div id="premiere-page"></div>
-    <div id="retour-arriere" onclick="ChangeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></div>
-    <div id="numero-de-liste"></div>
-    <div id="prochaine-page" onclick="ChangeSlide(1)"><i class="fa-solid fa-chevron-right"></i></div>
-    <div id="derniere-page"></div>
-  </div>
-</div>
 
- <!--script-->"
- <script src="catalogue.js"></script>
-<script src="/0_assets/BD/data/albums.js"></script>
-<script src="/0_assets/BD/data/series.js"></script>
-<script src="/0_assets/BD/data/auteurs.js"></script>
 
-  </body>
-</html>
