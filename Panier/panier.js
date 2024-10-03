@@ -1,3 +1,9 @@
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
 
 
@@ -513,4 +519,13 @@ function displayCartProducts()
     });
 
 });
+
+
+
+
+
+
+
+
+
 
