@@ -252,7 +252,7 @@ h1 {
 .best-seller{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   width: 40%;
   margin-left: 5%;
 
@@ -267,10 +267,15 @@ h1 {
 }
 
 .top-1{
-  width: 100%;
+  width: 500px;
   height: 100px;
   border: 3px solid transparent;
   border-color:#f8540c;
+}
+
+.top-1:hover{
+  width: 800px;
+  height:120px ;
 }
 
 
@@ -295,7 +300,8 @@ h1 {
   height: 150px;
   border: 3px solid transparent;
   border-color:#f8540c;
-  margin-top: 10px;
+  margin: 5px;
+
 }
 
 .top-2 img{
