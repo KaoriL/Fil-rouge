@@ -1,4 +1,4 @@
-
+<!-- 
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -25,7 +25,7 @@
             <div class="nav-icons">
                 <div class="search-container">
                     <input type="text" placeholder="Rechercher..." id="search-input">
-                    
+
                     <i class="fas fa-search"></i>
                 </div>
                 <i class="fas fa-user"></i>
@@ -76,7 +76,164 @@
     <script src="../0_assets/BD/data/series.js"></script>
     <script src="../Catalogue/catalogue.js"></script>
 </body>
-</html> 
+</html>  -->
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Catalogue</title>
+
+        <!-- Intégration de la bibliothèque Font Awesome pour les icônes -->
+        <link rel="stylesheet" href="../0_assets/fonts/webfonts/all.min.css"/>
+
+        <!-- Intégration de la police Roboto via Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+        <!-- Style CSS personnalisée -->
+        <link rel="stylesheet" href="catalogue.css">
+    </head>
+
+
+    <!-- ######################################################################## -->
+    
+    <body>
+        
+        <!-- ##################################### -->
+        <header>
+
+            <!-- Logo de l'en-tête -->
+            <div class="logo">
+                <img src="/0_assets/images/logo-projet-fil-rouge.png"  alt="" />
+            </div>
+        
+            <!-- Menu hamburger pour la navigation mobile -->
+            <div class="hamburger-menu"></div>
+        
+            <!-- Checkbox pour l'activation du menu hamburger -->
+            <input class="none" id="menu__toggle" type="checkbox" />
+        
+            <!-- Bouton qui contrôle l'affichage du menu hamburger -->
+            <label class="menu__btn" for="menu__toggle"><span></span></label>
+        
+            <!-- Menu de navigation avec des liens vers les sections principales -->
+            <nav class="menu__box">
+                <a class="menu__item" href="">Accueil</a>
+                <a class="menu__item" href="">Catalogue</a>
+                <a class="menu__item" href="">Contact</a>
+            </nav>
+        
+            <!-- Barre de navigation secondaire (recherche, utilisateur, panier) -->
+            <nav>
+                <!-- Formulaire de barre de recherche -->
+                <form action="" id="searchBar">
+
+                    <input type="text" name="" placeholder="Search..." />
+        
+                    <!-- Bouton pour basculer entre l'icône de recherche et l'icône de fermeture -->
+                    <button type="button" onclick="toggleBar()">
+
+                        <!-- Icône de recherche (loupe) -->
+                        <svg class="search" version="1.1" viewBox="0 0 32 32">
+                            <circle cx="14" cy="14" fill="none" r="9" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
+                            <line fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="27" x2="20.366" y1="27" y2="20.366" />
+                        </svg>
+                
+                        <!-- Icône de fermeture (croix) -->
+                        <svg class="close" viewBox="0 0 32 32">
+                            <g data-name="Layer 2">
+                            <path fill="#fff" d="M4,29a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l24-24a1,1,0,1,1,1.42,1.42l-24,24A1,1,0,0,1,4,29Z" />
+                            <path fill="#fff" d="M28,29a1,1,0,0,1-.71-.29l-24-24A1,1,0,0,1,4.71,3.29l24,24a1,1,0,0,1,0,1.42A1,1,0,0,1,28,29Z" />
+                            </g>
+                            <g id="frame"><rect fill="none" height="32" width="32" /></g>
+                        </svg>
+                        
+                    </button>
+                </form>
+        
+                <!-- Lien vers le profil utilisateur -->
+                <a href=""><i class="fa-solid fa-user"></i></a>
+            
+                <!-- Lien vers le panier d'achat -->
+                <a href=""><i class="fa-solid fa-basket-shopping"></i></a>
+            </nav>
+        </header>
+        <!-- ##################################### -->
+
+
+    <!-- ######################################################################## -->
+
+        <main>
+
+            <!-- Section de filtres -->
+
+            <div class="filtre"> 
+
+                <div class="titre">
+                    <label for="filter-titre">Titre</label>
+                    <select id="filter-titre">
+                        <option value="">Aucun</option>
+                    </select>
+                </div>
+
+                <div class="auteur">
+                    <label for="filter-auteur">Auteur</label>
+                    <select id="filter-auteur">
+                        <option value="">Aucun</option>
+                    </select>
+                </div>
+
+                <div class="series">
+                    <label for="filter-serie">Serie</label>
+                    <select id="filter-serie">
+                        <option value="">Aucun</option>
+                    </select>
+                </div>
+                
+            </div>
+
+
+            <!-- Bouton pour réinitialiser les filtres -->
+            <button id="reset-filters">Réinitialiser les filtres</button>
+
+            <!-- Conteneur pour afficher la liste de livres -->
+            <div id="book-list"></div>
+
+            <!-- Bouton pour afficher plus de livres -->
+            <button id="load-more"> Afficher plus </button>
+
+        </main>
+
+    <!-- ######################################################################## -->
+    
+
+
+
+        <footer>
+            <p>© 2024 Comics Style. Tous droits réservés.</p>
+        </footer>
+
+
+        <!-- les fichiers JavaScript qui contiennent les données  -->
+        <script src="../0_assets/BD/data/albums.js"></script>
+        <script src="../0_assets/BD/data/auteurs.js"></script>
+        <script src="../0_assets/BD/data/series.js"></script> 
+
+        <!-- Utiliser ce script pour faire correspondre les images avec les albums dans l'application -->
+        <script src="../0_assets/BD/albumsMini/titres_Images.js"></script>
+
+        <!-- Inclusion du fichier JavaScript qui gère les interactions -->
+        <script src="catalogue.js"></script>
+
+        <!-- Pour tester avec console -->
+        <!-- <script src="EXPLICATION.js"></script> -->
+
+    </body>
+</html>
 
 
 

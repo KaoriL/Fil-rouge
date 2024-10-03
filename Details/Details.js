@@ -8,7 +8,7 @@
 // Cette fonction récupère les détails de la bande dessinée à partir du stockage local en utilisant l'ID de bande dessinée sélectionné.
 // Elle récupère les informations sur la BD, l'auteur et la série, puis met à jour la page avec ces détails.
 function loadDataFromPages() {
-  const selectedComicId = localStorage.getItem('selectedComicId') || '85'; // Par défaut à '27'
+  const selectedComicId = localStorage.getItem('image_detail') || '85'; // Par défaut à '27'
   
   if (!selectedComicId) {
     console.error('Aucun ID de bande dessinée trouvé dans le stockage local.');
