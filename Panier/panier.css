@@ -51,6 +51,15 @@ body {
 }
 
 
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+
 /* **********************************************
    ************ STYLES DE LA NAVIGATION *********
    **********************************************/

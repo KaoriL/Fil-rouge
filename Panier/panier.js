@@ -436,6 +436,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {
         let totalProducts = upddatedAlbumIds.length; 
 
+        console.log(upddatedAlbumIds);
 
         // Mettre à jour l'élément affichant le nombre de produits
         document.getElementById("heading").innerText = ` (${totalProducts} produit${totalProducts !== 1 ? 's' : ''})`;

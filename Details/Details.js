@@ -121,35 +121,155 @@ loadRatings();
 // }
 
 // Fonction pour ajouter un article au panier
-function addToCart(item, quantity) {
-  if (!item || typeof quantity !== 'number' || isNaN(quantity)) {
+function addToCart(itemId, quantity) {
+  
+  if (!itemId || typeof quantity !== 'number' || isNaN(quantity)) {
     console.error("Article ou quantité invalide");
     return;
   }
 
-  // Initialiser le panier à partir du stockage local
-  let cart = JSON.parse(localStorage.getItem("id_book")) || [];
+  // -------------------------------------------------------------------------------------
 
-  // Supprimer toute valeur nulle ou indéfinie du panier
-  cart = cart.filter(cartItem => cartItem !== null && cartItem !== undefined);
+    // @ ############### CODE DE Hussen
 
-  // Vérifier si l'article existe déjà dans le panier
-  const existingItemIndex = cart.findIndex(cartItem => cartItem.name === item.name);
 
-  if (existingItemIndex !== -1) {
-    // Mettre à jour la quantité si l'article est déjà dans le panier
-    cart[existingItemIndex].quantity += quantity;
-  } else {
-    // Ajouter le nouvel article au panier
-    item.quantity = quantity;
-    // Add the image URL to the item
-    item.imageUrl = document.getElementById('comicImage').src;
-    cart.push(item);
-  }
+    
+    let albumIds = JSON.parse(localStorage.getItem("id_book")) || [];
 
-  localStorage.setItem("id_book", JSON.stringify(cart));
-  updateCartCounter(); // Mettre à jour le compteur de panier
+    let productQuantities = JSON.parse(localStorage.getItem('productQuantities')) || {};
+  
+
+
+    if (!albumIds.includes(itemId)) 
+    {
+      albumIds.push(itemId);
+    }
+  
+    if (productQuantities[itemId]) 
+    {
+      productQuantities[itemId] += quantity;
+    } 
+    else {
+      productQuantities[itemId] = quantity;
+    }
+  
+    // Stocker les mises à jour dans le localStorage
+
+    localStorage.setItem("id_book", JSON.stringify(albumIds));
+
+    localStorage.setItem("productQuantities", JSON.stringify(productQuantities));
+  
+    updateCartCounter(); // Mettre à jour le compteur de panier
+
+
+  // -------------------------------------------------------------------------------------
+
+
+
+  // // Initialiser le panier à partir du stockage local
+  // let cart = JSON.parse(localStorage.getItem("id_book")) || [];
+
+  // // Supprimer toute valeur nulle ou indéfinie du panier
+  // cart = cart.filter(cartItem => cartItem !== null && cartItem !== undefined);
+
+  // // Vérifier si l'article existe déjà dans le panier
+  // const existingItemIndex = cart.findIndex(cartItem => cartItem.name === item.name);
+
+  // if (existingItemIndex !== -1) {
+  //   // Mettre à jour la quantité si l'article est déjà dans le panier
+  //   cart[existingItemIndex].quantity += quantity;
+  // } else {
+  //   // Ajouter le nouvel article au panier
+  //   item.quantity = quantity;
+  //   // Add the image URL to the item
+  //   item.imageUrl = document.getElementById('comicImage').src;
+  //   cart.push(item);
+  // }
+
+  // localStorage.setItem("id_book", JSON.stringify(cart));
+  // updateCartCounter(); // Mettre à jour le compteur de panier
 }
+
+
+
+
+  // -------------------------------------------------------------------------------------
+
+    // @ ############### CODE DE Hussen
+
+
+    
+// Mettre à jour le compteur de panier en fonction du nombre d'articles dans le panier
+function updateCartCounter() {
+  let productQuantities = JSON.parse(localStorage.getItem("productQuantities")) || {};
+  let totalQuantity = Object.values(productQuantities).reduce((sum, quantity) => sum + quantity, 0);
+
+  const cartCounter = document.getElementById('cart-counter');
+  if (cartCounter) {
+    cartCounter.textContent = totalQuantity;
+    cartCounter.style.display = totalQuantity > 0 ? "inline-block" : "none";
+  } else {
+    console.error("Élément compteur de panier non trouvé");
+  }
+}
+
+// Écouteur d'événements pour le bouton "Ajouter au panier"
+const addToCartBtn = document.getElementById("addToCartBtn");
+if (addToCartBtn) {
+  addToCartBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    const quantity = parseInt(document.getElementById("quantity").value, 10) || 1;
+
+    // Récupérer l'ID de la BD depuis le stockage local
+    const comicId = localStorage.getItem('image_detail');
+
+    // Vérifier que l'ID est valide avant d'ajouter au panier
+    if (!comicId) {
+      console.error("ID de la bande dessinée introuvable.");
+      return;
+    }
+
+    addToCart(comicId, quantity);
+
+    // Retour visuel lorsque l'article est ajouté au panier
+    this.textContent = "Ajouté!";
+    this.classList.add("added");
+    setTimeout(() => {
+      this.textContent = "Ajouter au panier";
+      this.classList.remove("added");
+    }, 2000);
+  });
+} else {
+  console.error("Bouton ajouter au panier non trouvé");
+}
+
+// Initialiser le compteur de panier lorsque la page se charge
+updateCartCounter();
+
+// Écouteurs d'événements pour les icônes de connexion et de panier
+const loginIcon = document.querySelector(".fa-user").parentElement;
+if (loginIcon) {
+  loginIcon.addEventListener("click", function (event) {
+    event.preventDefault();
+    window.location.href = "../Login/login.html";
+  });
+}
+
+const cartIcon = document.querySelector(".cart-icon");
+if (cartIcon) {
+  cartIcon.addEventListener("click", function (event) {
+    event.preventDefault();
+    window.location.href = "../Panier/panier.html";
+  });
+}
+
+
+  // -------------------------------------------------------------------------------------
+
+
+
+
+
 
 // // Fonction pour ajouter un article au panier
 // function addToCart(item, quantity) {
@@ -181,56 +301,56 @@ function addToCart(item, quantity) {
 // }
 
 // Mettre à jour le compteur de panier en fonction du nombre d'articles dans le panier
-function updateCartCounter() {
-  let cart = JSON.parse(localStorage.getItem("id_book")) || [];
-  let totalQuantity = cart.reduce((sum, item) => {
-    return sum + (item && typeof item.quantity === 'number' ? item.quantity : 0);
-  }, 0);
+// function updateCartCounter() {
+//   let cart = JSON.parse(localStorage.getItem("id_book")) || [];
+//   let totalQuantity = cart.reduce((sum, item) => {
+//     return sum + (item && typeof item.quantity === 'number' ? item.quantity : 0);
+//   }, 0);
 
-  const cartCounter = document.getElementById('cart-counter');
-  if (cartCounter) {
-    cartCounter.textContent = totalQuantity;
-    cartCounter.style.display = totalQuantity > 0 ? "inline-block" : "none";
-  } else {
-    console.error("Élément compteur de panier non trouvé");
-  }
-}
+//   const cartCounter = document.getElementById('cart-counter');
+//   if (cartCounter) {
+//     cartCounter.textContent = totalQuantity;
+//     cartCounter.style.display = totalQuantity > 0 ? "inline-block" : "none";
+//   } else {
+//     console.error("Élément compteur de panier non trouvé");
+//   }
+// }
 
-// Écouteur d'événements pour le bouton "Ajouter au panier"
-const addToCartBtn = document.getElementById("addToCartBtn");
-if (addToCartBtn) {
-  addToCartBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-    const quantity = parseInt(document.getElementById("quantity").value, 10) || 1;
+// // Écouteur d'événements pour le bouton "Ajouter au panier"
+// const addToCartBtn = document.getElementById("addToCartBtn");
+// if (addToCartBtn) {
+//   addToCartBtn.addEventListener("click", function (event) {
+//     event.preventDefault();
+//     const quantity = parseInt(document.getElementById("quantity").value, 10) || 1;
 
-    // Collecter les données de la BD à ajouter au panier
-    const comicData = {
-      name: document.getElementById('comicTitle').textContent.trim(),
-      author: document.getElementById('comicAuthor').textContent.trim(),
-      price: parseFloat(document.getElementById('comicPrice').textContent),
-      seriesId: parseInt(document.querySelector('.comic-id').textContent.trim()),
-      imageUrl: document.getElementById('comicImage').src // Add this line to save the image URL
-    };
+//     // Collecter les données de la BD à ajouter au panier
+//     const comicData = {
+//       name: document.getElementById('comicTitle').textContent.trim(),
+//       author: document.getElementById('comicAuthor').textContent.trim(),
+//       price: parseFloat(document.getElementById('comicPrice').textContent),
+//       seriesId: parseInt(document.querySelector('.comic-id').textContent.trim()),
+//       imageUrl: document.getElementById('comicImage').src // Add this line to save the image URL
+//     };
 
-    // Valider les données de la BD avant de l'ajouter au panier
-    if (!comicData.name || !comicData.author || isNaN(comicData.price) || isNaN(comicData.seriesId)) {
-      console.error("Les données de la BD sont incomplètes:", comicData);
-      return;
-    }
+//     // Valider les données de la BD avant de l'ajouter au panier
+//     if (!comicData.name || !comicData.author || isNaN(comicData.price) || isNaN(comicData.seriesId)) {
+//       console.error("Les données de la BD sont incomplètes:", comicData);
+//       return;
+//     }
 
-    addToCart(comicData, quantity);
+//     addToCart(comicData, quantity);
 
-    // Retour visuel lorsque l'article est ajouté au panier
-    this.textContent = "Ajouté!";
-    this.classList.add("added");
-    setTimeout(() => {
-      this.textContent = "Ajouter au panier";
-      this.classList.remove("added");
-    }, 2000);
-  });
-} else {
-  console.error("Bouton ajouter au panier non trouvé");
-}
+//     // Retour visuel lorsque l'article est ajouté au panier
+//     this.textContent = "Ajouté!";
+//     this.classList.add("added");
+//     setTimeout(() => {
+//       this.textContent = "Ajouter au panier";
+//       this.classList.remove("added");
+//     }, 2000);
+//   });
+// } else {
+//   console.error("Bouton ajouter au panier non trouvé");
+// }
 
 // // Écouteur d'événements pour le bouton "Ajouter au panier"
 // const addToCartBtn = document.getElementById("addToCartBtn");
@@ -268,24 +388,24 @@ if (addToCartBtn) {
 // }
 
 // Initialiser le compteur de panier lorsque la page se charge
-updateCartCounter();
+// updateCartCounter();
 
-// Écouteurs d'événements pour les icônes de connexion et de panier
-const loginIcon = document.querySelector(".fa-user").parentElement;
-if (loginIcon) {
-  loginIcon.addEventListener("click", function (event) {
-    event.preventDefault();
-    window.location.href = "../Login/login.html";
-  });
-}
+// // Écouteurs d'événements pour les icônes de connexion et de panier
+// const loginIcon = document.querySelector(".fa-user").parentElement;
+// if (loginIcon) {
+//   loginIcon.addEventListener("click", function (event) {
+//     event.preventDefault();
+//     window.location.href = "../Login/login.html";
+//   });
+// }
 
-const cartIcon = document.querySelector(".cart-icon");
-if (cartIcon) {
-  cartIcon.addEventListener("click", function (event) {
-    event.preventDefault();
-    window.location.href = "../Panier/panier.html";
-  });
-}
+// const cartIcon = document.querySelector(".cart-icon");
+// if (cartIcon) {
+//   cartIcon.addEventListener("click", function (event) {
+//     event.preventDefault();
+//     window.location.href = "../Panier/panier.html";
+//   });
+// }
 
 
 
