@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Récupération des ID des albums depuis localStorage
 
-    let albumIds = JSON.parse(localStorage.getItem('id_book')) || [];
+    let albumIds = JSON.parse(localStorage.getItem('id_book')) || [];     
 
 
 
@@ -154,139 +154,139 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ... (previous code remains unchanged)
 
-function displayCartProducts() 
-{
-    let totalProducts = 0;  // Nombre total de produits
+// function displayCartProducts() 
+// {
+//     let totalProducts = 0;  // Nombre total de produits
 
-    if (albumIds.length === 0) {
-        document.getElementById("heading").innerText = ' ( 0 produit ) ';
-        return;
-    }
+//     if (albumIds.length === 0) {
+//         document.getElementById("heading").innerText = ' ( 0 produit ) ';
+//         return;
+//     }
 
-    // Boucle sur les id dans localStorage
-    albumIds.forEach(item => {
-        if (item && item != undefined) 
-        {
-            totalProducts += 1;  
+//     // Boucle sur les id dans localStorage
+//     albumIds.forEach(item => {
+//         if (item && item != undefined) 
+//         {
+//             totalProducts += 1;  
 
-            // Use the image URL stored in the cart item
-            const imageUrl = item.imageUrl || findImageForAlbum(item.name);
+//             // Use the image URL stored in the cart item
+//             const imageUrl = item.imageUrl || findImageForAlbum(item.name);
 
-            // Récupérer la quantité stockée pour ce produit dans localStorage
-            const quantity = item.quantity || 1;  
+//             // Récupérer la quantité stockée pour ce produit dans localStorage
+//             const quantity = item.quantity || 1;  
 
-            // Créer une structure HTML pour chaque produit
-            const productHtml = `
-                <div class="cart-product" data-id="${item.seriesId}">
-                    <img src="${imageUrl}" alt="${item.name}">
-                    <div class="product-info">
-                        <h3>${item.name}</h3>
-                        <p><strong>Auteur:</strong> ${item.author}</p>
-                        <p><strong>Série:</strong> ${item.seriesId}</p>
-                    </div>
-                    <div class="price-quantity">
-                        <span class="product-price">${item.price} €</span>
-                        <div class="quantity-controls">
-                            <button class="remove-btn" aria-label="Supprimer l'article">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
-                            <div class="quantity-wrapper">
-                                <button class="quantity-btn" aria-label="Réduire la quantité">-</button>
-                                <input type="number" value="${quantity}" min="1" class="quantity-input" aria-label="Quantité">
-                                <button class="quantity-btn" aria-label="Augmenter la quantité">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
+//             // Créer une structure HTML pour chaque produit
+//             const productHtml = `
+//                 <div class="cart-product" data-id="${item.seriesId}">
+//                     <img src="${imageUrl}" alt="${item.name}">
+//                     <div class="product-info">
+//                         <h3>${item.name}</h3>
+//                         <p><strong>Auteur:</strong> ${item.author}</p>
+//                         <p><strong>Série:</strong> ${item.seriesId}</p>
+//                     </div>
+//                     <div class="price-quantity">
+//                         <span class="product-price">${item.price} €</span>
+//                         <div class="quantity-controls">
+//                             <button class="remove-btn" aria-label="Supprimer l'article">
+//                                 <i class="fas fa-trash-alt"></i>
+//                             </button>
+//                             <div class="quantity-wrapper">
+//                                 <button class="quantity-btn" aria-label="Réduire la quantité">-</button>
+//                                 <input type="number" value="${quantity}" min="1" class="quantity-input" aria-label="Quantité">
+//                                 <button class="quantity-btn" aria-label="Augmenter la quantité">+</button>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//             `;
 
-            // Ajouter le produit à la section du panier
-            cartProductContainer.innerHTML += productHtml;
-        }
-    });
+//             // Ajouter le produit à la section du panier
+//             cartProductContainer.innerHTML += productHtml;
+//         }
+//     });
 
-    document.getElementById("heading").innerText = ` (${totalProducts} produit${albumIds.length > 1 ? 's' : ''})`;
-}
+//     document.getElementById("heading").innerText = ` (${totalProducts} produit${albumIds.length > 1 ? 's' : ''})`;
+// }
 
 // ... (rest of the code remains unchanged)
 
-    // function displayCartProducts() 
-    // {
+        function displayCartProducts() 
+        {
 
-    //     let totalProducts = 0;  // Nombre total de produits
-
-
-    //     if (albumIds.length === 0) {
-
-    //         document.getElementById("heading").innerText = ' ( 0 produit ) ';
-    //         return;
-    //     }
-
-    //     // Boucle sur les id dans localStorage
-    //     albumIds.forEach(id => {
-    //                              // albums est un ficher dans data/
-    //         const current_album = albums.get(id);
-
-    //         if (current_album && current_album != undefined) 
-    //         {
-    //             totalProducts += 1;  
-
-    //             const imageUrl = findImageForAlbum(current_album.titre);   // Trouver l'image associée
-    //             const auteur   = auteurs.get(current_album.idAuteur);        
-    //             const serie    = series.get(current_album.idSerie);
+            let totalProducts = 0;  // Nombre total de produits
 
 
-    //             // Récupérer la quantité stockée pour ce produit dans localStorage
-    //             const quantity = productQuantities[id] || 1;  
+            if (albumIds.length === 0) {
 
-                
-    //             // Créer une structure HTML pour chaque produit
-    //             const productHtml = `
+                document.getElementById("heading").innerText = ' ( 0 produit ) ';
+                return;
+            }
 
-    //                 <div class="cart-product" data-id="${id}">
+            // Boucle sur les id dans localStorage
+            albumIds.forEach(id => {
+                                     // albums est un ficher dans data/
+                const current_album = albums.get(id);
 
-    //                     <img src="${imageUrl ? imageUrl : 'https://via.placeholder.com/120x150.png?text=Image'}" alt="${current_album.titre}">
+                if (current_album && current_album != undefined) 
+                {
+                    totalProducts += 1;  
+
+                    const imageUrl = findImageForAlbum(current_album.titre);   // Trouver l'image associée
+                    const auteur   = auteurs.get(current_album.idAuteur);        
+                    const serie    = series.get(current_album.idSerie);
 
 
-    //                     <div class="product-info">
-    //                         <h3>${current_album.titre}</h3>
-    //                         <p><strong>Auteur:</strong> ${auteur ? auteur.nom : 'Auteur inconnu'}</p>
-    //                         <p><strong>Série:</strong>  ${serie  ? serie.nom  : 'Série inconnue'}</p>
-    //                     </div>
+                    // Récupérer la quantité stockée pour ce produit dans localStorage
+                    const quantity = productQuantities[id] || 1;  
+
+                    
+                    // Créer une structure HTML pour chaque produit
+                    const productHtml = `
+
+                        <div class="cart-product" data-id="${id}">
+
+                            <img src="${imageUrl ? imageUrl : 'https://via.placeholder.com/120x150.png?text=Image'}" alt="${current_album.titre}">
 
 
-    //                     <div class="price-quantity">
+                            <div class="product-info">
+                                <h3>${current_album.titre}</h3>
+                                <p><strong>Auteur:</strong> ${auteur ? auteur.nom : 'Auteur inconnu'}</p>
+                                <p><strong>Série:</strong>  ${serie  ? serie.nom  : 'Série inconnue'}</p>
+                            </div>
 
-    //                         <span class="product-price">${current_album.prix} €</span>
 
-    //                         <!-- Contrôles de quantité -->
+                            <div class="price-quantity">
 
-    //                         <div class="quantity-controls">
+                                <span class="product-price">${current_album.prix} €</span>
 
-    //                             <button class="remove-btn" aria-label="Supprimer l'article">
-    //                                 <i class="fas fa-trash-alt"></i> <!-- Icône supprimer -->
-    //                             </button>
+                                <!-- Contrôles de quantité -->
 
-    //                             <div class="quantity-wrapper">
-    //                                 <button class="quantity-btn" aria-label="Réduire la quantité">-</button>
-    //                                 <input type="number" value="${quantity}" min="1" class="quantity-input" aria-label="Quantité">
-    //                                 <button class="quantity-btn" aria-label="Augmenter la quantité">+</button>
-    //                             </div>
+                                <div class="quantity-controls">
 
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             `;
+                                    <button class="remove-btn" aria-label="Supprimer l'article">
+                                        <i class="fas fa-trash-alt"></i> <!-- Icône supprimer -->
+                                    </button>
 
-    //             // Ajouter le produit à la section du panier
-    //             cartProductContainer.innerHTML += productHtml;
-    //         }
-    //     });
-    //     // End for loop
+                                    <div class="quantity-wrapper">
+                                        <button class="quantity-btn" aria-label="Réduire la quantité">-</button>
+                                        <input type="number" value="${quantity}" min="1" class="quantity-input" aria-label="Quantité">
+                                        <button class="quantity-btn" aria-label="Augmenter la quantité">+</button>
+                                    </div>
 
-    //     document.getElementById("heading").innerText = ` (${totalProducts} produit${albumIds.length > 1 ? 's' : ''})`;
-        
-    // }
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    // Ajouter le produit à la section du panier
+                    cartProductContainer.innerHTML += productHtml;
+                }
+            });
+            // End for loop
+
+            document.getElementById("heading").innerText = ` (${totalProducts} produit${albumIds.length > 1 ? 's' : ''})`;
+            
+        }
 
 
     // ##############################
