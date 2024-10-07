@@ -191,20 +191,14 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url("/0_assets/images/fond-degrader.jpeg");
+  background-image: url("../0_assets/images/fond-degrader.jpeg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
 }
 
 
-.back {
-  background-image: url("/0_assets/images/fond-degrader.jpeg");
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  min-height: 100vh;
-}
+
 
 
 
@@ -250,16 +244,12 @@ header nav a {
   font-family: Roboto;
   margin-right: 20px;
   text-align: right;
-}
-header nav a {
   position: relative;
-  color: #fff;
-  text-decoration: none;
+  color: white;
   letter-spacing: 1.5px;
-  font-size: 22;
-  font-family: Roboto;
   font-weight: 300;
 }
+
 
 header nav a:hover {
   color: #ffffff;
@@ -522,6 +512,7 @@ form.active button[type="button"] svg.close {
   display: block;
   width: 100%;
   background-color: white;
+  border:1px solid #ced4da
 }
 
 .password-input {
@@ -572,7 +563,8 @@ form.active button[type="button"] svg.close {
   border-radius: 0.25rem; 
   background-color: white;
   font-size: 1rem; 
-  padding: 0.75rem;  
+  padding: 0.75rem; 
+  border:1px solid #ced4da
 }
 
 
