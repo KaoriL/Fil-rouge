@@ -26,13 +26,7 @@ body {
 }
 
 
-.back {
-  background-image: url("/0_assets/images/fond-degrader.jpeg");
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  min-height: 100vh;
-}
+
 
 
 
@@ -78,14 +72,8 @@ header nav a {
   font-family: Roboto;
   margin-right: 20px;
   text-align: right;
-}
-header nav a {
   position: relative;
-  color: #fff;
-  text-decoration: none;
   letter-spacing: 1.5px;
-  font-size: 22;
-  font-family: Roboto;
   font-weight: 300;
 }
 
