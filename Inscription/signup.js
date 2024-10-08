@@ -12,21 +12,7 @@ window.addEventListener('load', function() {
   const nameInput = document.getElementById('signUpName');
   const emailInput = document.getElementById('signUpEmail');
   const passwordInput = document.getElementById('signUpPassword');
-  const togglePassword = document.getElementById('togglePassword');
 
-  // Navbar toggle functionality
-  const navbarToggler = document.getElementById('navbarToggler');
-  const navbarMenu = document.getElementById('navbarMenu');
-
- 
-  
-  
-
-  if (navbarToggler && navbarMenu) {
-    navbarToggler.addEventListener('click', function() {
-      navbarMenu.classList.toggle('show');
-    });
-  }
 
   function isValidEmail(email) {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
